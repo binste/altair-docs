@@ -527,8 +527,22 @@ chart as a static <code class="docutils literal notranslate"><span class="pre">s
 </div>
 <p>However, saving these images requires some additional extensions to run the
 javascript code necessary to interpret the Vega-Lite specification and output
-it in the form of an image.</p>
-<p>Altair can do this via the <a class="reference external" href="http://github.com/altair-viz/altair_saver/">altair_saver</a> package, which can be installed with:</p>
+it in the form of an image. There are two packages that can be used to enable
+image export: <a href="#id3"><span class="problematic" id="id4">vl-convert-python_</span></a> or <a class="reference external" href="http://github.com/altair-viz/altair_saver/">altair_saver</a>.</p>
+<section id="vl-convert">
+<h3>vl-convert<a class="headerlink" href="#vl-convert" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://github.com/vega/vl-convert">vl-convert</a> package can be installed with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install vl-convert-python
+</pre></div>
+</div>
+<p>Unlike <a class="reference external" href="http://github.com/altair-viz/altair_saver/">altair_saver</a>, <a class="reference external" href="https://github.com/vega/vl-convert">vl-convert</a> does not require any external dependencies.
+However, it only supports saving charts to PNG and SVG formats. To save directly to
+PDF, <a class="reference external" href="http://github.com/altair-viz/altair_saver/">altair_saver</a> is still required. See the vl-convert documentation for information
+on other <a class="reference external" href="https://github.com/vega/vl-convert#limitations">limitations</a>.</p>
+</section>
+<section id="altair-saver">
+<h3>altair_saver<a class="headerlink" href="#altair-saver" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="http://github.com/altair-viz/altair_saver/">altair_saver</a> package can be installed with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install altair_saver
 </pre></div>
 </div>
@@ -538,6 +552,20 @@ it in the form of an image.</p>
 </div>
 <p>See the <a class="reference external" href="http://github.com/altair-viz/altair_saver/">altair_saver</a> documentation for information about additional installation
 requirements.</p>
+</section>
+<section id="engine-argument">
+<h3>Engine Argument<a class="headerlink" href="#engine-argument" title="Permalink to this heading">#</a></h3>
+<p>If both vl-convert and altair_saver are installed, vl-convert will take precedence.
+The engine argument to <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.save()</span></code> can be used to override this default
+behavior. For example, to use altair_saver for PNG export when vl-convert is also
+installed you can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>chart.save(‘chart.png’, engine=”altair_saver”)</p>
+</div></blockquote>
+</section>
 <section id="figure-size-resolution">
 <h3>Figure Size/Resolution<a class="headerlink" href="#figure-size-resolution" title="Permalink to this heading">#</a></h3>
 <p>When using <code class="docutils literal notranslate"><span class="pre">chart.save()</span></code> above, the resolution of the resulting PNG is
@@ -605,6 +633,21 @@ to contain more pixels at a given resolution.</p>
    PNG, SVG, and PDF format
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vl-convert">
+     vl-convert
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#altair-saver">
+     altair_saver
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#engine-argument">
+     Engine Argument
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#figure-size-resolution">
      Figure Size/Resolution

@@ -4,9 +4,9 @@
 .. _gallery_binned_scatterplot:
 
 
-Binned Scatterplot
+Binned Scatter Plot
 ------------------
-This example shows how to make a binned scatterplot.
+This example shows how to make a binned scatter plot.
 
 
 .. altair-plot::
