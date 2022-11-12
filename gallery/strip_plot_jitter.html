@@ -341,14 +341,14 @@
               
   <section id="strip-plot-with-jitter">
 <span id="gallery-strip-plot-jitter"></span><h1>Strip Plot with Jitter<a class="headerlink" href="#strip-plot-with-jitter" title="Permalink to this heading">#</a></h1>
-<p>This example shows how to make a strip plot with jitter.</p>
+<p>In this chart, we encode the <code class="docutils literal notranslate"><span class="pre">Major_Genre</span></code> column from the <code class="docutils literal notranslate"><span class="pre">movies</span></code> dataset in the <code class="docutils literal notranslate"><span class="pre">y</span></code>-channel. In the default presentation of this data, it would be difficult to gauge the relative frequencies with which different values occur because there would be so much overlap. To address this, we use the <code class="docutils literal notranslate"><span class="pre">yOffset</span></code> channel to incorporate a random offset (jittering). The example is shown twice, on the left side using normally distributed and on the right side using uniformally distributed jitter.</p>
 
 <div id="strip_plot_jitter-rst-altair-plot-0">
 <script>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"}, "mark": {"type": "circle", "size": 8}, "encoding": {"color": {"field": "Major_Genre", "legend": null, "type": "nominal"}, "x": {"field": "IMDB_Rating", "type": "quantitative"}, "y": {"field": "Major_Genre", "type": "nominal"}, "yOffset": {"field": "jitter", "type": "quantitative"}}, "transform": [{"calculate": "sqrt(-2*log(random()))*cos(2*PI*random())", "as": "jitter"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"mark": {"type": "circle", "size": 8}, "encoding": {"color": {"field": "Major_Genre", "legend": null, "type": "nominal"}, "x": {"field": "IMDB_Rating", "type": "quantitative"}, "y": {"field": "Major_Genre", "type": "nominal"}, "yOffset": {"field": "jitter", "type": "quantitative"}}, "title": "Normally distributed jitter", "transform": [{"calculate": "sqrt(-2*log(random()))*cos(2*PI*random())", "as": "jitter"}]}, {"mark": {"type": "circle", "size": 8}, "encoding": {"color": {"field": "Major_Genre", "legend": null, "type": "nominal"}, "x": {"field": "IMDB_Rating", "type": "quantitative"}, "y": {"axis": null, "field": "Major_Genre", "type": "nominal"}, "yOffset": {"field": "jitter", "type": "quantitative"}}, "title": "Uniformly distributed jitter", "transform": [{"calculate": "sqrt(-2*log(random()))*cos(2*PI*random())", "as": "jitter"}, {"calculate": "random()", "as": "jitter"}]}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json"}, "resolve": {"scale": {"yOffset": "independent"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -362,7 +362,7 @@
 
 <span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">movies</span><span class="o">.</span><span class="n">url</span>
 
-<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="n">gaussian_jitter</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Normally distributed jitter&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Major_Genre:N&quot;</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;IMDB_Rating:Q&quot;</span><span class="p">,</span>
     <span class="n">yOffset</span><span class="o">=</span><span class="s2">&quot;jitter:Q&quot;</span><span class="p">,</span>
@@ -371,6 +371,17 @@
     <span class="c1"># Generate Gaussian jitter with a Box-Muller transform</span>
     <span class="n">jitter</span><span class="o">=</span><span class="s2">&quot;sqrt(-2*log(random()))*cos(2*PI*random())&quot;</span>
 <span class="p">)</span>
+
+<span class="n">uniform_jitter</span> <span class="o">=</span> <span class="n">gaussian_jitter</span><span class="o">.</span><span class="n">transform_calculate</span><span class="p">(</span>
+    <span class="c1"># Generate uniform jitter</span>
+    <span class="n">jitter</span><span class="o">=</span><span class="s1">&#39;random()&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Major_Genre:N&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Uniformly distributed jitter&#39;</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="n">gaussian_jitter</span> <span class="o">|</span> <span class="n">uniform_jitter</span><span class="p">)</span><span class="o">.</span><span class="n">resolve_scale</span><span class="p">(</span><span class="n">yOffset</span><span class="o">=</span><span class="s1">&#39;independent&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -445,7 +456,7 @@
   <div class="footer-item">
     
 <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.3.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
 
   </div>

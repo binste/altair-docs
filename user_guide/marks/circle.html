@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Circle &#8212; Altair 5.0.0 documentation</title>
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/marks/circle';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Error Band" href="errorband.html" />
+    <link rel="prev" title="Box Plot" href="boxplot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    <a class="navbar-brand" href="../../index.html">
+<p class="title">Altair</p>
+</a>
+
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../../getting_started/overview.html">
+                        Getting Started
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../data.html">
+                        User Guide
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../gallery/index.html">
+                        Examples
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../API.html">
+                        Reference
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../ecosystem.html">
+                        Ecosystem
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                    <a class="nav-link" href="../../releases/changes.html">
+                        Release Notes
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../getting_help.html">
+                        Help
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../../getting_started/overview.html">
+                        Getting Started
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../data.html">
+                        User Guide
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../gallery/index.html">
+                        Examples
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../API.html">
+                        Reference
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../ecosystem.html">
+                        Ecosystem
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                    <a class="nav-link" href="../../releases/changes.html">
+                        Release Notes
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../getting_help.html">
+                        Help
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/altair-logo-light.png" class="logo" alt="logo">
+      <br>
+      <p class="site-version" id="site-version">5.0.0</p>
+      
+    </a>
+</div>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data in Altair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arc.html">Arc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar.html">Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boxplot.html">Box Plot</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Circle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errorband.html">Error Band</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errorbar.html">Error Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geoshape.html">Geoshape</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../transform/aggregate.html">Aggregate Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/bin.html">Bin transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/calculate.html">Calculate Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/density.html">Density Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/filter.html">Filter Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/flatten.html">Flatten Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/fold.html">Fold Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/impute.html">Impute Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/joinaggregate.html">Join Aggregate Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/lookup.html">Lookup Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/loess.html">LOESS Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/pivot.html">Pivot Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/quantile.html">Quantile Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/regression.html">Regression Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/sample.html">Sample Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/stack.html">Stack Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/timeunit.html">TimeUnit Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/window.html">Window Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates in Altair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing Visualizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Top-Level Chart Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving_charts.html">Saving Altair Charts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a></li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+    <div class="sidebar-start-items__item">
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="circle">
+<span id="user-guide-circle-marks"></span><h1>Circle<a class="headerlink" href="#circle" title="Permalink to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">circle</span></code> mark is similar to <code class="docutils literal notranslate"><span class="pre">point</span></code> mark, except that (1) the <code class="docutils literal notranslate"><span class="pre">shape</span></code> value is always set to <code class="docutils literal notranslate"><span class="pre">circle</span></code> (2) they are filled by default.</p>
+<section id="scatterplot-with-circle">
+<h2>Scatterplot with Circle<a class="headerlink" href="#scatterplot-with-circle" title="Permalink to this heading">#</a></h2>
+<p>Here is an example scatter plot with <code class="docutils literal notranslate"><span class="pre">circle</span></code> marks:</p>
+<div class="highlight-python notranslate" id="circle-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cars</span><span class="o">.</span><span class="n">url</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Horsepower:Q&#39;</span><span class="p">),</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Miles_per_Gallon:Q&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="circle-rst-altair-plot-0">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "circle", "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#circle-rst-altair-plot-0', spec, opt).catch(console.err);
+  });
+</script>
+</div></section>
+<section id="circle-config">
+<h2>Circle Config<a class="headerlink" href="#circle-config" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">circle</span></code> property of the top-level <code class="docutils literal notranslate"><span class="pre">config</span></code> object sets the default properties for all circle marks. If mark property encoding channels are specified for marks, these config values will be overridden.</p>
+<p>The circle config can contain any circle mark properties (except <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">style</span></code>, and <code class="docutils literal notranslate"><span class="pre">clip</span></code>).</p>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="boxplot.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Box Plot</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="errorband.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Error Band</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scatterplot-with-circle">
+   Scatterplot with Circle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#circle-config">
+   Circle Config
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../_sources/user_guide/marks/circle.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2016-2022, Altair Developers.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

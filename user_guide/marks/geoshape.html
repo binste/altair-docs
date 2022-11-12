@@ -1,0 +1,1654 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Geoshape &#8212; Altair 5.0.0 documentation</title>
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/marks/geoshape';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Image" href="image.html" />
+    <link rel="prev" title="Error Bar" href="errorbar.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    <a class="navbar-brand" href="../../index.html">
+<p class="title">Altair</p>
+</a>
+
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../../getting_started/overview.html">
+                        Getting Started
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../data.html">
+                        User Guide
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../gallery/index.html">
+                        Examples
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../API.html">
+                        Reference
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../ecosystem.html">
+                        Ecosystem
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                    <a class="nav-link" href="../../releases/changes.html">
+                        Release Notes
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../getting_help.html">
+                        Help
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../../getting_started/overview.html">
+                        Getting Started
+                    </a>
+                </li>
+                
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../data.html">
+                        User Guide
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../../gallery/index.html">
+                        Examples
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../API.html">
+                        Reference
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../ecosystem.html">
+                        Ecosystem
+                    </a>
+                </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                <li class="nav-item">
+                    <a class="nav-link" href="../../releases/changes.html">
+                        Release Notes
+                    </a>
+                </li>
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../getting_help.html">
+                        Help
+                    </a>
+                </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/altair-logo-light.png" class="logo" alt="logo">
+      <br>
+      <p class="site-version" id="site-version">5.0.0</p>
+      
+    </a>
+</div>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data in Altair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arc.html">Arc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar.html">Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boxplot.html">Box Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="circle.html">Circle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errorband.html">Error Band</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errorbar.html">Error Bar</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Geoshape</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../transform/aggregate.html">Aggregate Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/bin.html">Bin transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/calculate.html">Calculate Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/density.html">Density Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/filter.html">Filter Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/flatten.html">Flatten Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/fold.html">Fold Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/impute.html">Impute Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/joinaggregate.html">Join Aggregate Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/lookup.html">Lookup Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/loess.html">LOESS Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/pivot.html">Pivot Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/quantile.html">Quantile Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/regression.html">Regression Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/sample.html">Sample Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/stack.html">Stack Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/timeunit.html">TimeUnit Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transform/window.html">Window Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates in Altair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing Visualizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Top-Level Chart Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving_charts.html">Saving Altair Charts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a></li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+    <div class="sidebar-start-items__item">
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="geoshape">
+<span id="user-guide-geoshape-marks"></span><h1>Geoshape<a class="headerlink" href="#geoshape" title="Permalink to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">mark_geoshape</span></code> represents an arbitrary shapes whose geometry is determined by specified spatial data.</p>
+</section>
+<section id="basic-map">
+<h1>Basic Map<a class="headerlink" href="#basic-map" title="Permalink to this heading">#</a></h1>
+<p>Altair can work with many different geographical data formats, including geojson and topojson files. Often, the most convenient input format to use is a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>. Here we load the Natural Earth dataset and create a basic map using <code class="docutils literal notranslate"><span class="pre">mark_geoshape</span></code>:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="n">fp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth_lowres&#39;</span><span class="p">)</span>
+<span class="n">gdf_ne</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>  <span class="c1"># shapefile</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_ne</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In the example above, Altair applies a default blue <code class="docutils literal notranslate"><span class="pre">fill</span></code> color and uses a default map projection (<code class="docutils literal notranslate"><span class="pre">equalEarth</span></code>). We can customize the colors and boundary stroke widths using standard mark properties. Using the <code class="docutils literal notranslate"><span class="pre">project</span></code> method we can also define a custom map projection manually:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_ne</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">stroke</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;albers&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="focus-filtering">
+<h1>Focus &amp; Filtering<a class="headerlink" href="#focus-filtering" title="Permalink to this heading">#</a></h1>
+<p>By default Altair automatically adjusts the projection so that all the data fits within the width and height of the chart.
+Multiple approaches can be used to focus on specific regions of your spatial data. Namely:</p>
+<ol class="arabic simple">
+<li><p>Filter the source data within your GeoDataFrame.</p></li>
+<li><p>Filter the source data using a <code class="docutils literal notranslate"><span class="pre">transform_filter</span></code>.</p></li>
+<li><p>Specify <code class="docutils literal notranslate"><span class="pre">scale</span></code> (zoom level) and <code class="docutils literal notranslate"><span class="pre">translate</span></code> (panning) within the <code class="docutils literal notranslate"><span class="pre">project</span></code> method.</p></li>
+<li><p>Specify <code class="docutils literal notranslate"><span class="pre">fit</span></code> (extent) within the <code class="docutils literal notranslate"><span class="pre">project</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">clip=True</span></code> in the mark properties.</p></li>
+</ol>
+<p>The following examples applies these approaches to focus on continental Africa:</p>
+<ol class="arabic simple">
+<li><p>Filter the source data within your GeoDataFrame:</p></li>
+</ol>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="n">gdf_sel</span> <span class="o">=</span> <span class="n">gdf_ne</span><span class="p">[</span><span class="n">gdf_ne</span><span class="o">.</span><span class="n">continent</span> <span class="o">==</span> <span class="s1">&#39;Africa&#39;</span><span class="p">]</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Filter the source data using a <code class="docutils literal notranslate"><span class="pre">transform_filter</span></code>:</p></li>
+</ol>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_ne</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">continent</span> <span class="o">==</span> <span class="s1">&#39;Africa&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Specify <code class="docutils literal notranslate"><span class="pre">scale</span></code> (zoom level) and <code class="docutils literal notranslate"><span class="pre">translate</span></code> (panning) within the <code class="docutils literal notranslate"><span class="pre">project</span></code> method:</p></li>
+</ol>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-4"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_ne</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="n">scale</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">translate</span><span class="o">=</span><span class="p">[</span><span class="mi">160</span><span class="p">,</span> <span class="mi">160</span><span class="p">]</span>  <span class="c1"># lon, lat</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Specify <code class="docutils literal notranslate"><span class="pre">fit</span></code> (extent) within the <code class="docutils literal notranslate"><span class="pre">project</span></code> method &amp; <code class="docutils literal notranslate"><span class="pre">clip=True</span></code> in the mark properties:</p></li>
+</ol>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-5"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.ops</span> <span class="kn">import</span> <span class="n">orient</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">mapping</span>
+
+<span class="n">extent_roi</span> <span class="o">=</span> <span class="n">gdf_ne</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;continent == &#39;Africa&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">unary_union</span><span class="o">.</span><span class="n">envelope</span>
+
+<span class="c1"># fit object should be an array of GeoJSON-like features</span>
+<span class="c1"># order polygon exterior needs to be clock-wise (left-hand-rule)</span>
+<span class="k">if</span> <span class="n">extent_roi</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">is_ccw</span><span class="p">:</span>
+    <span class="n">extent_roi</span> <span class="o">=</span> <span class="n">orient</span><span class="p">(</span><span class="n">extent_roi</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">extent_roi_geojson</span> <span class="o">=</span> <span class="p">[</span><span class="n">mapping</span><span class="p">(</span><span class="n">extent_roi</span><span class="p">)]</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_ne</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span><span class="n">clip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="n">fit</span><span class="o">=</span><span class="n">extent_roi_geojson</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="cartesian-coordinates">
+<h1>Cartesian coordinates<a class="headerlink" href="#cartesian-coordinates" title="Permalink to this heading">#</a></h1>
+<p>The default projection of Altair is <code class="docutils literal notranslate"><span class="pre">equalEarth</span></code>, which accurately represents the areas of the world’s landmasses relative each other. This default assumes that your geometries are in degrees and referenced by longitude and latitude values.
+Another widely used coordinate system for data visualization is the 2d cartesian coordinate system. This coordinate system does not take into account the curvature of the Earth.</p>
+<p>In the following example the input geometry is not projected and is instead rendered directly in raw coordinates using the <code class="docutils literal notranslate"><span class="pre">identity</span></code> projection type. We have to define the <code class="docutils literal notranslate"><span class="pre">reflectY</span></code> as well since Canvas and SVG treats positive <code class="docutils literal notranslate"><span class="pre">y</span></code> as pointing down.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-6"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span>
+    <span class="n">reflectY</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="mapping-polygons">
+<h1>Mapping Polygons<a class="headerlink" href="#mapping-polygons" title="Permalink to this heading">#</a></h1>
+<p>The following example maps the visual property of the <code class="docutils literal notranslate"><span class="pre">name</span></code> column using the <code class="docutils literal notranslate"><span class="pre">color</span></code> encoding.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-7"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;name:N&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Since each country is represented by a (multi)polygon, we can separate the <code class="docutils literal notranslate"><span class="pre">stroke</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code> definitions as such:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-8"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span>
+    <span class="n">stroke</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+    <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">1.5</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;name:N&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="mapping-lines">
+<h1>Mapping Lines<a class="headerlink" href="#mapping-lines" title="Permalink to this heading">#</a></h1>
+<p>By default Altair assumes for <code class="docutils literal notranslate"><span class="pre">mark_geoshape</span></code> that the mark’s color is used for the fill color instead of the stroke color.
+This means that if your source data contain (multi)lines, you will have to explicitly define the <code class="docutils literal notranslate"><span class="pre">filled</span></code> value as <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Compare:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-9"><div class="highlight"><pre><span></span><span class="n">gs_line</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">from_wkt</span><span class="p">([</span><span class="s1">&#39;LINESTRING (0 0, 1 1, 0 2, 2 2, -1 1, 1 0)&#39;</span><span class="p">])</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gs_line</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span>
+    <span class="n">reflectY</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>With:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-10"><div class="highlight"><pre><span></span><span class="n">gs_line</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="o">.</span><span class="n">from_wkt</span><span class="p">([</span><span class="s1">&#39;LINESTRING (0 0, 1 1, 0 2, 2 2, -1 1, 1 0)&#39;</span><span class="p">])</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gs_line</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span>
+    <span class="n">filled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span>
+    <span class="n">reflectY</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Using this approach one can also style Polygons as if they are Linestrings:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-11"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span>
+    <span class="n">filled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">1.5</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">stroke</span><span class="o">=</span><span class="s1">&#39;name:N&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="mapping-points">
+<h1>Mapping Points<a class="headerlink" href="#mapping-points" title="Permalink to this heading">#</a></h1>
+<p>Points can be drawn when they are defined as <code class="docutils literal notranslate"><span class="pre">Points</span></code> within a GeoDataFrame using <code class="docutils literal notranslate"><span class="pre">mark_geoshape</span></code>.
+We first assign the centroids of Polygons as Point geometry and plot these:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-12"><div class="highlight"><pre><span></span><span class="n">gdf_centroid</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">gdf_sel</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>  <span class="c1"># .copy() to prevent changing the original `gdf_sel` variable</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="n">gdf_sel</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span>
+<span class="p">)</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_centroid</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Caveat: To use the <code class="docutils literal notranslate"><span class="pre">size</span></code> encoding for the Points you will need to use the <code class="docutils literal notranslate"><span class="pre">mark_circle</span></code> in combination with the <code class="docutils literal notranslate"><span class="pre">latitude</span></code> and <code class="docutils literal notranslate"><span class="pre">longitude</span></code> encoding channel definitions.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-13"><div class="highlight"><pre><span></span><span class="n">gdf_centroid</span><span class="p">[</span><span class="s2">&quot;lon&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_centroid</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span>
+<span class="n">gdf_centroid</span><span class="p">[</span><span class="s2">&quot;lat&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_centroid</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_centroid</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">longitude</span><span class="o">=</span><span class="s2">&quot;lon:Q&quot;</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="s2">&quot;lat:Q&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;pop_est:Q&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Altair also contains expressions related to geographical features. We can for example define the <code class="docutils literal notranslate"><span class="pre">centroids</span></code> using a <code class="docutils literal notranslate"><span class="pre">geoCentroid</span></code> expression:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-14"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">altair.expr</span> <span class="kn">import</span> <span class="n">datum</span><span class="p">,</span> <span class="n">geoCentroid</span>
+
+<span class="n">basemap</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span>
+     <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">stroke</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+
+<span class="n">bubbles</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">transform_calculate</span><span class="p">(</span>
+    <span class="n">centroid</span><span class="o">=</span><span class="n">geoCentroid</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">datum</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span>
+    <span class="n">stroke</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">longitude</span><span class="o">=</span><span class="s1">&#39;centroid[0]:Q&#39;</span><span class="p">,</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="s1">&#39;centroid[1]:Q&#39;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s2">&quot;pop_est:Q&quot;</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="n">basemap</span> <span class="o">+</span> <span class="n">bubbles</span><span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="n">reflectY</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="choropleths">
+<h1>Choropleths<a class="headerlink" href="#choropleths" title="Permalink to this heading">#</a></h1>
+<p>An alternative to showing the population sizes as bubbles, is to create a “Choropleth” map. These are geographical heatmaps where the color or each region are mapped to the values of a column in the dataframe.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-15"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_sel</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;pop_est&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>When we create choropleth maps, we need to be careful, because although the color changes according to the value of the column we are interested in, the size is tied to the area of each country and we might miss interesting values in small countries just because we can’t easily see them on the map (e.g. if we were to visualize population density).</p>
+</section>
+<section id="lookup-datasets">
+<h1>Lookup datasets<a class="headerlink" href="#lookup-datasets" title="Permalink to this heading">#</a></h1>
+<p>Sometimes your data is separated in two datasets. One <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the data and one <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> with the geometries.
+In this case you can use the <code class="docutils literal notranslate"><span class="pre">lookup</span></code> transform to collect related information from the other dataset.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">lookup</span></code> transform in two directions:</p>
+<ol class="arabic simple">
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> with geometries as source and lookup related information in another <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as source and lookup related geometries in a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>.</p></li>
+</ol>
+<p>Depending on your use-case one or the other is more favorable.</p>
+<p>First we show an example of the first approach.
+Here we lookup the field <code class="docutils literal notranslate"><span class="pre">rate</span></code> from the <code class="docutils literal notranslate"><span class="pre">df_us_unemp</span></code> DataFrame, where the <code class="docutils literal notranslate"><span class="pre">gdf_us_counties</span></code> GeoDataFrame is used as source:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-16"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="n">gdf_us_counties</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">us_10m</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;TopoJSON&#39;</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;counties&#39;</span><span class="p">)</span>
+<span class="n">df_us_unemp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">unemployment</span><span class="p">()</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_us_counties</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">transform_lookup</span><span class="p">(</span>
+    <span class="n">lookup</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
+    <span class="n">from_</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">LookupData</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df_us_unemp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;rate&#39;</span><span class="p">])</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;rate:Q&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;albersUsa&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we show an example of the second approach.
+Here we lookup the geometries through the fields <code class="docutils literal notranslate"><span class="pre">geometry</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> from the <code class="docutils literal notranslate"><span class="pre">gdf_us_counties</span></code> GeoDataFrame, where the <code class="docutils literal notranslate"><span class="pre">df_us_unemp</span></code> DataFrame is used as source.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-17"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_us_unemp</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">transform_lookup</span><span class="p">(</span>
+    <span class="n">lookup</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
+    <span class="n">from_</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">LookupData</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">gdf_us_counties</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">])</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;rate:Q&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;albersUsa&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="choropleth-classification">
+<h1>Choropleth Classification<a class="headerlink" href="#choropleth-classification" title="Permalink to this heading">#</a></h1>
+<p>In addition to displaying a continuous quantitative variable, choropleths can also be used to show discrete levels of a variable. While we should generally be careful to not create artificial groups when discretizing a continuous variable, it can be very useful when we have natural cutoff levels of a variable that we want to showcase clearly.
+We first define a utility function <code class="docutils literal notranslate"><span class="pre">classify()</span></code> that we will use to showcase different approaches to make a choropleth map.
+We apply it to define a choropleth map of the unemployment statistics of 2018 of US counties using a <code class="docutils literal notranslate"><span class="pre">linear</span></code> scale.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-18"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nice</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># define data</span>
+    <span class="n">us_counties</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">topo_feature</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">us_10m</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;counties&quot;</span><span class="p">)</span>
+    <span class="n">us_unemp</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">unemployment</span><span class="o">.</span><span class="n">url</span>
+
+    <span class="c1"># define choropleth scale</span>
+    <span class="k">if</span> <span class="s2">&quot;threshold&quot;</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">:</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="n">breaks</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;inferno&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span> <span class="n">nice</span><span class="o">=</span><span class="n">nice</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;inferno&quot;</span><span class="p">)</span>
+
+    <span class="c1"># define title</span>
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="nb">type</span>
+
+    <span class="c1"># define choropleth chart</span>
+    <span class="n">choropleth</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">us_counties</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">transform_lookup</span><span class="p">(</span>
+            <span class="n">lookup</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">LookupData</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">us_unemp</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;rate&quot;</span><span class="p">])</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+                <span class="s2">&quot;rate:Q&quot;</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span>
+                <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span>
+                    <span class="n">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;.1%&quot;</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;albersUsa&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">choropleth</span>
+
+<span class="n">classify</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We visualize the unemployment <code class="docutils literal notranslate"><span class="pre">rate</span></code> in percentage of 2018 with a <code class="docutils literal notranslate"><span class="pre">linear</span></code> scale range
+using a <code class="docutils literal notranslate"><span class="pre">mark_geoshape()</span></code> to present the spatial patterns on a map. Each value/
+county has defined a <cite>unique</cite> color. This gives a bit of insight, but often we like to
+group the distribution into classes.</p>
+<p>By grouping values in classes, you can classify the dataset so all values/geometries in
+each class get assigned the same color.</p>
+<p>Here we present a number of scale methods how Altair can be used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">quantile</span></code>, this type will divide your dataset (<cite>domain</cite>) into intervals of similar sizes. Each class contains more or less the same number of values/geometries (<cite>equal counts</cite>). The scale definition will look as follow:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantile&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And applied in our utility function:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-19"><div class="highlight"><pre><span></span><span class="n">classify</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantile&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;quantile&#39;</span><span class="p">,</span> <span class="s1">&#39;equal counts&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">quantize</span></code>, this type will divide the extent of your dataset (<cite>range</cite>) in equal intervals. Each class contains different number of values, but the step size is equal (<cite>equal range</cite>). The scale definition will look as follow:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantize&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And applied in our utility function:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-20"><div class="highlight"><pre><span></span><span class="n">classify</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantize&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;quantile&#39;</span><span class="p">,</span> <span class="s1">&#39;equal range&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">quantize</span></code> method can also be used in combination with <code class="docutils literal notranslate"><span class="pre">nice</span></code>. This will <cite>“nice”</cite> the domain before applying quantization. As such:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantize&#39;</span><span class="p">,</span> <span class="n">nice</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And applied in our utility function:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-21"><div class="highlight"><pre><span></span><span class="n">classify</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantize&#39;</span><span class="p">,</span> <span class="n">nice</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;quantize&#39;</span><span class="p">,</span> <span class="s1">&#39;equal range nice&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">threshold</span></code>, this type will divide your dataset in separate classes by manually specifying the cut values. Each class is separated by defined classes. The scale definition will look as follow:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;threshold&#39;</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>And applied in our utility function:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-22"><div class="highlight"><pre><span></span><span class="n">classify</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;threshold&#39;</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The definition above will create 3 classes. One class with values below <cite>0.05</cite>, one
+class with values from <cite>0.05</cite> to <cite>0.20</cite> and one class with values higher than <cite>0.20</cite>.</p>
+<p>So which method provides the optimal data classification for choropleth maps? As
+usual, it depends.</p>
+<p>There is another popular method that aid in determining class breaks.
+This method will maximize the similarity of values in a class while maximizing the
+distance between the classes (<cite>natural breaks</cite>). The method is also known as the
+Fisher-Jenks algorithm and is similar to k-Means in 1D:</p>
+<ul class="simple">
+<li><p>By using the external Python package <code class="docutils literal notranslate"><span class="pre">jenskpy</span></code> we can derive these <cite>optimum</cite> breaks</p></li>
+</ul>
+<p>as such:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">jenkspy</span> <span class="kn">import</span> <span class="n">JenksNaturalBreaks</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jnb</span> <span class="o">=</span> <span class="n">JenksNaturalBreaks</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_us_unemp</span><span class="p">[</span><span class="s1">&#39;rate&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jnb</span><span class="o">.</span><span class="n">inner_breaks_</span>
+<span class="go">[0.061, 0.088, 0.116, 0.161]</span>
+</pre></div>
+</div>
+<p>And applied in our utility function:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-23"><div class="highlight"><pre><span></span><span class="n">classify</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;threshold&#39;</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="p">[</span><span class="mf">0.061</span><span class="p">,</span> <span class="mf">0.088</span><span class="p">,</span> <span class="mf">0.116</span><span class="p">,</span> <span class="mf">0.161</span><span class="p">],</span>
+        <span class="n">title</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;threshold Jenks&#39;</span><span class="p">,</span><span class="s1">&#39;natural breaks&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Caveats:</p>
+<ul class="simple">
+<li><p>For the type <code class="docutils literal notranslate"><span class="pre">quantize</span></code> and <code class="docutils literal notranslate"><span class="pre">quantile</span></code> scales we observe that the default number of classes is 5. You can change the number of classes using a <code class="docutils literal notranslate"><span class="pre">SchemeParams()</span></code> object. In the above specification we can change <code class="docutils literal notranslate"><span class="pre">scheme='turbo'</span></code> into <code class="docutils literal notranslate"><span class="pre">scheme=alt.SchemeParams('turbo',</span> <span class="pre">count=2)</span></code> to manually specify usage of 2 classes for the scheme within the scale.</p></li>
+<li><p>The natural breaks method will determine the optimal class breaks given the required number of classes, but how many classes should you pick? One can investigate usage of goodness of variance fit (GVF), aka Jenks optimization method, to determine this.</p></li>
+</ul>
+</section>
+<section id="repeat-a-map">
+<h1>Repeat a Map<a class="headerlink" href="#repeat-a-map" title="Permalink to this heading">#</a></h1>
+<p>The <a class="reference internal" href="../generated/toplevel/altair.RepeatChart.html#altair.RepeatChart" title="altair.RepeatChart"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatChart</span></code></a> pattern, accessible via the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.repeat()</span></code> method
+provides a convenient interface for a particular type of horizontal or vertical
+concatenation of a multi-dimensional dataset.</p>
+<p>In the following example we have a dataset referenced as <code class="docutils literal notranslate"><span class="pre">source</span></code> from which we use
+three columns defining the <code class="docutils literal notranslate"><span class="pre">population</span></code>, <code class="docutils literal notranslate"><span class="pre">engineers</span></code> and <code class="docutils literal notranslate"><span class="pre">hurricanes</span></code> of each US state.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">states</span></code> is defined by making use of <a class="reference internal" href="../generated/api/altair.topo_feature.html#altair.topo_feature" title="altair.topo_feature"><code class="xref py py-func docutils literal notranslate"><span class="pre">topo_feature()</span></code></a> using <code class="docutils literal notranslate"><span class="pre">url</span></code> and <code class="docutils literal notranslate"><span class="pre">feature</span></code>
+as parameters. This is a convenience function for extracting features from a topojson url.</p>
+<p>These variables we provide as list in the <code class="docutils literal notranslate"><span class="pre">.repeat()</span></code> operator, which we refer to within
+the color encoding as <code class="docutils literal notranslate"><span class="pre">alt.repeat('row')</span></code></p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-24"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">states</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">topo_feature</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">us_10m</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;states&#39;</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">population_engineers_hurricanes</span><span class="o">.</span><span class="n">url</span>
+<span class="n">variable_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;engineers&#39;</span><span class="p">,</span> <span class="s1">&#39;hurricanes&#39;</span><span class="p">]</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span><span class="n">tooltip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;row&#39;</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;quantitative&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">transform_lookup</span><span class="p">(</span>
+    <span class="n">lookup</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
+    <span class="n">from_</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">LookupData</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">variable_list</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">project</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;albersUsa&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span>
+    <span class="n">row</span><span class="o">=</span><span class="n">variable_list</span>
+<span class="p">)</span><span class="o">.</span><span class="n">resolve_scale</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;independent&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="geoshape-rst-altair-plot-24">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "repeat": {"row": ["population", "engineers", "hurricanes"]}, "spec": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "tooltip": true}, "encoding": {"color": {"field": {"repeat": "row"}, "type": "quantitative"}}, "projection": {"type": "albersUsa"}, "transform": [{"lookup": "id", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population_engineers_hurricanes.csv"}, "key": "id", "fields": ["population", "engineers", "hurricanes"]}}]}, "resolve": {"scale": {"color": "independent"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#geoshape-rst-altair-plot-24', spec, opt).catch(console.err);
+  });
+</script>
+</div></section>
+<section id="facet-a-map">
+<h1>Facet a Map<a class="headerlink" href="#facet-a-map" title="Permalink to this heading">#</a></h1>
+<p>The <a class="reference internal" href="../generated/toplevel/altair.FacetChart.html#altair.FacetChart" title="altair.FacetChart"><code class="xref py py-class docutils literal notranslate"><span class="pre">FacetChart</span></code></a> pattern, accessible via the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.facet()</span></code> method
+provides a convenient interface for a particular type of horizontal or vertical
+concatenation of a dataset where one field contain multiple <code class="docutils literal notranslate"><span class="pre">variables</span></code>.</p>
+<p>Unfortunately, the following open issue <a class="github reference external" href="https://github.com/altair-viz/altair/issues/2369">altair-viz/altair#2369</a>
+will make the following not work for geographic visualization:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-25"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">population_engineers_hurricanes</span><span class="p">()</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">])</span>
+<span class="n">us_states</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">us_10m</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;TopoJSON&#39;</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;states&#39;</span><span class="p">)</span>
+<span class="n">gdf_comb</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">us_states</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_y&#39;</span><span class="p">))</span>
+
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_comb</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;value:Q&#39;</span><span class="p">),</span>
+    <span class="n">facet</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Facet</span><span class="p">(</span><span class="s1">&#39;variable:N&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">130</span>
+<span class="p">)</span><span class="o">.</span><span class="n">resolve_scale</span><span class="p">(</span><span class="s1">&#39;independent&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For now, the following workaround can be adopted to facet a map, manually filter the
+data in pandas, and create a small multiples chart via concatenation. For example:</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-26"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_comb</span><span class="p">[</span><span class="n">gdf_comb</span><span class="o">.</span><span class="n">variable</span> <span class="o">==</span> <span class="n">var</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="n">var</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span>
+                <span class="s2">&quot;value:Q&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Legend</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s1">&#39;albersUsa&#39;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">130</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">gdf_comb</span><span class="o">.</span><span class="n">variable</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">),</span>
+    <span class="n">columns</span><span class="o">=</span><span class="mi">3</span>
+<span class="p">)</span><span class="o">.</span><span class="n">resolve_scale</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;independent&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="interaction">
+<h1>Interaction<a class="headerlink" href="#interaction" title="Permalink to this heading">#</a></h1>
+<p>Often a map does not come alone, but is used in combination with another chart.
+Here we provide an example of an interactive visualization of a bar chart and a map.</p>
+<p>The data shows the states of the US in combination with a bar chart showing the 15 most
+populous states. Using an <code class="docutils literal notranslate"><span class="pre">alt.selection_point()</span></code> we define a selection parameter that connects to our left-mouseclick.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-27"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="c1"># load the data</span>
+<span class="n">us_states</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">us_10m</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;TopoJSON&quot;</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;states&quot;</span><span class="p">)</span>
+<span class="n">us_population</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">population_engineers_hurricanes</span><span class="p">()[[</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;population&quot;</span><span class="p">]]</span>
+
+<span class="c1"># define a pointer selection</span>
+<span class="n">click_state</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_point</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">])</span>
+
+<span class="c1"># create a choropleth map using a lookup transform</span>
+<span class="c1"># define a condition on the opacity encoding depending on the selection</span>
+<span class="n">choropleth</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">us_states</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_geoshape</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">transform_lookup</span><span class="p">(</span>
+        <span class="n">lookup</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">LookupData</span><span class="p">(</span><span class="n">us_population</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;population:Q&quot;</span><span class="p">,</span>
+        <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">click_state</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)),</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;state:N&quot;</span><span class="p">,</span> <span class="s2">&quot;population:Q&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;albersUsa&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># create a bar chart with a similar condition on the opacity encoding.</span>
+<span class="n">bars</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span>
+        <span class="n">us_population</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;population&quot;</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Top 15 states by population&quot;</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+        <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">click_state</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;population&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;-x&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="p">(</span><span class="n">choropleth</span> <span class="o">&amp;</span> <span class="n">bars</span><span class="p">)</span><span class="o">.</span><span class="n">add_params</span><span class="p">(</span><span class="n">click_state</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The interaction is two-directional. If you click (shift-click for multi-selection) on a geometry or bar the selection receive an <code class="docutils literal notranslate"><span class="pre">opacity</span></code> of <code class="docutils literal notranslate"><span class="pre">1</span></code> and the remaining an <code class="docutils literal notranslate"><span class="pre">opacity</span></code> of <code class="docutils literal notranslate"><span class="pre">0.2</span></code>.</p>
+</section>
+<section id="expression">
+<h1>Expression<a class="headerlink" href="#expression" title="Permalink to this heading">#</a></h1>
+<p>Altair expressions can be used within a geographical visualization. The following example
+visualize earthquakes on the globe using an <code class="docutils literal notranslate"><span class="pre">orthographic</span></code> projection. Where we can rotate
+the earth on a single-axis. (<code class="docutils literal notranslate"><span class="pre">rotate0</span></code>). The utility function <a class="reference internal" href="../generated/api/altair.sphere.html#altair.sphere" title="altair.sphere"><code class="xref py py-func docutils literal notranslate"><span class="pre">sphere()</span></code></a> is adopted to
+get a disk of the earth as background. The GeoDataFrame with the earthquakes has an <code class="docutils literal notranslate"><span class="pre">XYZ`</span></code> point geometry, where each coordinate represent <code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code> and <code class="docutils literal notranslate"><span class="pre">depth</span></code> respectively.
+We use here an elegant way to access the nested point coordinates from the geometry column directly to draw circles. Using this approach we do not need to assign them to three separate columns first.</p>
+<div class="highlight-python notranslate" id="geoshape-rst-altair-source-28"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="c1"># load data</span>
+<span class="n">gdf_quakies</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">earthquakes</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
+<span class="n">gdf_world</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">world_110m</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;TopoJSON&quot;</span><span class="p">)</span>
+
+<span class="c1"># define parameters</span>
+<span class="n">range0</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">binding_range</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">180</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">rotate0</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">bind</span><span class="o">=</span><span class="n">range0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;rotate0&#39;</span><span class="p">)</span>
+<span class="n">rotate_param</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">param</span><span class="p">(</span><span class="n">expr</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">rotate0</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, 0, 0]&quot;</span><span class="p">)</span>
+<span class="n">hover</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_point</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span> <span class="n">clear</span><span class="o">=</span><span class="s2">&quot;mouseout&quot;</span><span class="p">)</span>
+
+<span class="c1"># world disk</span>
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">sphere</span><span class="p">())</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;aliceblue&quot;</span><span class="p">,</span> <span class="n">stroke</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">1.5</span>
+<span class="p">)</span>
+
+<span class="c1"># countries as shapes</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_world</span><span class="p">)</span><span class="o">.</span><span class="n">mark_geoshape</span><span class="p">(</span>
+    <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;mintcream&quot;</span><span class="p">,</span> <span class="n">stroke</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">strokeWidth</span><span class="o">=</span><span class="mf">0.35</span>
+<span class="p">)</span>
+
+<span class="c1"># earthquakes as circles with fill for depth and size for magnitude</span>
+<span class="c1"># the hover param is added on the mar_circle only</span>
+<span class="n">quakes</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">gdf_quakies</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stroke</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">transform_calculate</span><span class="p">(</span>
+        <span class="n">lon</span><span class="o">=</span><span class="s2">&quot;datum.geometry.coordinates[0]&quot;</span><span class="p">,</span>
+        <span class="n">lat</span><span class="o">=</span><span class="s2">&quot;datum.geometry.coordinates[1]&quot;</span><span class="p">,</span>
+        <span class="n">depth</span><span class="o">=</span><span class="s2">&quot;datum.geometry.coordinates[2]&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">transform_filter</span><span class="p">(</span>
+        <span class="p">((</span><span class="n">rotate0</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">90</span> <span class="o">&lt;</span> <span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">lon</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">alt</span><span class="o">.</span><span class="n">datum</span><span class="o">.</span><span class="n">lon</span> <span class="o">&lt;</span> <span class="n">rotate0</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">90</span><span class="p">))</span><span class="o">.</span><span class="n">expr</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">longitude</span><span class="o">=</span><span class="s2">&quot;lon:Q&quot;</span><span class="p">,</span>
+        <span class="n">latitude</span><span class="o">=</span><span class="s2">&quot;lat:Q&quot;</span><span class="p">,</span>
+        <span class="n">strokeWidth</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">empty</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
+        <span class="n">size</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Size</span><span class="p">(</span>
+            <span class="s2">&quot;mag:Q&quot;</span><span class="p">,</span>
+            <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;pow&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">fill</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Fill</span><span class="p">(</span>
+            <span class="s2">&quot;depth:Q&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;lightorange&quot;</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">400</span><span class="p">])</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">add_params</span><span class="p">(</span><span class="n">hover</span><span class="p">,</span> <span class="n">rotate0</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># define projection and add the rotation param for all layers</span>
+<span class="n">comb</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">sphere</span><span class="p">,</span> <span class="n">world</span><span class="p">,</span> <span class="n">quakes</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;orthographic&quot;</span><span class="p">,</span> <span class="n">rotate</span><span class="o">=</span><span class="n">rotate_param</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">add_params</span><span class="p">(</span><span class="n">rotate_param</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">comb</span>
+</pre></div>
+</div>
+<p>The earthquakes are displayed using a <code class="docutils literal notranslate"><span class="pre">mark_geoshape</span></code> and filtered once out of sight of
+the visible part of the world. A hover highlighting is added to get more insight of each earthquake.</p>
+</section>
+<section id="geoshape-options">
+<h1>Geoshape Options<a class="headerlink" href="#geoshape-options" title="Permalink to this heading">#</a></h1>
+<p>Additional arguments to <code class="docutils literal notranslate"><span class="pre">mark_geoshape()</span></code> method are passed along to an
+associated <a class="reference internal" href="../generated/core/altair.MarkDef.html#altair.MarkDef" title="altair.MarkDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">MarkDef</span></code></a> instance, which supports the following attributes:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="vl-prop"><p>align</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Align.html#altair.Align" title="altair.Align"><code class="xref py py-class docutils literal notranslate"><span class="pre">Align</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>The horizontal alignment of the text or ranged marks (area, bar, image, rect, rule). One of <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code>.</p>
+<p><strong>Note:</strong> Expression reference is <em>not</em> supported for range marks.</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>angle</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>aria</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>ariaRole</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>ariaRoleDescription</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>aspect</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>bandSize</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>The width of the ticks.</p>
+<p><strong>Default value:</strong>  3/4 of step (width step for horizontal ticks and height step for vertical ticks).</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>baseline</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.TextBaseline.html#altair.TextBaseline" title="altair.TextBaseline"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextBaseline</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>For text marks, the vertical text baseline. One of <code class="docutils literal notranslate"><span class="pre">&quot;alphabetic&quot;</span></code> (default), <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;middle&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;line-top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;line-bottom&quot;</span></code>, or an expression reference that provides one of the valid values. The <code class="docutils literal notranslate"><span class="pre">&quot;line-top&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;line-bottom&quot;</span></code> values operate similarly to <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, but are calculated relative to the <code class="docutils literal notranslate"><span class="pre">lineHeight</span></code> rather than <code class="docutils literal notranslate"><span class="pre">fontSize</span></code> alone.</p>
+<p>For range marks, the vertical alignment of the marks. One of <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;middle&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>.</p>
+<p><strong>Note:</strong> Expression reference is <em>not</em> supported for range marks.</p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>binSpacing</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>Offset between bars for binned field. The ideal value for this is either 0 (preferred by statisticians) or 1 (Vega-Lite default, D3 example style).</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>blend</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Blend.html#altair.Blend" title="altair.Blend"><code class="xref py py-class docutils literal notranslate"><span class="pre">Blend</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>clip</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td class="vl-decsr"><p>Whether a mark be clipped to the enclosing group’s width and height.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>color</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="../generated/core/altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Default color.</p>
+<p><strong>Default value:</strong> <span style="color: #4682b4;">■</span> <code class="docutils literal notranslate"><span class="pre">&quot;#4682b4&quot;</span></code></p>
+<p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>This property cannot be used in a <a class="reference external" href="https://vega.github.io/vega-lite/docs/mark.html#style-config">style config</a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">fill</span></code> and <code class="docutils literal notranslate"><span class="pre">stroke</span></code> properties have higher precedence than <code class="docutils literal notranslate"><span class="pre">color</span></code> and will override <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>continuousBandSize</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>The default size of the bars on continuous scales.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">5</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>cornerRadius</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>cornerRadiusBottomLeft</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>cornerRadiusBottomRight</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>cornerRadiusEnd</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><ul class="simple">
+<li><p>For vertical bars, top-left and top-right corner radius.</p></li>
+<li><p>For horizontal bars, top-right and bottom-right corner radius.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>cornerRadiusTopLeft</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>cornerRadiusTopRight</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>cursor</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Cursor.html#altair.Cursor" title="altair.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>description</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>dir</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.TextDirection.html#altair.TextDirection" title="altair.TextDirection"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextDirection</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>discreteBandSize</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.RelativeBandSize.html#altair.RelativeBandSize" title="altair.RelativeBandSize"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelativeBandSize</span></code></a>)</p></td>
+<td class="vl-decsr"><p>The default size of the bars with discrete dimensions. If unspecified, the default size is  <code class="docutils literal notranslate"><span class="pre">step-2</span></code>, which provides 2 pixel offset between bars.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>dx</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>dy</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>ellipsis</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>fill</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="../generated/core/altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <code class="docutils literal notranslate"><span class="pre">null</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Default fill color. This property has higher precedence than <code class="docutils literal notranslate"><span class="pre">config.color</span></code>. Set to <code class="docutils literal notranslate"><span class="pre">null</span></code> to remove fill.</p>
+<p><strong>Default value:</strong> (None)</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>fillOpacity</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>filled</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td class="vl-decsr"><p>Whether the mark’s color should be used as fill color instead of stroke color.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">false</span></code> for all <code class="docutils literal notranslate"><span class="pre">point</span></code>, <code class="docutils literal notranslate"><span class="pre">line</span></code>, and <code class="docutils literal notranslate"><span class="pre">rule</span></code> marks as well as <code class="docutils literal notranslate"><span class="pre">geoshape</span></code> marks for <a class="reference external" href="https://vega.github.io/vega-lite/docs/data.html#graticule"><code class="docutils literal notranslate"><span class="pre">graticule</span></code></a> data sources; otherwise, <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p><strong>Note:</strong> This property cannot be used in a <a class="reference external" href="https://vega.github.io/vega-lite/docs/mark.html#style-config">style config</a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>font</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>fontSize</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>fontStyle</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.FontStyle.html#altair.FontStyle" title="altair.FontStyle"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontStyle</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>fontWeight</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.FontWeight.html#altair.FontWeight" title="altair.FontWeight"><code class="xref py py-class docutils literal notranslate"><span class="pre">FontWeight</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>height</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <a class="reference internal" href="../generated/core/altair.RelativeBandSize.html#altair.RelativeBandSize" title="altair.RelativeBandSize"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelativeBandSize</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Height of the marks.  One of:</p>
+<ul class="simple">
+<li><p>A number representing a fixed pixel height.</p></li>
+<li><p>A relative band size definition.  For example, <code class="docutils literal notranslate"><span class="pre">{band:</span> <span class="pre">0.5}</span></code> represents half of the band</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>href</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.URI.html#altair.URI" title="altair.URI"><code class="xref py py-class docutils literal notranslate"><span class="pre">URI</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>innerRadius</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>The inner radius in pixels of arc marks. <code class="docutils literal notranslate"><span class="pre">innerRadius</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">radius2</span></code>.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>interpolate</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Interpolate.html#altair.Interpolate" title="altair.Interpolate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interpolate</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>invalid</p></td>
+<td><p>[‘filter’, None]</p></td>
+<td class="vl-decsr"><p>Defines how Vega-Lite should handle marks for invalid values (<code class="docutils literal notranslate"><span class="pre">null</span></code> and <code class="docutils literal notranslate"><span class="pre">NaN</span></code>).</p>
+<ul class="simple">
+<li><p>If set to <code class="docutils literal notranslate"><span class="pre">&quot;filter&quot;</span></code> (default), all data items with null values will be skipped (for line, trail, and area marks) or filtered (for other marks).</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">null</span></code>, all data items are included. In this case, invalid values will be interpreted as zeroes.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>limit</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>line</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.OverlayMarkDef.html#altair.OverlayMarkDef" title="altair.OverlayMarkDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">OverlayMarkDef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>A flag for overlaying line on top of area marks, or an object defining the properties of the overlayed lines.</p>
+<ul class="simple">
+<li><p>If this value is an empty object (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) or <code class="docutils literal notranslate"><span class="pre">true</span></code>, lines with default properties will be used.</p></li>
+<li><p>If this value is <code class="docutils literal notranslate"><span class="pre">false</span></code>, no lines would be automatically added to area marks.</p></li>
+</ul>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>lineBreak</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>lineHeight</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>opacity</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>The overall opacity (value between [0,1]).</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0.7</span></code> for non-aggregate plots with <code class="docutils literal notranslate"><span class="pre">point</span></code>, <code class="docutils literal notranslate"><span class="pre">tick</span></code>, <code class="docutils literal notranslate"><span class="pre">circle</span></code>, or <code class="docutils literal notranslate"><span class="pre">square</span></code> marks or layered <code class="docutils literal notranslate"><span class="pre">bar</span></code> charts and <code class="docutils literal notranslate"><span class="pre">1</span></code> otherwise.</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>order</p></td>
+<td><p>[null, boolean]</p></td>
+<td class="vl-decsr"><p>For line and trail marks, this <code class="docutils literal notranslate"><span class="pre">order</span></code> property can be set to <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> to make the lines use the original order in the data sources.</p></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>orient</p></td>
+<td><p><a class="reference internal" href="../generated/core/altair.Orientation.html#altair.Orientation" title="altair.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a></p></td>
+<td class="vl-decsr"><p>The orientation of a non-stacked bar, tick, area, and line charts. The value is either horizontal (default) or vertical.</p>
+<ul class="simple">
+<li><p>For bar, rule and tick, this determines whether the size of the bar and tick should be applied to x or y dimension.</p></li>
+<li><p>For area, this property determines the orient property of the Vega output.</p></li>
+<li><p>For line and trail marks, this property determines the sort order of the points in the line if <code class="docutils literal notranslate"><span class="pre">config.sortLineBy</span></code> is not specified. For stacked charts, this is always determined by the orientation of the stack; therefore explicitly specified value will be ignored.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>outerRadius</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>The outer radius in pixels of arc marks. <code class="docutils literal notranslate"><span class="pre">outerRadius</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">radius</span></code>.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>padAngle</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>point</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.OverlayMarkDef.html#altair.OverlayMarkDef" title="altair.OverlayMarkDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">OverlayMarkDef</span></code></a>, <code class="docutils literal notranslate"><span class="pre">string</span></code>)</p></td>
+<td class="vl-decsr"><p>A flag for overlaying points on top of line or area marks, or an object defining the properties of the overlayed points.</p>
+<ul class="simple">
+<li><p>If this property is <code class="docutils literal notranslate"><span class="pre">&quot;transparent&quot;</span></code>, transparent points will be used (for enhancing tooltips and selections).</p></li>
+<li><p>If this property is an empty object (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) or <code class="docutils literal notranslate"><span class="pre">true</span></code>, filled points with default properties will be used.</p></li>
+<li><p>If this property is <code class="docutils literal notranslate"><span class="pre">false</span></code>, no points would be automatically added to line or area marks.</p></li>
+</ul>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>radius</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>For arc mark, the primary (outer) radius in pixels.</p>
+<p>For text marks, polar coordinate radial offset, in pixels, of the text from the origin determined by the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> properties.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">min(plot_width,</span> <span class="pre">plot_height)/2</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>radius2</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>The secondary (inner) radius in pixels of arc marks.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>radius2Offset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for radius2.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>radiusOffset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for radius.</p></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>shape</p></td>
+<td><p>anyOf(anyOf(<a class="reference internal" href="../generated/core/altair.SymbolShape.html#altair.SymbolShape" title="altair.SymbolShape"><code class="xref py py-class docutils literal notranslate"><span class="pre">SymbolShape</span></code></a>, <code class="docutils literal notranslate"><span class="pre">string</span></code>), <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>size</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Default size for marks.</p>
+<ul class="simple">
+<li><p>For <code class="docutils literal notranslate"><span class="pre">point</span></code>/<code class="docutils literal notranslate"><span class="pre">circle</span></code>/<code class="docutils literal notranslate"><span class="pre">square</span></code>, this represents the pixel area of the marks. Note that this value sets the area of the symbol; the side lengths will increase with the square root of this value.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">bar</span></code>, this represents the band size of the bar, in pixels.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">text</span></code>, this represents the font size, in pixels.</p></li>
+</ul>
+<p><strong>Default value:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">30</span></code> for point, circle, square marks; width/height’s <code class="docutils literal notranslate"><span class="pre">step</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> for bar marks with discrete dimensions;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span></code> for bar marks with continuous dimensions;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code> for text marks.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>smooth</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>stroke</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="../generated/core/altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <code class="docutils literal notranslate"><span class="pre">null</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Default stroke color. This property has higher precedence than <code class="docutils literal notranslate"><span class="pre">config.color</span></code>. Set to <code class="docutils literal notranslate"><span class="pre">null</span></code> to remove stroke.</p>
+<p><strong>Default value:</strong> (None)</p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>strokeCap</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.StrokeCap.html#altair.StrokeCap" title="altair.StrokeCap"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrokeCap</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>strokeDash</p></td>
+<td><p>anyOf(array(<code class="docutils literal notranslate"><span class="pre">number</span></code>), <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>strokeDashOffset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>strokeJoin</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.StrokeJoin.html#altair.StrokeJoin" title="altair.StrokeJoin"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrokeJoin</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>strokeMiterLimit</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>strokeOffset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>strokeOpacity</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>strokeWidth</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>style</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">string</span></code>, array(<code class="docutils literal notranslate"><span class="pre">string</span></code>))</p></td>
+<td class="vl-decsr"><p>A string or array of strings indicating the name of custom styles to apply to the mark. A style is a named collection of mark property defaults defined within the <a class="reference external" href="https://vega.github.io/vega-lite/docs/mark.html#style-config">style configuration</a>. If style is an array, later styles will override earlier styles. Any <a class="reference external" href="https://vega.github.io/vega-lite/docs/encoding.html#mark-prop">mark properties</a> explicitly defined within the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> will override a style default.</p>
+<p><strong>Default value:</strong> The mark’s name. For example, a bar mark will have style <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code> by default. <strong>Note:</strong> Any specified style will augment the default style. For example, a bar mark with <code class="docutils literal notranslate"><span class="pre">&quot;style&quot;:</span> <span class="pre">&quot;foo&quot;</span></code> will receive from <code class="docutils literal notranslate"><span class="pre">config.style.bar</span></code> and <code class="docutils literal notranslate"><span class="pre">config.style.foo</span></code> (the specified style <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> has higher precedence).</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>tension</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>text</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>theta</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><ul class="simple">
+<li><p>For arc marks, the arc length in radians if theta2 is not specified, otherwise the start arc angle. (A value of 0 indicates up or “north”, increasing values proceed clockwise.)</p></li>
+<li><p>For text marks, polar coordinate angle in radians.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>theta2</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>The end angle of arc marks in radians. A value of 0 indicates up or “north”, increasing values proceed clockwise.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>theta2Offset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for theta2.</p></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>thetaOffset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for theta.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>thickness</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>Thickness of the tick mark.</p>
+<p><strong>Default value:</strong>  <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>timeUnitBandPosition</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>Default relative band position for a time unit. If set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the marks will be positioned at the beginning of the time unit band step. If set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, the marks will be positioned in the middle of the time unit band step.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>timeUnitBandSize</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>Default relative band size for a time unit. If set to <code class="docutils literal notranslate"><span class="pre">1</span></code>, the bandwidth of the marks will be equal to the time unit band step. If set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, bandwidth of the marks will be half of the time unit band step.</p></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>tooltip</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.TooltipContent.html#altair.TooltipContent" title="altair.TooltipContent"><code class="xref py py-class docutils literal notranslate"><span class="pre">TooltipContent</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <code class="docutils literal notranslate"><span class="pre">null</span></code>)</p></td>
+<td class="vl-decsr"><p>The tooltip text string to show upon mouse hover or an object defining which fields should the tooltip be derived from.</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">{&quot;content&quot;:</span> <span class="pre">&quot;encoding&quot;}</span></code>, then all fields from <code class="docutils literal notranslate"><span class="pre">encoding</span></code> will be used.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> is <code class="docutils literal notranslate"><span class="pre">{&quot;content&quot;:</span> <span class="pre">&quot;data&quot;}</span></code>, then all fields that appear in the highlighted data point will be used.</p></li>
+<li><p>If set to <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>, then no tooltip will be used.</p></li>
+</ul>
+<p>See the <a class="reference external" href="https://vega.github.io/vega-lite/docs/tooltip.html"><code class="docutils literal notranslate"><span class="pre">tooltip</span></code></a> documentation for a detailed discussion about tooltip  in Vega-Lite.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">null</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>type</p></td>
+<td><p><a class="reference internal" href="../generated/core/altair.Mark.html#altair.Mark" title="altair.Mark"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mark</span></code></a></p></td>
+<td class="vl-decsr"><p>The mark type. This could a primitive mark type (one of <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;circle&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;square&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;tick&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;line&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;area&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;point&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;geoshape&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;rule&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code>) or a composite mark type (<code class="docutils literal notranslate"><span class="pre">&quot;boxplot&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;errorband&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;errorbar&quot;</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>url</p></td>
+<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.URI.html#altair.URI" title="altair.URI"><code class="xref py py-class docutils literal notranslate"><span class="pre">URI</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>width</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <a class="reference internal" href="../generated/core/altair.RelativeBandSize.html#altair.RelativeBandSize" title="altair.RelativeBandSize"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelativeBandSize</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Width of the marks.  One of:</p>
+<ul class="simple">
+<li><p>A number representing a fixed pixel width.</p></li>
+<li><p>A relative band size definition.  For example, <code class="docutils literal notranslate"><span class="pre">{band:</span> <span class="pre">0.5}</span></code> represents half of the band.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>x</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>X coordinates of the marks, or width of horizontal <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;area&quot;</span></code> without specified <code class="docutils literal notranslate"><span class="pre">x2</span></code> or <code class="docutils literal notranslate"><span class="pre">width</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> of this channel can be a number or a string <code class="docutils literal notranslate"><span class="pre">&quot;width&quot;</span></code> for the width of the plot.</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>x2</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>X2 coordinates for ranged <code class="docutils literal notranslate"><span class="pre">&quot;area&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;rect&quot;</span></code>, and  <code class="docutils literal notranslate"><span class="pre">&quot;rule&quot;</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> of this channel can be a number or a string <code class="docutils literal notranslate"><span class="pre">&quot;width&quot;</span></code> for the width of the plot.</p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>x2Offset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for x2-position.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>xOffset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for x-position.</p></td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>y</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Y coordinates of the marks, or height of vertical <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;area&quot;</span></code> without specified <code class="docutils literal notranslate"><span class="pre">y2</span></code> or <code class="docutils literal notranslate"><span class="pre">height</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> of this channel can be a number or a string <code class="docutils literal notranslate"><span class="pre">&quot;height&quot;</span></code> for the height of the plot.</p>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>y2</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Y2 coordinates for ranged <code class="docutils literal notranslate"><span class="pre">&quot;area&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;rect&quot;</span></code>, and  <code class="docutils literal notranslate"><span class="pre">&quot;rule&quot;</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> of this channel can be a number or a string <code class="docutils literal notranslate"><span class="pre">&quot;height&quot;</span></code> for the height of the plot.</p>
+</td>
+</tr>
+<tr class="row-even"><td class="vl-prop"><p>y2Offset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for y2-position.</p></td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>yOffset</p></td>
+<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-decsr"><p>Offset for y-position.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Marks can also be configured globally using chart-level configurations; see
+<a class="reference internal" href="../configuration.html#config-mark"><span class="std std-ref">Mark and Mark Style Configuration</span></a> for details.</p>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="errorbar.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Error Bar</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="image.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Image</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Geoshape
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-map">
+   Basic Map
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#focus-filtering">
+   Focus &amp; Filtering
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cartesian-coordinates">
+   Cartesian coordinates
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mapping-polygons">
+   Mapping Polygons
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mapping-lines">
+   Mapping Lines
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mapping-points">
+   Mapping Points
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choropleths">
+   Choropleths
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lookup-datasets">
+   Lookup datasets
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choropleth-classification">
+   Choropleth Classification
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repeat-a-map">
+   Repeat a Map
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#facet-a-map">
+   Facet a Map
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaction">
+   Interaction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expression">
+   Expression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#geoshape-options">
+   Geoshape Options
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../_sources/user_guide/marks/geoshape.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2016-2022, Altair Developers.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
