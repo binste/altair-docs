@@ -50,8 +50,8 @@ x           :class:`X`           The x-axis value                   :ref:`galler
 y           :class:`Y`           The y-axis value                   :ref:`gallery_scatter_tooltips`
 x2          :class:`X2`          Second x value for ranges          :ref:`gallery_gantt_chart`
 y2          :class:`Y2`          Second y value for ranges          :ref:`gallery_candlestick_chart`
-longitude   :class:`Longitude`   Longitude for geo charts           :ref:`gallery_airports`
-latitude    :class:`Latitude`    Latitude for geo charts            :ref:`gallery_airports`
+longitude   :class:`Longitude`   Longitude for geo charts           :ref:`gallery_point_map`
+latitude    :class:`Latitude`    Latitude for geo charts            :ref:`gallery_point_map`
 longitude2  :class:`Longitude2`  Second longitude value for ranges  :ref:`gallery_airport_connections`
 latitude2   :class:`Latitude2`   Second latitude value for ranges   :ref:`gallery_airport_connections`
 xError      :class:`XError`      The x-axis error value             N/A
@@ -59,7 +59,7 @@ yError      :class:`YError`      The y-axis error value             N/A
 xError2     :class:`XError2`     The second x-axis error value      N/A
 yError2     :class:`YError2`     The second y-axis error value      N/A
 xOffset     :class:`XOffset`     Offset to the x position           :ref:`gallery_grouped_bar_chart2`
-yOffset     :class:`YOffset`     Offset to the y position           :ref:`gallery_jitter_chart`
+yOffset     :class:`YOffset`     Offset to the y position           :ref:`gallery_strip_plot_jitter`
 theta       :class:`Theta`       The start arc angle                :ref:`gallery_radial_chart`
 theta2      :class:`Theta2`      The end arc angle (radian)         :ref:`gallery_pacman_chart`
 ==========  ===================  =================================  ===================================
@@ -94,6 +94,8 @@ text     :class:`Text`     Text to use for the mark  :ref:`gallery_scatter_with_
 key      :class:`Key`      --                        N/A
 tooltip  :class:`Tooltip`  The tooltip value         :ref:`gallery_scatter_tooltips`
 =======  ================  ========================  =========================================
+
+.. _hyperlink-channel:
 
 Hyperlink Channel
 ^^^^^^^^^^^^^^^^^
@@ -528,7 +530,7 @@ The same approach works for other mark types, like stacked areas charts.
         order=alt.Order("site", sort="ascending")
     )
 
-For line marks, the `order` channel encodes the order in which data points are connected. This can be useful for creating a scatterplot that draws lines between the dots using a different field than the x and y axes.
+For line marks, the `order` channel encodes the order in which data points are connected. This can be useful for creating a scatter plot that draws lines between the dots using a different field than the x and y axes.
 
 .. altair-plot::
 
@@ -553,8 +555,8 @@ sort options available:
 - ``sort='ascending'`` (Default) will sort the field's value in ascending order.
   for string data, this uses standard alphabetical order.
 - ``sort='descending'`` will sort the field's value in descending order
-- passing the name of an encoding channel to ``sort``, such as ``"x"`` or ``"y"``, allows for 
-  sorting by that channel. An optional minus prefix can be used for a descending 
+- passing the name of an encoding channel to ``sort``, such as ``"x"`` or ``"y"``, allows for
+  sorting by that channel. An optional minus prefix can be used for a descending
   sort. For example ``sort='-x'`` would sort by the x channel in descending order.
 - passing a list to ``sort`` allows you to explicitly set the order in which
   you would like the encoding to appear
@@ -621,9 +623,9 @@ x-axis, using the barley dataset:
         columns=3
     )
 
-The last two charts are the same because the default aggregation 
-(see :ref:`encoding-aggregates`) is ``mean``. To highlight the 
-difference between sorting via channel and sorting via field consider the 
+The last two charts are the same because the default aggregation
+(see :ref:`encoding-aggregates`) is ``mean``. To highlight the
+difference between sorting via channel and sorting via field consider the
 following example where we don't aggregate the data:
 
 .. altair-plot::
@@ -635,7 +637,7 @@ following example where we don't aggregate the data:
     base = alt.Chart(barley).mark_point().encode(
         y='yield:Q',
     ).properties(width=200)
-    
+
     # Sort according to encoding channel
     sortchannel = base.encode(
         alt.X(field='site', type='nominal',
@@ -653,7 +655,7 @@ following example where we don't aggregate the data:
     )
     sortchannel | sortfield
 
-By passing a :class:`EncodingSortField` class to ``sort`` we have more control over 
+By passing a :class:`EncodingSortField` class to ``sort`` we have more control over
 the sorting process.
 
 
