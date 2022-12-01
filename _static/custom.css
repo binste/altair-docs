@@ -35,6 +35,14 @@ table.docutils td li {
   padding-bottom: 10px;
 }
 
+.properties-example .vega-bindings select {
+  max-width: 180px;
+}
+  
+.full-width-plot {
+  width: 100%;
+}
+
 /* Use full page width without sidebars */
 /* .bd-content { */
 /*   max-width: 100%; */
