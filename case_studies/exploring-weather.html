@@ -506,7 +506,7 @@ Altair natively supports dates and discretization of dates when we set the
 type to <code class="docutils literal notranslate"><span class="pre">temporal</span></code> (shorthand <code class="docutils literal notranslate"><span class="pre">T</span></code>).
 For example, in the following plot, we compute the total precipitation for each month.
 To discretize the data into months, we can use a <code class="docutils literal notranslate"><span class="pre">month</span></code> binning (see
-<a class="reference internal" href="../user_guide/transform/timeunit.html#user-guide-timeunit-transform"><span class="std std-ref">TimeUnit Transform</span></a> for more information about this and
+<a class="reference internal" href="../user_guide/transform/timeunit.html#user-guide-timeunit-transform"><span class="std std-ref">TimeUnit</span></a> for more information about this and
 other <code class="docutils literal notranslate"><span class="pre">timeUnit</span></code> binnings):</p>
 <div class="highlight-python notranslate" id="exploring-weather-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;month(date):T&#39;</span><span class="p">,</span>
