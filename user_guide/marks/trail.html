@@ -407,6 +407,7 @@
 
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="image.html">Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="line.html">Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="point.html">Point</a></li>
@@ -574,8 +575,13 @@ and the following special properties:</p>
         <span class="n">column</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s2">&quot;site:N&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Site&quot;</span><span class="p">),</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">configure_view</span><span class="p">(</span><span class="n">stroke</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Barley Yield comparison between 1932 and 1931&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_legend</span><span class="p">(</span>
+        <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
+        <span class="n">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Barley Yield comparison between 1932 and 1931&quot;</span>
+    <span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
