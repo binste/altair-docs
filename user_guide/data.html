@@ -48,7 +48,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Encodings" href="encoding.html" />
+    <link rel="next" title="Encodings" href="encodings/index.html" />
     <link rel="prev" title="Basic Statistical Visualization" href="../getting_started/starting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encoding.html">Encodings</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="marks/arc.html">Arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/area.html">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/bar.html">Bar</a></li>
@@ -419,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="marks/trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/calculate.html">Calculate</a></li>
@@ -440,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="transform/window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scale_resolve.html">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="customization.html">Customizing Visualizations</a></li>
@@ -450,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -560,8 +564,8 @@ with the data specified as a JSON-style list of records:</p>
 </script>
 </div><p>notice the extra markup required in the encoding; because Altair cannot infer
 the types within a <a class="reference internal" href="generated/core/altair.Data.html#altair.Data" title="altair.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> object, we must specify them manually
-(here we use <a class="reference internal" href="encoding.html#shorthand-description"><span class="std std-ref">Encoding Shorthands</span></a> to specify <em>ordinal</em> (<code class="docutils literal notranslate"><span class="pre">O</span></code>) for <code class="docutils literal notranslate"><span class="pre">x</span></code>
-and <em>quantitative</em> (<code class="docutils literal notranslate"><span class="pre">Q</span></code>) for <code class="docutils literal notranslate"><span class="pre">y</span></code>; see <a class="reference internal" href="encoding.html#encoding-data-types"><span class="std std-ref">Encoding Data Types</span></a>).</p>
+(here we use <a class="reference internal" href="encodings/index.html#shorthand-description"><span class="std std-ref">Encoding Shorthands</span></a> to specify <em>ordinal</em> (<code class="docutils literal notranslate"><span class="pre">O</span></code>) for <code class="docutils literal notranslate"><span class="pre">x</span></code>
+and <em>quantitative</em> (<code class="docutils literal notranslate"><span class="pre">Q</span></code>) for <code class="docutils literal notranslate"><span class="pre">y</span></code>; see <a class="reference internal" href="encodings/index.html#encoding-data-types"><span class="std std-ref">Encoding Data Types</span></a>).</p>
 <p>Similarly, we must also specify the data type when referencing data by URL:</p>
 <div class="highlight-python notranslate" id="data-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
@@ -588,7 +592,7 @@ and <em>quantitative</em> (<code class="docutils literal notranslate"><span clas
       vegaEmbed('#data-rst-altair-plot-2', spec, opt).catch(console.err);
   });
 </script>
-</div><p>We will further discuss encodings and associated types in <a class="reference internal" href="encoding.html#user-guide-encoding"><span class="std std-ref">Encodings</span></a>, next.</p>
+</div><p>We will further discuss encodings and associated types in <a class="reference internal" href="encodings/index.html#user-guide-encoding"><span class="std std-ref">Encodings</span></a>, next.</p>
 <section id="including-index-data">
 <span id="data-in-index"></span><h2>Including Index Data<a class="headerlink" href="#including-index-data" title="Permalink to this heading">#</a></h2>
 <p>By design Altair only accesses dataframe columns, not dataframe indices.
@@ -993,7 +997,7 @@ have the option to reproject the data, try using the project configuration
 without applying a projection.</p>
 </section>
 <section id="winding-order">
-<span id="data-winding-order"></span><h2>Winding order<a class="headerlink" href="#winding-order" title="Permalink to this heading">#</a></h2>
+<span id="data-winding-order"></span><h2>Winding Order<a class="headerlink" href="#winding-order" title="Permalink to this heading">#</a></h2>
 <p>LineString, Polygon and MultiPolygon geometries contain coordinates in an order: lines
 go in a certain direction, and polygon rings do too. The GeoJSON-like structure of the
 __geo_interface__ recommends the right-hand rule winding order for Polygon and
@@ -1031,7 +1035,7 @@ data before usage in Altair using GeoPandas for example as such:</p>
           <p class="prev-next-title">Basic Statistical Visualization</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="encoding.html" title="next page">
+  <a class='right-next' id="next-link" href="encodings/index.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
       <p class="prev-next-title">Encodings</p>
@@ -1115,7 +1119,7 @@ data before usage in Altair using GeoPandas for example as such:</p>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#winding-order">
-   Winding order
+   Winding Order
   </a>
   <ul class="nav section-nav flex-column">
   </ul>

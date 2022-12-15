@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../marks/arc.html">Arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../marks/area.html">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../marks/bar.html">Bar</a></li>
@@ -394,6 +398,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../marks/errorband.html">Error Band</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../marks/errorbar.html">Error Bar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../marks/geoshape.html">Geoshape</a></li>
+
 
 
 
@@ -418,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../marks/trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Data Transformations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Data Transformations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calculate.html">Calculate</a></li>
@@ -439,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing Visualizations</a></li>
@@ -449,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -651,7 +656,7 @@ labels.</p>
 <h2>Transform Options<a class="headerlink" href="#transform-options" title="Permalink to this heading">#</a></h2>
 <p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">transform_timeunit()</span></code> method is built on the <a class="reference internal" href="../generated/core/altair.TimeUnitTransform.html#altair.TimeUnitTransform" title="altair.TimeUnitTransform"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeUnitTransform</span></code></a>
 class, which has the following options:</p>
-<table class="table">
+<details><summary><a>Click to show table</a></summary><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Property</p></th>
 <th class="head"><p>Type</p></th>
@@ -660,20 +665,20 @@ class, which has the following options:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td class="vl-prop"><p>as</p></td>
-<td><p><a class="reference internal" href="../generated/core/altair.FieldName.html#altair.FieldName" title="altair.FieldName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldName</span></code></a></p></td>
+<td class="vl-type-def"><p><a class="reference internal" href="../generated/core/altair.FieldName.html#altair.FieldName" title="altair.FieldName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldName</span></code></a></p></td>
 <td class="vl-decsr"><p>The output field to write the timeUnit value.</p></td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>field</p></td>
-<td><p><a class="reference internal" href="../generated/core/altair.FieldName.html#altair.FieldName" title="altair.FieldName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldName</span></code></a></p></td>
+<td class="vl-type-def"><p><a class="reference internal" href="../generated/core/altair.FieldName.html#altair.FieldName" title="altair.FieldName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldName</span></code></a></p></td>
 <td class="vl-decsr"><p>The data field to apply time unit.</p></td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>timeUnit</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.TimeUnit.html#altair.TimeUnit" title="altair.TimeUnit"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeUnit</span></code></a>, <a class="reference internal" href="../generated/core/altair.TimeUnitParams.html#altair.TimeUnitParams" title="altair.TimeUnitParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeUnitParams</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.TimeUnit.html#altair.TimeUnit" title="altair.TimeUnit"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeUnit</span></code></a>, <a class="reference internal" href="../generated/core/altair.TimeUnitParams.html#altair.TimeUnitParams" title="altair.TimeUnitParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeUnitParams</span></code></a>)</p></td>
 <td class="vl-decsr"><p>The timeUnit.</p></td>
 </tr>
 </tbody>
 </table>
-</section>
+</details></section>
 </section>
 
 

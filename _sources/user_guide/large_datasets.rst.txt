@@ -1,0 +1,186 @@
+.. _large-datasets:
+
+Large Datasets
+--------------
+If you try to create a plot that will directly embed a dataset with more than
+5000 rows, you will see a ``MaxRowsError``:
+
+.. altair-plot::
+   :output: none
+
+   data = pd.DataFrame({'x': range(10000)})
+   alt.Chart(data).mark_line()
+
+.. code-block:: none
+
+    MaxRowsError: The number of rows in your dataset is greater than the maximum
+                  allowed (5000). For information on how to plot larger datasets
+                  in Altair, see the documentation.
+
+This is not because Altair cannot handle larger datasets, but it is because it
+is important for the user to think carefully about how large datasets are handled. The following sections
+describe various considerations and approaches you can take.
+
+If you are certain you would like to embed your full dataset within the visualization
+specification, you can disable the ``MaxRows`` check with the following::
+
+    alt.data_transformers.disable_max_rows()
+
+Challenges
+~~~~~~~~~~
+By design, Altair does not produce plots consisting of pixels, but plots
+consisting of data plus a visualization specification. For example, here is a 
+simple chart made from a dataframe with three rows of data:
+
+.. altair-plot::
+    :output: none
+
+    import altair as alt
+    import pandas as pd
+    data = pd.DataFrame({'x': [1, 2, 3], 'y': [2, 1, 2]})
+
+    chart = alt.Chart(data).mark_line().encode(
+         x='x',
+         y='y'
+    )
+
+    from pprint import pprint
+    pprint(chart.to_dict())
+
+.. code-block:: none
+
+    {'$schema': 'https://vega.github.io/schema/vega-lite/v2.4.1.json',
+     'config': {'view': {'height': 300, 'width': 400}},
+     'data': {'values': [{'x': 1, 'y': 2}, {'x': 2, 'y': 1}, {'x': 3, 'y': 2}]},
+     'encoding': {'x': {'field': 'x', 'type': 'quantitative'},
+                  'y': {'field': 'y', 'type': 'quantitative'}},
+     'mark': 'line'}
+
+The resulting specification includes a representation of the data converted
+to JSON format, and this specification is embedded in the notebook or web page
+where it can be used by Vega-Lite to render the plot.
+As the size of the data grows, this explicit data storage can lead to some
+very large specifications which can have various negative implications:
+
+* large notebook files which can slow down your notebook environment/IDE
+* slow loading of a website as a lot of data needs to be transmitted
+* slow calculations as calculations happen in JavaScript which is not the fastest language for transforming large amounts of data
+
+
+
+
+Passing Data by URL
+^^^^^^^^^^^^^^^^^^^
+A better solution when working with large datasets is to not embed the data
+in the notebook, but rather store it separately and pass it to the chart by URL.
+This not only addresses the issue of large notebooks, but also leads to better
+interactivity performance with large datasets.
+
+
+As discussed in
+:ref:`user-guide-data`, this data can be specified in one of several ways.
+When you pass the data directly, i.e. not as a file but for example as a pandas DataFrame,
+this data is sent in its entirety to your frontend such as a Jupyter notebook or a web page.
+
+
+The best way around this is to store the data in an external file, and
+pass it to the chart by URL. You can do this manually if you wish:
+
+.. altair-plot::
+   :output: none
+
+   url = 'data.json'
+   data.to_json(url, orient='records')
+
+   chart = alt.Chart(url).mark_line().encode(
+       x='x:Q',
+       y='y:Q'
+   )
+   pprint(chart.to_dict())
+
+
+.. code-block:: none
+
+    {'$schema': 'https://vega.github.io/schema/vega-lite/v2.4.1.json',
+     'config': {'view': {'height': 300, 'width': 400}},
+     'data': {'url': 'data.json'},
+     'encoding': {'x': {'field': 'x', 'type': 'quantitative'},
+                  'y': {'field': 'y', 'type': 'quantitative'}},
+     'mark': 'line'}
+
+
+With this type of approach, the data is now stored as an external file
+rather than being embedded in the notebook,
+leading to much more compact plot specifications.
+The disadvantage, of course, is a loss of portability: if the notebook is
+ever moved, the data file must accompany it or the plot may not display.
+
+
+
+Vega Datasets
+^^^^^^^^^^^^^
+If you are working with one of the vega datasets, you can pass the data by URL
+using the ``url`` attribute:
+
+.. code-block:: python
+
+   from vega_datasets import data
+   source = data.cars.url
+
+   alt.Chart(source).mark_point() # etc.
+
+Local Filesystem
+^^^^^^^^^^^^^^^^
+You may also save data to a local filesystem and reference the data by
+file path. Altair has a ``JSON`` data transformer that will do this
+transparently when enabled::
+
+    alt.data_transformers.enable('json')
+
+With this data transformer enabled, each time you make a plot the data will be
+serialized to disk and referenced by URL, rather than being embedded in the
+notebook output.
+You may also manually save the data to file and reference it that way
+(see :ref:`altair-faq-large-notebook`).
+
+There is a similar CSV data transformer, but it must be used more carefully
+because CSV does not preserve data types as JSON does.
+
+Note that the filesystem approach may not work on some cloud-based Jupyter
+notebook services.
+
+
+Local Data Server
+^^^^^^^^^^^^^^^^^
+It is also possible to serve your data from a local threaded server to avoid writing
+datasets to disk. The `altair_data_server <https://github.com/altair-viz/altair_data_server>`_
+package makes this easy. First install the package:
+
+.. code-block:: none
+
+   pip install altair_data_server
+
+And then enable the data transformer::
+
+    import altair as alt
+    alt.data_transformers.enable('data_server')
+
+Note that this approach may not work on some cloud-based Jupyter notebook services.
+
+PNG and SVG Renderers
+~~~~~~~~~~~~~~~~~~~~~
+See :ref:`renderers`. `vl-convert`_ or altair-saver but vl-convert is faster and less dependencies
+* No interactivity
+* Transforms happen on "server".
+
+VegaFusion
+~~~~~~~~~~
+`VegaFusion`_. Interesting for very large datasets where you still require interactivity. 
+Current limitations around frontend etc.
+
+*VegaFusion's support for the Vega specs that Vega-Lite generates is fairly complete. Transforms that are not supported are left in the Vega spec that the Vega renderer handles, so it falls back gracefully in these situations. The biggest ecosystem limitation is that VegaFusion currently depends on a custom Jupyter Widget to render the resulting Vega specs and communicate with the VegaFusion runtime.*
+
+
+
+.. _VegaFusion: https://vegafusion.io
+.. _vl-convert: https://github.com/vega/vl-convert

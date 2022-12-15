@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Data transformers &#8212; Vega-Altair 5.0.0 documentation</title>
+    <title>Data Transformers &#8212; Vega-Altair 5.0.0 documentation</title>
   <script>
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="data.html">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encoding.html">Encodings</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="marks/arc.html">Arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/area.html">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/bar.html">Bar</a></li>
@@ -419,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="marks/trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/calculate.html">Calculate</a></li>
@@ -440,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="transform/window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scale_resolve.html">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="customization.html">Customizing Visualizations</a></li>
@@ -450,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data transformers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -487,7 +491,7 @@
             <article class="bd-article" role="main">
               
   <section id="data-transformers">
-<span id="id1"></span><h1>Data transformers<a class="headerlink" href="#data-transformers" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>Data Transformers<a class="headerlink" href="#data-transformers" title="Permalink to this heading">#</a></h1>
 <p>Before a Vega-Lite or Vega specification can be passed to a renderer, it typically
 has to be transformed in a number of ways:</p>
 <ul class="simple">
@@ -612,7 +616,7 @@ individual layer. This duplication of data is the reason that dataset
 consolidation is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> by default.</p>
 </section>
 <section id="built-in-data-transformers">
-<h2>Built-in data transformers<a class="headerlink" href="#built-in-data-transformers" title="Permalink to this heading">#</a></h2>
+<h2>Built-in Data Transformers<a class="headerlink" href="#built-in-data-transformers" title="Permalink to this heading">#</a></h2>
 <p>Altair includes a default set of data transformers with the following signatures.</p>
 <p>Raise a <code class="docutils literal notranslate"><span class="pre">MaxRowsError</span></code> if a Dataframe has more than <code class="docutils literal notranslate"><span class="pre">max_rows</span></code> rows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">limit_rows</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
@@ -645,7 +649,7 @@ consolidation is set to <code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="managing-data-transformers">
-<h2>Managing data transformers<a class="headerlink" href="#managing-data-transformers" title="Permalink to this heading">#</a></h2>
+<h2>Managing Data Transformers<a class="headerlink" href="#managing-data-transformers" title="Permalink to this heading">#</a></h2>
 <p>Altair maintains a registry of data transformers, which includes a default
 data transformer that is automatically applied to all Dataframes before rendering.</p>
 <p>To see the registered transformers:</p>
@@ -688,7 +692,7 @@ be registered and enabled as:</p>
 </div>
 </section>
 <section id="storing-json-data-in-a-separate-directory">
-<h2>Storing JSON data in a separate directory<a class="headerlink" href="#storing-json-data-in-a-separate-directory" title="Permalink to this heading">#</a></h2>
+<h2>Storing JSON Data in a Separate Directory<a class="headerlink" href="#storing-json-data-in-a-separate-directory" title="Permalink to this heading">#</a></h2>
 <p>When creating many charts with <code class="docutils literal notranslate"><span class="pre">alt.data_transformers.enable('json')</span></code> the
 working directory can get a bit cluttered. To avoid this we can build a simple
 custom data transformer that stores all JSON files in separate directory.:</p>
@@ -758,7 +762,7 @@ desired directory and make sure that the directory actually exists.</p>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#built-in-data-transformers">
-   Built-in data transformers
+   Built-in Data Transformers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -768,12 +772,12 @@ desired directory and make sure that the directory actually exists.</p>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#managing-data-transformers">
-   Managing data transformers
+   Managing Data Transformers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#storing-json-data-in-a-separate-directory">
-   Storing JSON data in a separate directory
+   Storing JSON Data in a Separate Directory
   </a>
  </li>
 </ul>

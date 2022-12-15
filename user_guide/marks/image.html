@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arc.html">Arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="area.html">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar.html">Bar</a></li>
@@ -419,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../transform/aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../transform/bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../transform/calculate.html">Calculate</a></li>
@@ -440,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../transform/window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing Visualizations</a></li>
@@ -450,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -493,7 +497,7 @@
 <h2>Image Mark Properties<a class="headerlink" href="#image-mark-properties" title="Permalink to this heading">#</a></h2>
 <p>An <code class="docutils literal notranslate"><span class="pre">image</span></code> mark can contain any <a class="reference internal" href="index.html#mark-properties"><span class="std std-ref">standard mark properties</span></a>
 and the following special properties:</p>
-<table class="table">
+<details><summary><a>Click to show table</a></summary><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Property</p></th>
 <th class="head"><p>Type</p></th>
@@ -502,21 +506,21 @@ and the following special properties:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td class="vl-prop"><p>url</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.URI.html#altair.URI" title="altair.URI"><code class="xref py py-class docutils literal notranslate"><span class="pre">URI</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.URI.html#altair.URI" title="altair.URI"><code class="xref py py-class docutils literal notranslate"><span class="pre">URI</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"></td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>aspect</p></td>
-<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"></td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>align</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Align.html#altair.Align" title="altair.Align"><code class="xref py py-class docutils literal notranslate"><span class="pre">Align</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.Align.html#altair.Align" title="altair.Align"><code class="xref py py-class docutils literal notranslate"><span class="pre">Align</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>The horizontal alignment of the text or ranged marks (area, bar, image, rect, rule). One of <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code>.</p>
 <p><strong>Note:</strong> Expression reference is <em>not</em> supported for range marks.</p>
 </td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>baseline</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.TextBaseline.html#altair.TextBaseline" title="altair.TextBaseline"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextBaseline</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.TextBaseline.html#altair.TextBaseline" title="altair.TextBaseline"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextBaseline</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>For text marks, the vertical text baseline. One of <code class="docutils literal notranslate"><span class="pre">&quot;alphabetic&quot;</span></code> (default), <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;middle&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;line-top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;line-bottom&quot;</span></code>, or an expression reference that provides one of the valid values. The <code class="docutils literal notranslate"><span class="pre">&quot;line-top&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;line-bottom&quot;</span></code> values operate similarly to <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, but are calculated relative to the <code class="docutils literal notranslate"><span class="pre">lineHeight</span></code> rather than <code class="docutils literal notranslate"><span class="pre">fontSize</span></code> alone.</p>
 <p>For range marks, the vertical alignment of the marks. One of <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;middle&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>.</p>
 <p><strong>Note:</strong> Expression reference is <em>not</em> supported for range marks.</p>
@@ -524,7 +528,7 @@ and the following special properties:</p>
 </tr>
 </tbody>
 </table>
-</section>
+</details></section>
 <section id="scatter-plot-with-image-marks">
 <h2>Scatter Plot with Image Marks<a class="headerlink" href="#scatter-plot-with-image-marks" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate" id="image-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>

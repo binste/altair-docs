@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Altair Internals: Understanding the Library &#8212; Vega-Altair 5.0.0 documentation</title>
+    <title>Altair Internals &#8212; Vega-Altair 5.0.0 documentation</title>
   <script>
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="data.html">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encoding.html">Encodings</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="marks/arc.html">Arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/area.html">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/bar.html">Bar</a></li>
@@ -419,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="marks/trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/calculate.html">Calculate</a></li>
@@ -440,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="transform/window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scale_resolve.html">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="customization.html">Customizing Visualizations</a></li>
@@ -450,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -486,8 +490,8 @@
             
             <article class="bd-article" role="main">
               
-  <section id="altair-internals-understanding-the-library">
-<span id="user-guide-internals"></span><h1>Altair Internals: Understanding the Library<a class="headerlink" href="#altair-internals-understanding-the-library" title="Permalink to this heading">#</a></h1>
+  <section id="altair-internals">
+<span id="user-guide-internals"></span><h1>Altair Internals<a class="headerlink" href="#altair-internals" title="Permalink to this heading">#</a></h1>
 <p>This section will provide some details about how the Altair API relates to the
 Vega-Lite visualization specification, and how you can use that knowledge to
 use the package more effectively.</p>
@@ -501,7 +505,7 @@ very well-defined thing:</p>
 visualizations requires a frontend that is correctly set up, but strictly
 speaking that rendering is generally not controlled by the Altair package.</p>
 <section id="altair-chart-to-vega-lite-spec">
-<h2>Altair chart to Vega-Lite Spec<a class="headerlink" href="#altair-chart-to-vega-lite-spec" title="Permalink to this heading">#</a></h2>
+<h2>Altair Chart to Vega-Lite Spec<a class="headerlink" href="#altair-chart-to-vega-lite-spec" title="Permalink to this heading">#</a></h2>
 <p>Since Altair is fundamentally about constructing chart specifications, the central
 functionality of any chart object are the <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_dict()</span></code> and
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_json()</span></code> methods, which output the chart specification as a Python
@@ -837,7 +841,7 @@ documentation is weak or incomplete.</p>
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#altair-chart-to-vega-lite-spec">
-   Altair chart to Vega-Lite Spec
+   Altair Chart to Vega-Lite Spec
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">

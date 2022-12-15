@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arc.html">Arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="area.html">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar.html">Bar</a></li>
@@ -419,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../transform/aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../transform/bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../transform/calculate.html">Calculate</a></li>
@@ -440,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../transform/window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing Visualizations</a></li>
@@ -450,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -495,7 +499,7 @@ raw data or directly visualize aggregated data.</p>
 <section id="error-bar-mark-properties">
 <h2>Error Bar Mark Properties<a class="headerlink" href="#error-bar-mark-properties" title="Permalink to this heading">#</a></h2>
 <p>An <code class="docutils literal notranslate"><span class="pre">errorbar</span></code> mark definition can contain the following properties:</p>
-<table class="table">
+<details><summary><a>Click to show table</a></summary><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Property</p></th>
 <th class="head"><p>Type</p></th>
@@ -504,7 +508,7 @@ raw data or directly visualize aggregated data.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td class="vl-prop"><p>extent</p></td>
-<td><p><a class="reference internal" href="../generated/core/altair.ErrorBarExtent.html#altair.ErrorBarExtent" title="altair.ErrorBarExtent"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorBarExtent</span></code></a></p></td>
+<td class="vl-type-def"><p><a class="reference internal" href="../generated/core/altair.ErrorBarExtent.html#altair.ErrorBarExtent" title="altair.ErrorBarExtent"><code class="xref py py-class docutils literal notranslate"><span class="pre">ErrorBarExtent</span></code></a></p></td>
 <td class="vl-decsr"><p>The extent of the rule. Available options include:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;ci&quot;</span></code>: Extend the rule to the confidence interval of the mean.</p></li>
@@ -516,11 +520,11 @@ raw data or directly visualize aggregated data.</p>
 </td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>orient</p></td>
-<td><p><a class="reference internal" href="../generated/core/altair.Orientation.html#altair.Orientation" title="altair.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a></p></td>
+<td class="vl-type-def"><p><a class="reference internal" href="../generated/core/altair.Orientation.html#altair.Orientation" title="altair.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a></p></td>
 <td class="vl-decsr"><p>Orientation of the error bar. This is normally automatically determined, but can be specified when the orientation is ambiguous and cannot be automatically determined.</p></td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>color</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="../generated/core/altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="../generated/core/altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>Default color.</p>
 <p><strong>Default value:</strong> <span style="color: #4682b4;">■</span> <code class="docutils literal notranslate"><span class="pre">&quot;#4682b4&quot;</span></code></p>
 <p><strong>Note:</strong></p>
@@ -531,12 +535,12 @@ raw data or directly visualize aggregated data.</p>
 </td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>opacity</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-type-def"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
 <td class="vl-decsr"><p>The opacity (value between [0,1]) of the mark.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Besides the properties listed above, <code class="docutils literal notranslate"><span class="pre">rule</span></code> and <code class="docutils literal notranslate"><span class="pre">ticks</span></code> can be used to specify
+</details><p>Besides the properties listed above, <code class="docutils literal notranslate"><span class="pre">rule</span></code> and <code class="docutils literal notranslate"><span class="pre">ticks</span></code> can be used to specify
 the underlying mark properties for different parts of the error bar as well.</p>
 </section>
 <section id="using-error-bars-to-aggregate-raw-data">

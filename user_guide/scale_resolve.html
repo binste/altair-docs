@@ -49,7 +49,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Times and Dates" href="times_and_dates.html" />
-    <link rel="prev" title="Compound Charts: Layer, HConcat, VConcat, Repeat, Facet" href="compound_charts.html" />
+    <link rel="prev" title="Layered and Multi-View Charts" href="compound_charts.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="data.html">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="encoding.html">Encodings</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="marks/index.html">Marks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="marks/arc.html">Arc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/area.html">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/bar.html">Bar</a></li>
@@ -394,6 +398,7 @@
 <li class="toctree-l2"><a class="reference internal" href="marks/errorband.html">Error Band</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/errorbar.html">Error Bar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marks/geoshape.html">Geoshape</a></li>
+
 
 
 
@@ -418,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="marks/trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transform/calculate.html">Calculate</a></li>
@@ -439,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="transform/window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="customization.html">Customizing Visualizations</a></li>
@@ -449,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -487,7 +492,7 @@
               
   <section id="scale-and-guide-resolution">
 <span id="user-guide-resolve"></span><h1>Scale and Guide Resolution<a class="headerlink" href="#scale-and-guide-resolution" title="Permalink to this heading">#</a></h1>
-<p>When creating compound charts (see <a class="reference internal" href="compound_charts.html#user-guide-compound"><span class="std std-ref">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</span></a>), altair defaults
+<p>When creating compound charts (see <a class="reference internal" href="compound_charts.html#user-guide-compound"><span class="std std-ref">Layered and Multi-View Charts</span></a>), altair defaults
 to using shared chart scales and guides (e.g. axes, legends, etc.).
 This default can be adjusted using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.resolve_scale()</span></code>,
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.resolve_axis()</span></code>, and <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.resolve_legend()</span></code> functions.</p>
@@ -654,7 +659,7 @@ charts</a> by Lisa Charlotte Rost.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</p>
+          <p class="prev-next-title">Layered and Multi-View Charts</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="times_and_dates.html" title="next page">

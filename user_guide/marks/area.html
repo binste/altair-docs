@@ -384,8 +384,12 @@
     <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../data.html">Specifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../encoding.html">Encodings</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channels.html">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../encodings/channel_options.html">Channel Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Marks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arc.html">Arc</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Area</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar.html">Bar</a></li>
@@ -419,7 +423,7 @@
 <li class="toctree-l2"><a class="reference internal" href="trail.html">Trail</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../transform/index.html">Data Transformations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../transform/aggregate.html">Aggregate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../transform/bin.html">Bin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../transform/calculate.html">Calculate</a></li>
@@ -440,8 +444,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../transform/window.html">Window</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts: Parameters, Conditions, Bindings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Compound Charts: Layer, HConcat, VConcat, Repeat, Facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactions.html">Interactive Charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compound_charts.html">Layered and Multi-View Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scale_resolve.html">Scale and Guide Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../times_and_dates.html">Times and Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../customization.html">Customizing Visualizations</a></li>
@@ -450,12 +454,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals: Understanding the Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data transformers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data Transformers</a></li>
 </ul>
 
   </div>
@@ -527,7 +531,7 @@ Area marks are often used to show change over time, using either a single area o
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-4931952949a2b4cbb2bf6e2ee53eef58"}, "mark": {"type": "area", "interpolate": {"expr": "param_30"}, "tension": {"expr": "param_31"}}, "encoding": {"x": {"field": "u", "type": "quantitative"}, "y": {"field": "v", "type": "quantitative"}}, "params": [{"name": "param_30", "bind": {"input": "select", "options": ["basis", "cardinal", "catmull-rom", "linear", "monotone", "natural", "step", "step-after", "step-before"], "name": "interpolate"}, "value": "linear"}, {"name": "param_31", "bind": {"input": "range", "max": 1, "min": 0, "name": "tension", "step": 0.05}, "value": 0}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-4931952949a2b4cbb2bf6e2ee53eef58": [{"u": 1, "v": 28}, {"u": 2, "v": 55}, {"u": 3, "v": 42}, {"u": 4, "v": 34}, {"u": 5, "v": 36}, {"u": 6, "v": 38}]}};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-4931952949a2b4cbb2bf6e2ee53eef58"}, "mark": {"type": "area", "interpolate": {"expr": "param_56"}, "tension": {"expr": "param_57"}}, "encoding": {"x": {"field": "u", "type": "quantitative"}, "y": {"field": "v", "type": "quantitative"}}, "params": [{"name": "param_56", "bind": {"input": "select", "options": ["basis", "cardinal", "catmull-rom", "linear", "monotone", "natural", "step", "step-after", "step-before"], "name": "interpolate"}, "value": "linear"}, {"name": "param_57", "bind": {"input": "range", "max": 1, "min": 0, "name": "tension", "step": 0.05}, "value": 0}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-4931952949a2b4cbb2bf6e2ee53eef58": [{"u": 1, "v": 28}, {"u": 2, "v": 55}, {"u": 3, "v": 42}, {"u": 4, "v": 34}, {"u": 5, "v": 36}, {"u": 6, "v": 38}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -538,7 +542,7 @@ Area marks are often used to show change over time, using either a single area o
 </script>
 </div><p>An <code class="docutils literal notranslate"><span class="pre">area</span></code> mark definition can contain any <a class="reference internal" href="index.html#mark-properties"><span class="std std-ref">standard mark properties</span></a>
 and the following line interpolation as well as line and point overlay properties:</p>
-<table class="table">
+<details><summary><a>Click to show table</a></summary><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Property</p></th>
 <th class="head"><p>Type</p></th>
@@ -547,20 +551,20 @@ and the following line interpolation as well as line and point overlay propertie
 </thead>
 <tbody>
 <tr class="row-even"><td class="vl-prop"><p>align</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Align.html#altair.Align" title="altair.Align"><code class="xref py py-class docutils literal notranslate"><span class="pre">Align</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.Align.html#altair.Align" title="altair.Align"><code class="xref py py-class docutils literal notranslate"><span class="pre">Align</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>The horizontal alignment of the text or ranged marks (area, bar, image, rect, rule). One of <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code>.</p>
 <p><strong>Note:</strong> Expression reference is <em>not</em> supported for range marks.</p>
 </td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>baseline</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.TextBaseline.html#altair.TextBaseline" title="altair.TextBaseline"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextBaseline</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.TextBaseline.html#altair.TextBaseline" title="altair.TextBaseline"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextBaseline</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>For text marks, the vertical text baseline. One of <code class="docutils literal notranslate"><span class="pre">&quot;alphabetic&quot;</span></code> (default), <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;middle&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;line-top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;line-bottom&quot;</span></code>, or an expression reference that provides one of the valid values. The <code class="docutils literal notranslate"><span class="pre">&quot;line-top&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;line-bottom&quot;</span></code> values operate similarly to <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, but are calculated relative to the <code class="docutils literal notranslate"><span class="pre">lineHeight</span></code> rather than <code class="docutils literal notranslate"><span class="pre">fontSize</span></code> alone.</p>
 <p>For range marks, the vertical alignment of the marks. One of <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;middle&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>.</p>
 <p><strong>Note:</strong> Expression reference is <em>not</em> supported for range marks.</p>
 </td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>orient</p></td>
-<td><p><a class="reference internal" href="../generated/core/altair.Orientation.html#altair.Orientation" title="altair.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a></p></td>
+<td class="vl-type-def"><p><a class="reference internal" href="../generated/core/altair.Orientation.html#altair.Orientation" title="altair.Orientation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Orientation</span></code></a></p></td>
 <td class="vl-decsr"><p>The orientation of a non-stacked bar, tick, area, and line charts. The value is either horizontal (default) or vertical.</p>
 <ul class="simple">
 <li><p>For bar, rule and tick, this determines whether the size of the bar and tick should be applied to x or y dimension.</p></li>
@@ -570,15 +574,15 @@ and the following line interpolation as well as line and point overlay propertie
 </td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>interpolate</p></td>
-<td><p>anyOf(<a class="reference internal" href="../generated/core/altair.Interpolate.html#altair.Interpolate" title="altair.Interpolate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interpolate</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<a class="reference internal" href="../generated/core/altair.Interpolate.html#altair.Interpolate" title="altair.Interpolate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interpolate</span></code></a>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"></td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>tension</p></td>
-<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<code class="docutils literal notranslate"><span class="pre">number</span></code>, <a class="reference internal" href="../generated/core/altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</p></td>
 <td class="vl-decsr"></td>
 </tr>
 <tr class="row-odd"><td class="vl-prop"><p>line</p></td>
-<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.OverlayMarkDef.html#altair.OverlayMarkDef" title="altair.OverlayMarkDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">OverlayMarkDef</span></code></a>)</p></td>
+<td class="vl-type-def"><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.OverlayMarkDef.html#altair.OverlayMarkDef" title="altair.OverlayMarkDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">OverlayMarkDef</span></code></a>)</p></td>
 <td class="vl-decsr"><p>A flag for overlaying line on top of area marks, or an object defining the properties of the overlayed lines.</p>
 <ul class="simple">
 <li><p>If this value is an empty object (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) or <code class="docutils literal notranslate"><span class="pre">true</span></code>, lines with default properties will be used.</p></li>
@@ -588,7 +592,7 @@ and the following line interpolation as well as line and point overlay propertie
 </td>
 </tr>
 <tr class="row-even"><td class="vl-prop"><p>point</p></td>
-<td><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.OverlayMarkDef.html#altair.OverlayMarkDef" title="altair.OverlayMarkDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">OverlayMarkDef</span></code></a>, <code class="docutils literal notranslate"><span class="pre">string</span></code>)</p></td>
+<td class="vl-type-def"><p>anyOf(<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <a class="reference internal" href="../generated/core/altair.OverlayMarkDef.html#altair.OverlayMarkDef" title="altair.OverlayMarkDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">OverlayMarkDef</span></code></a>, <code class="docutils literal notranslate"><span class="pre">string</span></code>)</p></td>
 <td class="vl-decsr"><p>A flag for overlaying points on top of line or area marks, or an object defining the properties of the overlayed points.</p>
 <ul class="simple">
 <li><p>If this property is <code class="docutils literal notranslate"><span class="pre">&quot;transparent&quot;</span></code>, transparent points will be used (for enhancing tooltips and selections).</p></li>
@@ -600,7 +604,7 @@ and the following line interpolation as well as line and point overlay propertie
 </tr>
 </tbody>
 </table>
-</section>
+</details></section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <section id="area-chart">
@@ -794,7 +798,7 @@ Adding the <code class="docutils literal notranslate"><span class="pre">interact
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "axis": null, "field": "count", "stack": "center", "type": "quantitative"}}, "params": [{"name": "param_32", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "axis": null, "field": "count", "stack": "center", "type": "quantitative"}}, "params": [{"name": "param_58", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -807,7 +811,7 @@ Adding the <code class="docutils literal notranslate"><span class="pre">interact
 <section id="ranged-area">
 <h3>Ranged Area<a class="headerlink" href="#ranged-area" title="Permalink to this heading">#</a></h3>
 <p>Specifying <code class="docutils literal notranslate"><span class="pre">x2</span></code> or <code class="docutils literal notranslate"><span class="pre">y2</span></code> for the quantitative axis of area marks produce ranged areas. For example, we can use ranged area with the <code class="docutils literal notranslate"><span class="pre">ci0</span></code> and <code class="docutils literal notranslate"><span class="pre">ci0</span></code>
-<a class="reference internal" href="../encoding.html#encoding-aggregates"><span class="std std-ref">aggregation operators</span></a> to highlight 95% confidence interval of a line chart that shows mean values over time.</p>
+<a class="reference internal" href="../encodings/index.html#encoding-aggregates"><span class="std std-ref">aggregation operators</span></a> to highlight 95% confidence interval of a line chart that shows mean values over time.</p>
 <div class="highlight-python notranslate" id="area-rst-altair-source-7"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
