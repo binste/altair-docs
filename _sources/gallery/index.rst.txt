@@ -907,6 +907,11 @@ Advanced Calculations
      <span class="image-title">Top-K Plot with Others</span>
    </a>
    
+   <a class="imagegroup" href="waterfall_chart.html">
+     <span class="image" alt="Waterfall Chart" style="background-image: url(../_static/waterfall_chart-thumb.png);"></span>
+     <span class="image-title">Waterfall Chart</span>
+   </a>
+   
    <a class="imagegroup" href="wilkinson-dot-plot.html">
      <span class="image" alt="Wilkinson Dot Plot" style="background-image: url(../_static/wilkinson-dot-plot-thumb.png);"></span>
      <span class="image-title">Wilkinson Dot Plot</span>
