@@ -241,7 +241,7 @@
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
   
   <div class="sidebar-header-items sidebar-primary__section">
@@ -348,16 +348,9 @@
   </div>
 
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item">
-    </div>
-  </div>
-  
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -388,7 +381,7 @@ change on the top panel.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": "bar", "encoding": {"x": {"bin": {"extent": {"param": "param_5"}, "maxbins": 30}, "field": "time", "scale": {"domain": {"param": "param_5"}}, "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "height": 100, "transform": [{"calculate": "hours(datum.date) + minutes(datum.date) / 60", "as": "time"}], "width": 600}, {"mark": "bar", "encoding": {"x": {"bin": {"maxbins": 30}, "field": "time", "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "height": 100, "name": "view_6", "transform": [{"calculate": "hours(datum.date) + minutes(datum.date) / 60", "as": "time"}], "width": 600}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-5k.json"}, "params": [{"name": "param_5", "select": {"type": "interval", "encodings": ["x"]}, "views": ["view_6"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "vconcat": [{"mark": "bar", "encoding": {"x": {"bin": {"extent": {"param": "param_33"}, "maxbins": 30}, "field": "time", "scale": {"domain": {"param": "param_33"}}, "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "height": 100, "transform": [{"calculate": "hours(datum.date) + minutes(datum.date) / 60", "as": "time"}], "width": 600}, {"mark": "bar", "encoding": {"x": {"bin": {"maxbins": 30}, "field": "time", "type": "quantitative"}, "y": {"aggregate": "count", "type": "quantitative"}}, "height": 100, "name": "view_40", "transform": [{"calculate": "hours(datum.date) + minutes(datum.date) / 60", "as": "time"}], "width": 600}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/flights-5k.json"}, "params": [{"name": "param_33", "select": {"type": "interval", "encodings": ["x"]}, "views": ["view_40"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

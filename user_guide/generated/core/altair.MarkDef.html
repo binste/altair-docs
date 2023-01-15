@@ -533,7 +533,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.BrushConfig.html">altair.BrushConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.CalculateTransform.html">altair.CalculateTransform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.Categorical.html">altair.Categorical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Color.html">altair.Color</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorDef.html">altair.ColorDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorName.html">altair.ColorName</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorScheme.html">altair.ColorScheme</a></li>
@@ -831,7 +830,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.StrokeJoin.html">altair.StrokeJoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.StyleConfigIndex.html">altair.StyleConfigIndex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.SymbolShape.html">altair.SymbolShape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Text.html">altair.Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextBaseline.html">altair.TextBaseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDef.html">altair.TextDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDirection.html">altair.TextDirection</a></li>
@@ -900,15 +898,11 @@
   </div>
 </nav>
     </div>
-    <div class="sidebar-start-items__item">
-    </div>
   </div>
   
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -972,7 +966,7 @@ calculated relative to the <code class="docutils literal notranslate"><span clas
 <dt><strong>blend</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.Blend.html#altair.Blend" title="altair.Blend"><code class="xref py py-class docutils literal notranslate"><span class="pre">Blend</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
 <dt><strong>clip</strong><span class="classifier">boolean</span></dt><dd><p>Whether a mark be clipped to the enclosing group’s width and height.</p>
 </dd>
-<dt><strong>color</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>Default color.</p>
+<dt><strong>color</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>Default color.</p>
 <p><strong>Default value:</strong> <span class="raw-html"><span style="color: #4682b4;">&#9632;</span></span>
 <code class="docutils literal notranslate"><span class="pre">&quot;#4682b4&quot;</span></code></p>
 <p><strong>Note:</strong></p>
@@ -1002,7 +996,7 @@ size is  <code class="docutils literal notranslate"><span class="pre">step-2</sp
 <dt><strong>dx</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
 <dt><strong>dy</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
 <dt><strong>ellipsis</strong><span class="classifier">anyOf(string, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>fill</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, None, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>Default fill color. This property has higher precedence than <code class="docutils literal notranslate"><span class="pre">config.color</span></code>. Set
+<dt><strong>fill</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, None, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>Default fill color. This property has higher precedence than <code class="docutils literal notranslate"><span class="pre">config.color</span></code>. Set
 to <code class="docutils literal notranslate"><span class="pre">null</span></code> to remove fill.</p>
 <p><strong>Default value:</strong> (None)</p>
 </dd>
@@ -1110,7 +1104,7 @@ increase with the square root of this value.</p></li>
 </ul>
 </dd>
 <dt><strong>smooth</strong><span class="classifier">anyOf(boolean, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>stroke</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, None, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>Default stroke color. This property has higher precedence than <code class="docutils literal notranslate"><span class="pre">config.color</span></code>. Set
+<dt><strong>stroke</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, <a class="reference internal" href="altair.Gradient.html#altair.Gradient" title="altair.Gradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code></a>, None, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>Default stroke color. This property has higher precedence than <code class="docutils literal notranslate"><span class="pre">config.color</span></code>. Set
 to <code class="docutils literal notranslate"><span class="pre">null</span></code> to remove stroke.</p>
 <p><strong>Default value:</strong> (None)</p>
 </dd>
@@ -1134,7 +1128,7 @@ For example, a bar mark with <code class="docutils literal notranslate"><span cl
 higher precedence).</p>
 </dd>
 <dt><strong>tension</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>text</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
+<dt><strong>text</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
 <dt><strong>theta</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>For arc marks, the arc length in radians if theta2 is not specified, otherwise the
 start arc angle. (A value of 0 indicates up or “north”, increasing values proceed
 clockwise.)</p>

@@ -368,20 +368,17 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Statistical Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_philosophy.html">Project Philosophy</a></li>
 </ul>
 
   </div>
 </nav>
-    </div>
-    <div class="sidebar-start-items__item">
     </div>
   </div>
   
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -461,7 +458,7 @@ For example, we can show the data as a point using <code class="xref py py-meth 
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -489,7 +486,7 @@ This can be done straightforwardly via the <code class="xref py py-meth docutils
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "encoding": {"x": {"field": "a", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "encoding": {"x": {"field": "a", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -519,7 +516,7 @@ adding a <code class="docutils literal notranslate"><span class="pre">y</span></
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "encoding": {"x": {"field": "a", "type": "nominal"}, "y": {"field": "b", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "encoding": {"x": {"field": "a", "type": "nominal"}, "y": {"field": "b", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -551,7 +548,7 @@ aggregate within the column identifier:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "encoding": {"x": {"field": "a", "type": "nominal"}, "y": {"aggregate": "average", "field": "b", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "point", "encoding": {"x": {"field": "a", "type": "nominal"}, "y": {"aggregate": "average", "field": "b", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -577,7 +574,7 @@ with <code class="xref py py-meth docutils literal notranslate"><span class="pre
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "bar", "encoding": {"x": {"field": "a", "type": "nominal"}, "y": {"aggregate": "average", "field": "b", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "bar", "encoding": {"x": {"field": "a", "type": "nominal"}, "y": {"aggregate": "average", "field": "b", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -601,7 +598,7 @@ swap the <code class="docutils literal notranslate"><span class="pre">x</span></
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "bar", "encoding": {"x": {"aggregate": "average", "field": "b", "type": "quantitative"}, "y": {"field": "a", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "bar", "encoding": {"x": {"aggregate": "average", "field": "b", "type": "quantitative"}, "y": {"field": "a", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -628,7 +625,7 @@ JSON specification that Altair is exporting and sending as JSON to Vega-Lite:</p
   &quot;config&quot;: {
     &quot;view&quot;: {
       &quot;continuousHeight&quot;: 300,
-      &quot;continuousWidth&quot;: 400
+      &quot;continuousWidth&quot;: 300
     }
   },
   &quot;data&quot;: {
@@ -726,7 +723,7 @@ of the more advanced field configurations:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "bar", "encoding": {"x": {"aggregate": "average", "field": "b", "type": "quantitative"}, "y": {"field": "a", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": "bar", "encoding": {"x": {"aggregate": "average", "field": "b", "type": "quantitative"}, "y": {"field": "a", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -758,7 +755,7 @@ color string:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": {"type": "bar", "color": "firebrick"}, "encoding": {"x": {"aggregate": "average", "field": "b", "title": "avg(b) by category", "type": "quantitative"}, "y": {"field": "a", "title": "category", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-347f1284ea3247c0f55cb966abbdd2d8"}, "mark": {"type": "bar", "color": "firebrick"}, "encoding": {"x": {"aggregate": "average", "field": "b", "title": "avg(b) by category", "type": "quantitative"}, "y": {"field": "a", "title": "category", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-347f1284ea3247c0f55cb966abbdd2d8": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -794,10 +791,10 @@ in the <code class="docutils literal notranslate"><span class="pre">spec</span><
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;vis&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">spec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w">  </span><span class="cm">/* JSON dump of your chart&#39;s spec */</span><span class="w"></span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">opt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;renderer&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;canvas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;actions&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">};</span><span class="w">  </span><span class="cm">/* Options for the embedding */</span><span class="w"></span>
-<span class="w">      </span><span class="nx">vegaEmbed</span><span class="p">(</span><span class="s2">&quot;#vis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">spec</span><span class="p">,</span><span class="w"> </span><span class="nx">opt</span><span class="p">);</span><span class="w"></span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">spec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w">  </span><span class="cm">/* JSON dump of your chart&#39;s spec */</span>
+<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">opt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;renderer&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;canvas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;actions&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">};</span><span class="w">  </span><span class="cm">/* Options for the embedding */</span>
+<span class="w">      </span><span class="nx">vegaEmbed</span><span class="p">(</span><span class="s2">&quot;#vis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">spec</span><span class="p">,</span><span class="w"> </span><span class="nx">opt</span><span class="p">);</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>

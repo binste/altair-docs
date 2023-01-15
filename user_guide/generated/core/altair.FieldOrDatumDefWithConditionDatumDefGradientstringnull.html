@@ -533,7 +533,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.BrushConfig.html">altair.BrushConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.CalculateTransform.html">altair.CalculateTransform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.Categorical.html">altair.Categorical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Color.html">altair.Color</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorDef.html">altair.ColorDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorName.html">altair.ColorName</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorScheme.html">altair.ColorScheme</a></li>
@@ -831,7 +830,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.StrokeJoin.html">altair.StrokeJoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.StyleConfigIndex.html">altair.StyleConfigIndex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.SymbolShape.html">altair.SymbolShape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Text.html">altair.Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextBaseline.html">altair.TextBaseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDef.html">altair.TextDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDirection.html">altair.TextDirection</a></li>
@@ -900,15 +898,11 @@
   </div>
 </nav>
     </div>
-    <div class="sidebar-start-items__item">
-    </div>
   </div>
   
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -944,16 +938,14 @@ A FieldDef with Condition <span class="raw-html"><ValueDef></span> {   condition
 example, the marks will be positioned at the beginning of the band if set to <code class="docutils literal notranslate"><span class="pre">0</span></code>,
 and at the middle of the band if set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
 </dd>
-<dt><strong>condition</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.ConditionalValueDefGradientstringnullExprRef.html#altair.ConditionalValueDefGradientstringnullExprRef" title="altair.ConditionalValueDefGradientstringnullExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionalValueDefGradientstringnullExprRef</span></code></a>,</span></dt><dd></dd>
-<dt><strong>List(:class:`ConditionalValueDefGradientstringnullExprRef`))</strong></dt><dd><p>One or more value definition(s) with <a class="reference external" href="https://vega.github.io/vega-lite/docs/condition.html">a parameter or a test predicate</a>.</p>
+<dt><strong>condition</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.ConditionalValueDefGradientstringnullExprRef.html#altair.ConditionalValueDefGradientstringnullExprRef" title="altair.ConditionalValueDefGradientstringnullExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionalValueDefGradientstringnullExprRef</span></code></a>, List(<a class="reference internal" href="altair.ConditionalValueDefGradientstringnullExprRef.html#altair.ConditionalValueDefGradientstringnullExprRef" title="altair.ConditionalValueDefGradientstringnullExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionalValueDefGradientstringnullExprRef</span></code></a>))</span></dt><dd><p>One or more value definition(s) with <a class="reference external" href="https://vega.github.io/vega-lite/docs/condition.html">a parameter or a test predicate</a>.</p>
 <p><strong>Note:</strong> A field definition’s <code class="docutils literal notranslate"><span class="pre">condition</span></code> property can only contain <a class="reference external" href="https://vega.github.io/vega-lite/docs/condition.html#value">conditional
 value definitions</a>
 since Vega-Lite only allows at most one encoded field per encoding channel.</p>
 </dd>
-<dt><strong>datum</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.PrimitiveValue.html#altair.PrimitiveValue" title="altair.PrimitiveValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrimitiveValue</span></code></a>, <a class="reference internal" href="altair.DateTime.html#altair.DateTime" title="altair.DateTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>,</span></dt><dd></dd>
-<dt><strong>:class:`RepeatRef`)</strong></dt><dd><p>A constant value in data domain.</p>
+<dt><strong>datum</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.PrimitiveValue.html#altair.PrimitiveValue" title="altair.PrimitiveValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrimitiveValue</span></code></a>, <a class="reference internal" href="altair.DateTime.html#altair.DateTime" title="altair.DateTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <a class="reference internal" href="altair.RepeatRef.html#altair.RepeatRef" title="altair.RepeatRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatRef</span></code></a>)</span></dt><dd><p>A constant value in data domain.</p>
 </dd>
-<dt><strong>title</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, None)</span></dt><dd><p>A title for the field. If <code class="docutils literal notranslate"><span class="pre">null</span></code>, the title will be removed.</p>
+<dt><strong>title</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, None)</span></dt><dd><p>A title for the field. If <code class="docutils literal notranslate"><span class="pre">null</span></code>, the title will be removed.</p>
 <p><strong>Default value:</strong>  derived from the field’s name and transformation function (
 <code class="docutils literal notranslate"><span class="pre">aggregate</span></code>, <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">timeUnit</span></code> ). If the field has an aggregate function,
 the function is displayed as part of the title (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;Sum</span> <span class="pre">of</span> <span class="pre">Profit&quot;</span></code> ). If the

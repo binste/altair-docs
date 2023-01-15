@@ -241,7 +241,7 @@
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
   
   <div class="sidebar-header-items sidebar-primary__section">
@@ -348,16 +348,9 @@
   </div>
 
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item">
-    </div>
-  </div>
-  
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -388,7 +381,7 @@ binding the selection to <code class="docutils literal notranslate"><span class=
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "opacity": {"condition": {"value": 1, "param": "param_9"}, "value": 0.2}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "axis": null, "field": "count", "stack": "center", "type": "quantitative"}}, "params": [{"name": "param_9", "select": {"type": "point", "fields": ["series"]}, "bind": "legend"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "opacity": {"condition": {"value": 1, "param": "param_37"}, "value": 0.2}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "axis": null, "field": "count", "stack": "center", "type": "quantitative"}}, "params": [{"name": "param_37", "select": {"type": "point", "fields": ["series"]}, "bind": "legend"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

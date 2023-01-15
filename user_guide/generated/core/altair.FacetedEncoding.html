@@ -533,7 +533,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.BrushConfig.html">altair.BrushConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.CalculateTransform.html">altair.CalculateTransform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.Categorical.html">altair.Categorical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Color.html">altair.Color</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorDef.html">altair.ColorDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorName.html">altair.ColorName</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorScheme.html">altair.ColorScheme</a></li>
@@ -831,7 +830,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.StrokeJoin.html">altair.StrokeJoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.StyleConfigIndex.html">altair.StyleConfigIndex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.SymbolShape.html">altair.SymbolShape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Text.html">altair.Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextBaseline.html">altair.TextBaseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDef.html">altair.TextDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDirection.html">altair.TextDirection</a></li>
@@ -900,15 +898,11 @@
   </div>
 </nav>
     </div>
-    <div class="sidebar-start-items__item">
-    </div>
   </div>
   
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -954,8 +948,7 @@ more information about customizing <a class="reference external" href="https://v
 </dd>
 <dt><strong>column</strong><span class="classifier"><a class="reference internal" href="altair.RowColumnEncodingFieldDef.html#altair.RowColumnEncodingFieldDef" title="altair.RowColumnEncodingFieldDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">RowColumnEncodingFieldDef</span></code></a></span></dt><dd><p>A field definition for the horizontal facet of trellis plots.</p>
 </dd>
-<dt><strong>description</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StringFieldDefWithCondition.html#altair.StringFieldDefWithCondition" title="altair.StringFieldDefWithCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFieldDefWithCondition</span></code></a>,</span></dt><dd></dd>
-<dt><strong>:class:`StringValueDefWithCondition`)</strong></dt><dd><p>A text description of this mark for ARIA accessibility (SVG output only). For SVG
+<dt><strong>description</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StringFieldDefWithCondition.html#altair.StringFieldDefWithCondition" title="altair.StringFieldDefWithCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFieldDefWithCondition</span></code></a>, <a class="reference internal" href="altair.StringValueDefWithCondition.html#altair.StringValueDefWithCondition" title="altair.StringValueDefWithCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringValueDefWithCondition</span></code></a>)</span></dt><dd><p>A text description of this mark for ARIA accessibility (SVG output only). For SVG
 output the <code class="docutils literal notranslate"><span class="pre">&quot;aria-label&quot;</span></code> attribute will be set to this description.</p>
 </dd>
 <dt><strong>detail</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.FieldDefWithoutScale.html#altair.FieldDefWithoutScale" title="altair.FieldDefWithoutScale"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldDefWithoutScale</span></code></a>, List(<a class="reference internal" href="altair.FieldDefWithoutScale.html#altair.FieldDefWithoutScale" title="altair.FieldDefWithoutScale"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldDefWithoutScale</span></code></a>))</span></dt><dd><p>Additional levels of detail for grouping data in aggregate views and in line, trail,
@@ -1064,8 +1057,7 @@ clockwise.)</p>
 <dt><strong>theta2</strong><span class="classifier"><a class="reference internal" href="altair.Position2Def.html#altair.Position2Def" title="altair.Position2Def"><code class="xref py py-class docutils literal notranslate"><span class="pre">Position2Def</span></code></a></span></dt><dd><p>The end angle of arc marks in radians. A value of 0 indicates up or “north”,
 increasing values proceed clockwise.</p>
 </dd>
-<dt><strong>tooltip</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StringFieldDefWithCondition.html#altair.StringFieldDefWithCondition" title="altair.StringFieldDefWithCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFieldDefWithCondition</span></code></a>, <a class="reference internal" href="altair.StringValueDefWithCondition.html#altair.StringValueDefWithCondition" title="altair.StringValueDefWithCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringValueDefWithCondition</span></code></a>,</span></dt><dd></dd>
-<dt><strong>List(:class:`StringFieldDef`), None)</strong></dt><dd><p>The tooltip text to show upon mouse hover. Specifying <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> encoding overrides
+<dt><strong>tooltip</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StringFieldDefWithCondition.html#altair.StringFieldDefWithCondition" title="altair.StringFieldDefWithCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFieldDefWithCondition</span></code></a>, <a class="reference internal" href="altair.StringValueDefWithCondition.html#altair.StringValueDefWithCondition" title="altair.StringValueDefWithCondition"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringValueDefWithCondition</span></code></a>, List(<a class="reference internal" href="altair.StringFieldDef.html#altair.StringFieldDef" title="altair.StringFieldDef"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringFieldDef</span></code></a>), None)</span></dt><dd><p>The tooltip text to show upon mouse hover. Specifying <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> encoding overrides
 <a class="reference external" href="https://vega.github.io/vega-lite/docs/mark.html#mark-def">the tooltip property in the mark definition</a>.</p>
 <p>See the <a class="reference external" href="https://vega.github.io/vega-lite/docs/tooltip.html">tooltip</a>
 documentation for a detailed discussion about tooltip in Vega-Lite.</p>

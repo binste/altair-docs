@@ -533,7 +533,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.BrushConfig.html">altair.BrushConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.CalculateTransform.html">altair.CalculateTransform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.Categorical.html">altair.Categorical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Color.html">altair.Color</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorDef.html">altair.ColorDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorName.html">altair.ColorName</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorScheme.html">altair.ColorScheme</a></li>
@@ -831,7 +830,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.StrokeJoin.html">altair.StrokeJoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.StyleConfigIndex.html">altair.StyleConfigIndex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.SymbolShape.html">altair.SymbolShape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Text.html">altair.Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextBaseline.html">altair.TextBaseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDef.html">altair.TextDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDirection.html">altair.TextDirection</a></li>
@@ -900,15 +898,11 @@
   </div>
 </nav>
     </div>
-    <div class="sidebar-start-items__item">
-    </div>
   </div>
   
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -943,8 +937,7 @@ JavaScript identifiers: they should contain only alphanumeric characters (or “
 “_”) and may not start with a digit. Reserved keywords that may not be used as
 parameter names are “datum”, “event”, “item”, and “parent”.</p>
 </dd>
-<dt><strong>select</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.SelectionType.html#altair.SelectionType" title="altair.SelectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionType</span></code></a>, <a class="reference internal" href="altair.PointSelectionConfig.html#altair.PointSelectionConfig" title="altair.PointSelectionConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSelectionConfig</span></code></a>,</span></dt><dd></dd>
-<dt><strong>:class:`IntervalSelectionConfig`)</strong></dt><dd><p>Determines the default event processing and data query for the selection. Vega-Lite
+<dt><strong>select</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.SelectionType.html#altair.SelectionType" title="altair.SelectionType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionType</span></code></a>, <a class="reference internal" href="altair.PointSelectionConfig.html#altair.PointSelectionConfig" title="altair.PointSelectionConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSelectionConfig</span></code></a>, <a class="reference internal" href="altair.IntervalSelectionConfig.html#altair.IntervalSelectionConfig" title="altair.IntervalSelectionConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalSelectionConfig</span></code></a>)</span></dt><dd><p>Determines the default event processing and data query for the selection. Vega-Lite
 currently supports two selection types:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;point&quot;</span></code> – to select multiple discrete data values; the first value is
@@ -963,8 +956,7 @@ projected field/encodings and binding definitions.</p>
 <p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/bind.html">bind</a>
 documentation.</p>
 </dd>
-<dt><strong>value</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.SelectionInit.html#altair.SelectionInit" title="altair.SelectionInit"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionInit</span></code></a>, List(<a class="reference internal" href="altair.SelectionInitMapping.html#altair.SelectionInitMapping" title="altair.SelectionInitMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionInitMapping</span></code></a>),</span></dt><dd></dd>
-<dt><strong>:class:`SelectionInitIntervalMapping`)</strong></dt><dd><p>Initialize the selection with a mapping between <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#project">projected channels or field names</a> and initial
+<dt><strong>value</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.SelectionInit.html#altair.SelectionInit" title="altair.SelectionInit"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionInit</span></code></a>, List(<a class="reference internal" href="altair.SelectionInitMapping.html#altair.SelectionInitMapping" title="altair.SelectionInitMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionInitMapping</span></code></a>), <a class="reference internal" href="altair.SelectionInitIntervalMapping.html#altair.SelectionInitIntervalMapping" title="altair.SelectionInitIntervalMapping"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionInitIntervalMapping</span></code></a>)</span></dt><dd><p>Initialize the selection with a mapping between <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#project">projected channels or field names</a> and initial
 values.</p>
 <p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/value.html">init</a>
 documentation.</p>

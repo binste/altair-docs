@@ -533,7 +533,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.BrushConfig.html">altair.BrushConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.CalculateTransform.html">altair.CalculateTransform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.Categorical.html">altair.Categorical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Color.html">altair.Color</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorDef.html">altair.ColorDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorName.html">altair.ColorName</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorScheme.html">altair.ColorScheme</a></li>
@@ -831,7 +830,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.StrokeJoin.html">altair.StrokeJoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.StyleConfigIndex.html">altair.StyleConfigIndex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.SymbolShape.html">altair.SymbolShape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Text.html">altair.Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextBaseline.html">altair.TextBaseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDef.html">altair.TextDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDirection.html">altair.TextDirection</a></li>
@@ -900,15 +898,11 @@
   </div>
 </nav>
     </div>
-    <div class="sidebar-start-items__item">
-    </div>
   </div>
   
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -930,49 +924,30 @@
               
   <section id="altair-type">
 <h1>altair.Type<a class="headerlink" href="#altair-type" title="Permalink to this heading">#</a></h1>
-<dl class="py class">
+<dl class="py data">
 <dt class="sig sig-object py" id="altair.Type">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altair.</span></span><span class="sig-name descname"><span class="pre">Type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altair.Type" title="Permalink to this definition">#</a></dt>
-<dd><p>Type schema wrapper</p>
-<p>enum(‘quantitative’, ‘ordinal’, ‘temporal’, ‘nominal’, ‘geojson’)
-Data type based on level of measurement</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="altair.Type.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altair.Type.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">altair.</span></span><span class="sig-name descname"><span class="pre">Type</span></span><a class="headerlink" href="#altair.Type" title="Permalink to this definition">#</a></dt>
+<dd><p>A special construct usable to annotate class objects.</p>
+<p>For example, suppose we have the following classes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span><span class="p">:</span> <span class="o">...</span>  <span class="c1"># Abstract base for User classes</span>
+<span class="k">class</span> <span class="nc">BasicUser</span><span class="p">(</span><span class="n">User</span><span class="p">):</span> <span class="o">...</span>
+<span class="k">class</span> <span class="nc">ProUser</span><span class="p">(</span><span class="n">User</span><span class="p">):</span> <span class="o">...</span>
+<span class="k">class</span> <span class="nc">TeamUser</span><span class="p">(</span><span class="n">User</span><span class="p">):</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>And a function that takes a class argument that’s a subclass of
+User and returns an instance of the corresponding class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">U</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">User</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">new_user</span><span class="p">(</span><span class="n">user_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">U</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">U</span><span class="p">:</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">user_class</span><span class="p">()</span>
+    <span class="c1"># (Here we could write the user object to a database)</span>
+    <span class="k">return</span> <span class="n">user</span>
 
-<p class="rubric">Methods</p>
-<table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#altair.Type.__init__" title="altair.Type.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>([deep, ignore])</p></td>
-<td><p>Return a copy of the object</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code>(dct[, validate, _wrapper_classes])</p></td>
-<td><p>Construct class from a dictionary representation</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_json</span></code>(json_string[, validate])</p></td>
-<td><p>Instantiate the object from a valid JSON string</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_references</span></code>([schema])</p></td>
-<td><p>Resolve references in the context of this object's schema or root schema.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code>([validate, ignore, context])</p></td>
-<td><p>Return a dictionary representation of the object</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code>([validate, ignore, context, indent, ...])</p></td>
-<td><p>Emit the JSON representation for this object as a string.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate</span></code>(instance[, schema])</p></td>
-<td><p>Validate the instance against the class schema in the context of the rootschema.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_property</span></code>(name, value[, schema])</p></td>
-<td><p>Validate a property against property schema in the context of the rootschema</p></td>
-</tr>
-</tbody>
-</table>
+<span class="n">joe</span> <span class="o">=</span> <span class="n">new_user</span><span class="p">(</span><span class="n">BasicUser</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At this point the type checker knows that joe has type BasicUser.</p>
+<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></p>
 </dd></dl>
 
 </section>
@@ -1023,17 +998,6 @@ Data type based on level of measurement</p>
     </span>
    </code>
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#altair.Type.__init__">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Type.__init__()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 

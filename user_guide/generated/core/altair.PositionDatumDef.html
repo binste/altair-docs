@@ -533,7 +533,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.BrushConfig.html">altair.BrushConfig</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.CalculateTransform.html">altair.CalculateTransform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.Categorical.html">altair.Categorical</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Color.html">altair.Color</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorDef.html">altair.ColorDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorName.html">altair.ColorName</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.ColorScheme.html">altair.ColorScheme</a></li>
@@ -831,7 +830,6 @@
 <li class="toctree-l1"><a class="reference internal" href="altair.StrokeJoin.html">altair.StrokeJoin</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.StyleConfigIndex.html">altair.StyleConfigIndex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.SymbolShape.html">altair.SymbolShape</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altair.Text.html">altair.Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextBaseline.html">altair.TextBaseline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDef.html">altair.TextDef</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altair.TextDirection.html">altair.TextDirection</a></li>
@@ -900,15 +898,11 @@
   </div>
 </nav>
     </div>
-    <div class="sidebar-start-items__item">
-    </div>
   </div>
   
 
   
   <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
   </div>
 
   
@@ -948,8 +942,7 @@ documentation.</p>
 example, the marks will be positioned at the beginning of the band if set to <code class="docutils literal notranslate"><span class="pre">0</span></code>,
 and at the middle of the band if set to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
 </dd>
-<dt><strong>datum</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.PrimitiveValue.html#altair.PrimitiveValue" title="altair.PrimitiveValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrimitiveValue</span></code></a>, <a class="reference internal" href="altair.DateTime.html#altair.DateTime" title="altair.DateTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>,</span></dt><dd></dd>
-<dt><strong>:class:`RepeatRef`)</strong></dt><dd><p>A constant value in data domain.</p>
+<dt><strong>datum</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.PrimitiveValue.html#altair.PrimitiveValue" title="altair.PrimitiveValue"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrimitiveValue</span></code></a>, <a class="reference internal" href="altair.DateTime.html#altair.DateTime" title="altair.DateTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTime</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>, <a class="reference internal" href="altair.RepeatRef.html#altair.RepeatRef" title="altair.RepeatRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeatRef</span></code></a>)</span></dt><dd><p>A constant value in data domain.</p>
 </dd>
 <dt><strong>impute</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.ImputeParams.html#altair.ImputeParams" title="altair.ImputeParams"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImputeParams</span></code></a>, None)</span></dt><dd><p>An object defining the properties of the Impute Operation to be applied. The field
 value of the other positional channel is taken as <code class="docutils literal notranslate"><span class="pre">key</span></code> of the <code class="docutils literal notranslate"><span class="pre">Impute</span></code>
@@ -978,16 +971,10 @@ chart.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;normalize&quot;</span></code> - stacking with normalized domain (for creating <a class="reference external" href="https://vega.github.io/vega-lite/docs/stack.html#normalized">normalized
 stacked bar and area charts</a>.
 <span class="raw-html"><br/></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code> - stacking with center baseline (for <a class="reference external" href="https://vega.github.io/vega-lite/docs/stack.html#streamgraph">streamgraph</a> ).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> - No-stacking. This will produce layered <a class="reference external" href="https://vega.github.io/vega-lite/docs/stack.html#layered-bar-chart">bar</a> and area
+chart.</p></li>
 </ul>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code> - stacking with center baseline (for <a href="#id1"><span class="problematic" id="id2">`</span></a>streamgraph</p></li>
-</ul>
-<p>&lt;<a class="reference external" href="https://vega.github.io/vega-lite/docs/stack.html#streamgraph">https://vega.github.io/vega-lite/docs/stack.html#streamgraph</a>&gt;`__ ).
-* <code class="docutils literal notranslate"><span class="pre">null</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> - No-stacking. This will produce layered <a href="#id3"><span class="problematic" id="id4">`</span></a>bar</p>
-<blockquote>
-<div><p>&lt;<a class="reference external" href="https://vega.github.io/vega-lite/docs/stack.html#layered-bar-chart">https://vega.github.io/vega-lite/docs/stack.html#layered-bar-chart</a>&gt;`__ and area
-chart.</p>
-</div></blockquote>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">zero</span></code> for plots with all of the following conditions are true:
 (1) the mark is <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">area</span></code>, or <code class="docutils literal notranslate"><span class="pre">arc</span></code> ; (2) the stacked measure channel (x
 or y) has a linear scale; (3) At least one of non-position channels mapped to an
@@ -995,7 +982,7 @@ unaggregated field that is different from x and y. Otherwise, <code class="docut
 <p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/stack.html">stack</a>
 documentation.</p>
 </dd>
-<dt><strong>title</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, None)</span></dt><dd><p>A title for the field. If <code class="docutils literal notranslate"><span class="pre">null</span></code>, the title will be removed.</p>
+<dt><strong>title</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Text.html#altair.Text" title="altair.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a>, None)</span></dt><dd><p>A title for the field. If <code class="docutils literal notranslate"><span class="pre">null</span></code>, the title will be removed.</p>
 <p><strong>Default value:</strong>  derived from the field’s name and transformation function (
 <code class="docutils literal notranslate"><span class="pre">aggregate</span></code>, <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">timeUnit</span></code> ). If the field has an aggregate function,
 the function is displayed as part of the title (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;Sum</span> <span class="pre">of</span> <span class="pre">Profit&quot;</span></code> ). If the
