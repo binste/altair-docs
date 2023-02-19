@@ -81,6 +81,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -434,7 +440,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data Transformers</a></li>
@@ -511,7 +516,7 @@ This can be useful when, for example, selecting only a subset of data.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "area", "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "transform": [{"filter": "((datum.year === 2000) && (datum.sex === 1))"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "area"}, "encoding": {"x": {"field": "age", "type": "ordinal"}, "y": {"field": "people", "type": "quantitative"}}, "transform": [{"filter": "((datum.year === 2000) && (datum.sex === 1))"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -565,7 +570,7 @@ values from year 2000 as in the above chart:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "line", "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "transform": [{"filter": {"equal": 2000, "field": "year"}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "transform": [{"filter": {"equal": 2000, "field": "year"}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -595,7 +600,7 @@ of specific values:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "line", "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "transform": [{"filter": {"field": "year", "oneOf": [1900, 1950, 2000]}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "transform": [{"filter": {"field": "year", "oneOf": [1900, 1950, 2000]}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -625,7 +630,7 @@ particular continuous range:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "line", "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "transform": [{"filter": {"field": "year", "range": [1960, 2000]}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "transform": [{"filter": {"field": "year", "range": [1960, 2000]}}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -681,7 +686,7 @@ to select the data to be shown in the top chart:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "vconcat": [{"mark": "line", "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "height": 200, "transform": [{"filter": {"param": "param_104"}}], "width": 600}, {"mark": "bar", "encoding": {"color": {"condition": {"value": "steelblue", "param": "param_104"}, "value": "lightgray"}, "x": {"field": "year", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "height": 100, "name": "view_89", "width": 600}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "params": [{"name": "param_104", "select": {"type": "point", "fields": ["year"]}, "views": ["view_89"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "vconcat": [{"mark": {"type": "line"}, "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "height": 200, "transform": [{"filter": {"param": "param_76"}}], "width": 600}, {"mark": {"type": "bar"}, "encoding": {"color": {"condition": {"value": "steelblue", "param": "param_76"}, "value": "lightgray"}, "x": {"field": "year", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "height": 100, "name": "view_55", "width": 600}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "params": [{"name": "param_76", "select": {"type": "point", "fields": ["year"]}, "views": ["view_55"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -727,7 +732,7 @@ by applying a <code class="docutils literal notranslate"><span class="pre">Logic
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": "line", "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "height": 200, "transform": [{"filter": {"not": {"field": "year", "range": [1950, 1960]}}}], "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/population.json"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "year", "type": "ordinal"}, "x": {"field": "age", "type": "ordinal"}, "y": {"aggregate": "sum", "field": "people", "type": "quantitative"}}, "height": 200, "transform": [{"filter": {"not": {"field": "year", "range": [1950, 1960]}}}], "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

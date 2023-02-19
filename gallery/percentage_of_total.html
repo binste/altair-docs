@@ -79,6 +79,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -380,7 +386,7 @@ data values as a percentage of total.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-b65fb8da81d8d9141134bef309e2af20"}, "mark": "bar", "encoding": {"x": {"axis": {"format": ".0%"}, "field": "PercentOfTotal", "type": "quantitative"}, "y": {"field": "Activity", "type": "nominal"}}, "transform": [{"joinaggregate": [{"op": "sum", "field": "Time", "as": "TotalTime"}]}, {"calculate": "datum.Time / datum.TotalTime", "as": "PercentOfTotal"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-b65fb8da81d8d9141134bef309e2af20": [{"Activity": "Sleeping", "Time": 8}, {"Activity": "Eating", "Time": 2}, {"Activity": "TV", "Time": 4}, {"Activity": "Work", "Time": 8}, {"Activity": "Exercise", "Time": 2}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-b65fb8da81d8d9141134bef309e2af20"}, "mark": {"type": "bar"}, "encoding": {"x": {"axis": {"format": ".0%"}, "field": "PercentOfTotal", "type": "quantitative"}, "y": {"field": "Activity", "type": "nominal"}}, "transform": [{"joinaggregate": [{"op": "sum", "field": "Time", "as": "TotalTime"}]}, {"calculate": "datum.Time / datum.TotalTime", "as": "PercentOfTotal"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-b65fb8da81d8d9141134bef309e2af20": [{"Activity": "Sleeping", "Time": 8}, {"Activity": "Eating", "Time": 2}, {"Activity": "TV", "Time": 4}, {"Activity": "Work", "Time": 8}, {"Activity": "Exercise", "Time": 2}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

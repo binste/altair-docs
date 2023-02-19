@@ -81,6 +81,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -434,7 +440,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_frontends.html">Displaying Altair Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_renderers.html">Customizing Renderers</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Transformers</a></li>
@@ -533,7 +538,7 @@ of the data transformer.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}, {"mark": "point", "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "data": {"name": "data-137453ccbb3f929636eb2f9dd7052f16"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-137453ccbb3f929636eb2f9dd7052f16": [{"x": 0, "y": 1}, {"x": 1, "y": 3}, {"x": 2, "y": 4}, {"x": 3, "y": 3}, {"x": 4, "y": 5}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}, {"mark": {"type": "point"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "data": {"name": "data-137453ccbb3f929636eb2f9dd7052f16"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-137453ccbb3f929636eb2f9dd7052f16": [{"x": 0, "y": 1}, {"x": 1, "y": 3}, {"x": 2, "y": 4}, {"x": 3, "y": 3}, {"x": 4, "y": 5}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -558,10 +563,10 @@ was specified twice, only one copy of it is output in the spec:</p>
                                                         {&#39;x&#39;: 4, &#39;y&#39;: 5}]},
  &#39;layer&#39;: [{&#39;encoding&#39;: {&#39;x&#39;: {&#39;field&#39;: &#39;x&#39;, &#39;type&#39;: &#39;quantitative&#39;},
                          &#39;y&#39;: {&#39;field&#39;: &#39;y&#39;, &#39;type&#39;: &#39;quantitative&#39;}},
-            &#39;mark&#39;: &#39;line&#39;},
+            &#39;mark&#39;: {&#39;type&#39;: &#39;line&#39;}},
            {&#39;encoding&#39;: {&#39;x&#39;: {&#39;field&#39;: &#39;x&#39;, &#39;type&#39;: &#39;quantitative&#39;},
                          &#39;y&#39;: {&#39;field&#39;: &#39;y&#39;, &#39;type&#39;: &#39;quantitative&#39;}},
-            &#39;mark&#39;: &#39;point&#39;}]}
+            &#39;mark&#39;: {&#39;type&#39;: &#39;point&#39;}}]}
 </pre></div>
 </div>
 <p>This consolidation of datasets is an extra bit of processing that is turned on
@@ -582,10 +587,10 @@ by using the <code class="docutils literal notranslate"><span class="pre">enable
                      {&#39;x&#39;: 4, &#39;y&#39;: 5}]},
  &#39;layer&#39;: [{&#39;encoding&#39;: {&#39;x&#39;: {&#39;field&#39;: &#39;x&#39;, &#39;type&#39;: &#39;quantitative&#39;},
                          &#39;y&#39;: {&#39;field&#39;: &#39;y&#39;, &#39;type&#39;: &#39;quantitative&#39;}},
-            &#39;mark&#39;: &#39;line&#39;},
+            &#39;mark&#39;: {&#39;type&#39;: &#39;line&#39;}},
            {&#39;encoding&#39;: {&#39;x&#39;: {&#39;field&#39;: &#39;x&#39;, &#39;type&#39;: &#39;quantitative&#39;},
                          &#39;y&#39;: {&#39;field&#39;: &#39;y&#39;, &#39;type&#39;: &#39;quantitative&#39;}},
-            &#39;mark&#39;: &#39;point&#39;}]}
+            &#39;mark&#39;: {&#39;type&#39;: &#39;point&#39;}}]}
 </pre></div>
 </div>
 <p>Notice that now the dataset is not specified within the top-level <code class="docutils literal notranslate"><span class="pre">datasets</span></code>

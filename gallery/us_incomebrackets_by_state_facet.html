@@ -79,6 +79,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -380,7 +386,7 @@ faceted over income brackets</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/income.json"}, "mark": "geoshape", "encoding": {"color": {"field": "pct", "type": "quantitative"}, "facet": {"columns": 2, "field": "group", "type": "nominal"}, "shape": {"field": "geo", "type": "geojson"}, "tooltip": [{"field": "name", "type": "nominal"}, {"field": "pct", "type": "quantitative"}]}, "height": 175, "projection": {"type": "albersUsa"}, "transform": [{"lookup": "id", "as": "geo", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "key": "id"}}], "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/income.json"}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "pct", "type": "quantitative"}, "facet": {"columns": 2, "field": "group", "type": "nominal"}, "shape": {"field": "geo", "type": "geojson"}, "tooltip": [{"field": "name", "type": "nominal"}, {"field": "pct", "type": "quantitative"}]}, "height": 175, "projection": {"type": "albersUsa"}, "transform": [{"lookup": "id", "as": "geo", "from": {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "key": "id"}}], "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

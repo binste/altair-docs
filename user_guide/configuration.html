@@ -81,6 +81,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -434,7 +440,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="internals.html">Altair Internals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="display_frontends.html">Displaying Altair Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_renderers.html">Customizing Renderers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data Transformers</a></li>
@@ -486,6 +491,7 @@ overridden by specific style settings associated with chart elements.</p>
 <li><p><a class="reference internal" href="#config-scale"><span class="std std-ref">Scale Configuration</span></a> <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_scale()</span></code></p></li>
 <li><p><a class="reference internal" href="#config-range"><span class="std std-ref">Scale Range Configuration</span></a> <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_range()</span></code></p></li>
 <li><p><a class="reference internal" href="#config-projection"><span class="std std-ref">Projection Configuration</span></a> <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_projection()</span></code></p></li>
+<li><p><a class="reference internal" href="#config-composition"><span class="std std-ref">Concat and Facet Configuration</span></a> <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_concat()</span></code>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_facet()</span></code></p></li>
 <li><p><a class="reference internal" href="#config-selection"><span class="std std-ref">Selection Configuration</span></a> <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_selection()</span></code></p></li>
 <li><p><a class="reference internal" href="#config-title"><span class="std std-ref">Title Configuration</span></a> <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_title()</span></code></p></li>
 <li><p><a class="reference internal" href="#config-view"><span class="std std-ref">View Configuration</span></a> <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_view()</span></code></p></li>
@@ -803,7 +809,7 @@ and has the following attributes:</p>
 </details></section>
 <section id="axis-configuration">
 <span id="config-axis"></span><h2>Axis Configuration<a class="headerlink" href="#axis-configuration" title="Permalink to this heading">#</a></h2>
-<p>Axis configuration defines default settings for axes, and can be set using
+<p>Axis configuration defines default settings for axes and can be set using
 the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axis()</span></code> method.
 Properties defined here are applied to all axes in the figure.</p>
 <p>Additional property blocks can target more specific axis types based on the
@@ -824,6 +830,20 @@ over general options.</p>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisTop()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisX()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisY()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisDiscrete()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisPoint()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisQuantitative()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisTemporal()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisXBand()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisXDiscrete()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisXPoint()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisXQuantitative()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisXTemporal()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisYBand()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisYDiscrete()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisYPoint()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisYQuantitative()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_axisYTemporal()</span></code></p></li>
 </ul>
 <p>They have the following properties:</p>
 <details><summary><a>Click to show table</a></summary><table class="table">
@@ -1205,9 +1225,9 @@ over general options.</p>
 </details></section>
 <section id="header-configuration">
 <span id="config-header"></span><h2>Header Configuration<a class="headerlink" href="#header-configuration" title="Permalink to this heading">#</a></h2>
-<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_header()</span></code> method allows configuration of facet headers,
-including the font, color, size, and position of the title and labels.
-Here is an example:</p>
+<p>Header configuration defines default settings for headers including the font, color,
+size, and position of the title and labels and can be set using
+the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_header()</span></code> method. Here is an example:</p>
 <div class="highlight-python notranslate" id="configuration-rst-altair-source-0"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">from</span> <span class="nn">vega_datasets</span> <span class="kn">import</span> <span class="n">data</span>
 
@@ -1237,7 +1257,7 @@ Here is an example:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "header": {"labelColor": "red", "labelFontSize": 14, "titleColor": "green", "titleFontSize": 14}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "point", "encoding": {"color": {"field": "Origin", "type": "nominal"}, "column": {"field": "Origin", "type": "nominal"}, "x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "height": 180, "width": 180, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "header": {"labelColor": "red", "labelFontSize": 14, "titleColor": "green", "titleFontSize": 14}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"color": {"field": "Origin", "type": "nominal"}, "column": {"field": "Origin", "type": "nominal"}, "x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "height": 180, "width": 180, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1246,7 +1266,14 @@ Here is an example:</p>
       vegaEmbed('#configuration-rst-altair-plot-0', spec, opt).catch(console.err);
   });
 </script>
-</div><p>Additional properties are summarized in the following table:</p>
+</div><p>Additional property blocks can target more specific header types. The methods are the following:</p>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_header()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_headerColumn()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_headerFacet()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_headerRow()</span></code></p></li>
+</ul>
+<p>They have the following properties:</p>
 <details><summary><a>Click to show table</a></summary><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Property</p></th>
@@ -1449,7 +1476,7 @@ Here is an example:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "legend": {"cornerRadius": 10, "fillColor": "#EEEEEE", "orient": "top-right", "padding": 10, "strokeColor": "gray"}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "point", "encoding": {"color": {"field": "Origin", "type": "nominal"}, "x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "legend": {"cornerRadius": 10, "fillColor": "#EEEEEE", "orient": "top-right", "padding": 10, "strokeColor": "gray"}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"color": {"field": "Origin", "type": "nominal"}, "x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1804,10 +1831,15 @@ defining default properties for each mark.</p>
 </ul>
 <p>For configurations specific to particular mark types, use:</p>
 <ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_arc()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_area()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_bar()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_boxplot()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_circle()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_errorband()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_errorbar()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_geoshape()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_image()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_line()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_point()</span></code></p></li>
 <li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_rect()</span></code></p></li>
@@ -2506,6 +2538,44 @@ which has the following properties:</p>
 </tbody>
 </table>
 </details></section>
+<section id="concat-and-facet-configuration">
+<span id="config-composition"></span><h2>Concat and Facet Configuration<a class="headerlink" href="#concat-and-facet-configuration" title="Permalink to this heading">#</a></h2>
+<p>Various aspects of concat and facet charts can be configured using <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_concat()</span></code>
+and <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_facet()</span></code>, which have the following properties:</p>
+<details><summary><a>Click to show table</a></summary><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="vl-prop"><p>columns</p></td>
+<td class="vl-type-def"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>The number of columns to include in the view composition layout.</p>
+<p><strong>Default value</strong>: <code class="docutils literal notranslate"><span class="pre">undefined</span></code> – An infinite number of columns (a single row) will be assumed. This is equivalent to <code class="docutils literal notranslate"><span class="pre">hconcat</span></code> (for <code class="docutils literal notranslate"><span class="pre">concat</span></code>) and to using the <code class="docutils literal notranslate"><span class="pre">column</span></code> channel (for <code class="docutils literal notranslate"><span class="pre">facet</span></code> and <code class="docutils literal notranslate"><span class="pre">repeat</span></code>).</p>
+<p><strong>Note</strong>:</p>
+<ol class="arabic simple">
+<li><p>This property is only for:</p></li>
+</ol>
+<ul class="simple">
+<li><p>the general (wrappable) <code class="docutils literal notranslate"><span class="pre">concat</span></code> operator (not <code class="docutils literal notranslate"><span class="pre">hconcat</span></code>/<code class="docutils literal notranslate"><span class="pre">vconcat</span></code>)</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">facet</span></code> and <code class="docutils literal notranslate"><span class="pre">repeat</span></code> operator with one field/repetition definition (without row/column nesting)</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Setting the <code class="docutils literal notranslate"><span class="pre">columns</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">vconcat</span></code> (for <code class="docutils literal notranslate"><span class="pre">concat</span></code>) and to using the <code class="docutils literal notranslate"><span class="pre">row</span></code> channel (for <code class="docutils literal notranslate"><span class="pre">facet</span></code> and <code class="docutils literal notranslate"><span class="pre">repeat</span></code>).</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td class="vl-prop"><p>spacing</p></td>
+<td class="vl-type-def"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="vl-decsr"><p>The default spacing in pixels between composed sub-views.</p>
+<p><strong>Default value</strong>: <code class="docutils literal notranslate"><span class="pre">20</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</details></section>
 <section id="selection-configuration">
 <span id="config-selection"></span><h2>Selection Configuration<a class="headerlink" href="#selection-configuration" title="Permalink to this heading">#</a></h2>
 <p>Selections can be configured using <code class="xref py py-meth docutils literal notranslate"><span class="pre">Chart.configure_selection()</span></code>,
@@ -2564,7 +2634,7 @@ Here is an example:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"anchor": "start", "color": "gray", "font": "Courier", "fontSize": 20}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "point", "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "title": "Cars Data", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"anchor": "start", "color": "gray", "font": "Courier", "fontSize": 20}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "title": "Cars Data", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -2716,7 +2786,7 @@ be controlled:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 200, "continuousHeight": 200, "fill": "#FFEEDD", "stroke": "red", "strokeWidth": 4}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": "point", "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 200, "continuousHeight": 200, "fill": "#FFEEDD", "stroke": "red", "strokeWidth": 4}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -2905,6 +2975,11 @@ be controlled:</p>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#projection-configuration">
    Projection Configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concat-and-facet-configuration">
+   Concat and Facet Configuration
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">

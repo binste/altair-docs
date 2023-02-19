@@ -81,6 +81,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -932,13 +938,17 @@
 <dl class="field-list">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>cornerRadius</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
+<dt><strong>cornerRadius</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The radius in pixels of rounded rectangles or arcs’ corners.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</dd>
 <dt><strong>cursor</strong><span class="classifier"><a class="reference internal" href="altair.Cursor.html#altair.Cursor" title="altair.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a></span></dt><dd><p>The mouse cursor used over the view. Any valid <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#Values">CSS cursor type</a> can be used.</p>
 </dd>
 <dt><strong>fill</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, None, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The fill color.</p>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">undefined</span></code></p>
 </dd>
-<dt><strong>fillOpacity</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
+<dt><strong>fillOpacity</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The fill opacity (value between [0,1]).</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</dd>
 <dt><strong>opacity</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The overall opacity (value between [0,1]).</p>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">0.7</span></code> for non-aggregate plots with <code class="docutils literal notranslate"><span class="pre">point</span></code>, <code class="docutils literal notranslate"><span class="pre">tick</span></code>,
 <code class="docutils literal notranslate"><span class="pre">circle</span></code>, or <code class="docutils literal notranslate"><span class="pre">square</span></code> marks or layered <code class="docutils literal notranslate"><span class="pre">bar</span></code> charts and <code class="docutils literal notranslate"><span class="pre">1</span></code> otherwise.</p>
@@ -946,13 +956,24 @@
 <dt><strong>stroke</strong><span class="classifier">anyOf(<a class="reference internal" href="../channels/altair.Color.html#altair.Color" title="altair.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, None, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The stroke color.</p>
 <p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;#ddd&quot;</span></code></p>
 </dd>
-<dt><strong>strokeCap</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StrokeCap.html#altair.StrokeCap" title="altair.StrokeCap"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrokeCap</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>strokeDash</strong><span class="classifier">anyOf(List(float), <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>strokeDashOffset</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>strokeJoin</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StrokeJoin.html#altair.StrokeJoin" title="altair.StrokeJoin"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrokeJoin</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>strokeMiterLimit</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>strokeOpacity</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
-<dt><strong>strokeWidth</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd></dd>
+<dt><strong>strokeCap</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StrokeCap.html#altair.StrokeCap" title="altair.StrokeCap"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrokeCap</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The stroke cap for line ending style. One of <code class="docutils literal notranslate"><span class="pre">&quot;butt&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;round&quot;</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">&quot;square&quot;</span></code>.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;butt&quot;</span></code></p>
+</dd>
+<dt><strong>strokeDash</strong><span class="classifier">anyOf(List(float), <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>An array of alternating stroke, space lengths for creating dashed or dotted lines.</p>
+</dd>
+<dt><strong>strokeDashOffset</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The offset (in pixels) into which to begin drawing with the stroke dash array.</p>
+</dd>
+<dt><strong>strokeJoin</strong><span class="classifier">anyOf(<a class="reference internal" href="altair.StrokeJoin.html#altair.StrokeJoin" title="altair.StrokeJoin"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrokeJoin</span></code></a>, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The stroke line join method. One of <code class="docutils literal notranslate"><span class="pre">&quot;miter&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;round&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;bevel&quot;</span></code>.</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;miter&quot;</span></code></p>
+</dd>
+<dt><strong>strokeMiterLimit</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The miter limit at which to bevel a line join.</p>
+</dd>
+<dt><strong>strokeOpacity</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The stroke opacity (value between [0,1]).</p>
+<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</dd>
+<dt><strong>strokeWidth</strong><span class="classifier">anyOf(float, <a class="reference internal" href="altair.ExprRef.html#altair.ExprRef" title="altair.ExprRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExprRef</span></code></a>)</span></dt><dd><p>The stroke width, in pixels.</p>
+</dd>
 <dt><strong>style</strong><span class="classifier">anyOf(string, List(string))</span></dt><dd><p>A string or array of strings indicating the name of custom styles to apply to the
 view background. A style is a named collection of mark property defaults defined
 within the <a class="reference external" href="https://vega.github.io/vega-lite/docs/mark.html#style-config">style configuration</a>. If style is an

@@ -1,1 +1,0 @@
-This repository contains the documentation for a **development version** of Altair. For the official documentation, go to http://altair-viz.github.io.

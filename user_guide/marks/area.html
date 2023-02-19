@@ -81,6 +81,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -434,7 +440,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../internals.html">Altair Internals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../importing.html">Importing Vega &amp; Vega-Lite Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../display_frontends.html">Displaying Altair Charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_renderers.html">Customizing Renderers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data_transformers.html">Data Transformers</a></li>
@@ -509,7 +514,7 @@ Area marks are often used to show change over time, using either a single area o
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-4931952949a2b4cbb2bf6e2ee53eef58"}, "mark": {"type": "area", "interpolate": {"expr": "param_84"}, "tension": {"expr": "param_85"}}, "encoding": {"x": {"field": "u", "type": "quantitative"}, "y": {"field": "v", "type": "quantitative"}}, "params": [{"name": "param_84", "bind": {"input": "select", "options": ["basis", "cardinal", "catmull-rom", "linear", "monotone", "natural", "step", "step-after", "step-before"], "name": "interpolate"}, "value": "linear"}, {"name": "param_85", "bind": {"input": "range", "max": 1, "min": 0, "name": "tension", "step": 0.05}, "value": 0}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-4931952949a2b4cbb2bf6e2ee53eef58": [{"u": 1, "v": 28}, {"u": 2, "v": 55}, {"u": 3, "v": 42}, {"u": 4, "v": 34}, {"u": 5, "v": 36}, {"u": 6, "v": 38}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-4931952949a2b4cbb2bf6e2ee53eef58"}, "mark": {"type": "area", "interpolate": {"expr": "param_56"}, "tension": {"expr": "param_57"}}, "encoding": {"x": {"field": "u", "type": "quantitative"}, "y": {"field": "v", "type": "quantitative"}}, "params": [{"name": "param_56", "bind": {"input": "select", "options": ["basis", "cardinal", "catmull-rom", "linear", "monotone", "natural", "step", "step-after", "step-before"], "name": "interpolate"}, "value": "linear"}, {"name": "param_57", "bind": {"input": "range", "max": 1, "min": 0, "name": "tension", "step": 0.05}, "value": 0}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-4931952949a2b4cbb2bf6e2ee53eef58": [{"u": 1, "v": 28}, {"u": 2, "v": 55}, {"u": 3, "v": 42}, {"u": 4, "v": 34}, {"u": 5, "v": 36}, {"u": 6, "v": 38}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -607,7 +612,7 @@ the following area chart shows a number of unemployment people in the US over ti
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"x": {"field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "height": 200, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": {"type": "area"}, "encoding": {"x": {"field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "height": 200, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -713,7 +718,7 @@ In this example, we are also customizing the overlay. For more information about
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": {"type": "area"}, "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -744,7 +749,7 @@ In this example, we are also customizing the overlay. For more information about
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "stack": "normalize", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": {"type": "area"}, "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "field": "count", "stack": "normalize", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -776,7 +781,7 @@ Adding the <code class="docutils literal notranslate"><span class="pre">interact
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": "area", "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "axis": null, "field": "count", "stack": "center", "type": "quantitative"}}, "params": [{"name": "param_86", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/unemployment-across-industries.json"}, "mark": {"type": "area"}, "encoding": {"color": {"field": "series", "scale": {"scheme": "category20b"}, "type": "nominal"}, "x": {"axis": {"domain": false, "format": "%Y", "tickSize": 0}, "field": "date", "timeUnit": "yearmonth", "type": "temporal"}, "y": {"aggregate": "sum", "axis": null, "field": "count", "stack": "center", "type": "quantitative"}}, "params": [{"name": "param_58", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

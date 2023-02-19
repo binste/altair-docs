@@ -79,6 +79,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -379,7 +385,7 @@
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}, "projection": {"type": "albersUsa"}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv"}, "mark": "circle", "encoding": {"color": {"value": "steelblue"}, "latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "size": {"field": "count", "title": "Number of Airports", "type": "quantitative"}, "tooltip": [{"field": "state", "type": "nominal"}, {"field": "count", "type": "quantitative"}]}, "title": "Number of airports in US", "transform": [{"aggregate": [{"op": "mean", "field": "latitude", "as": "latitude"}, {"op": "mean", "field": "longitude", "as": "longitude"}, {"op": "count", "as": "count"}], "groupby": ["state"]}]}], "height": 300, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}, "projection": {"type": "albersUsa"}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/airports.csv"}, "mark": {"type": "circle"}, "encoding": {"color": {"value": "steelblue"}, "latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "size": {"field": "count", "title": "Number of Airports", "type": "quantitative"}, "tooltip": [{"field": "state", "type": "nominal"}, {"field": "count", "type": "quantitative"}]}, "title": "Number of airports in US", "transform": [{"aggregate": [{"op": "mean", "field": "latitude", "as": "latitude"}, {"op": "mean", "field": "longitude", "as": "longitude"}, {"op": "count", "as": "count"}], "groupby": ["state"]}]}], "height": 300, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",

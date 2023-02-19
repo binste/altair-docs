@@ -79,6 +79,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
     </div>
+  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
+    
+
+
+<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+
   </div>
 
   
@@ -379,7 +385,7 @@
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": "point", "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 7}, "encoding": {"text": {"field": "label", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "data": {"name": "data-4db6ddb6c4b049d1ba9819161e3b8018"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-4db6ddb6c4b049d1ba9819161e3b8018": [{"x": 1, "y": 1, "label": "A"}, {"x": 3, "y": 3, "label": "B"}, {"x": 5, "y": 5, "label": "C"}, {"x": 7, "y": 7, "label": "D"}, {"x": 9, "y": 9, "label": "E"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "point"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 7}, "encoding": {"text": {"field": "label", "type": "nominal"}, "x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}}], "data": {"name": "data-4db6ddb6c4b049d1ba9819161e3b8018"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-4db6ddb6c4b049d1ba9819161e3b8018": [{"x": 1, "y": 1, "label": "A"}, {"x": 3, "y": 3, "label": "B"}, {"x": 5, "y": 5, "label": "C"}, {"x": 7, "y": 7, "label": "D"}, {"x": 9, "y": 9, "label": "E"}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
