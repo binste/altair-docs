@@ -1100,6 +1100,17 @@ Distributions
      <span class="image-title">Facetted Scatter Plot with Marginal Histograms</span>
    </a>
    
+   <a class="imagegroup" href="heat_lane.html">
+   <span
+        class="image" alt="Heat Lane Chart"
+
+        style="background-image: url(../_static/heat_lane-thumb.png);"
+
+    ></span>
+
+     <span class="image-title">Heat Lane Chart</span>
+   </a>
+   
    <a class="imagegroup" href="histogram_responsive.html">
    <span
         class="image" alt="Histogram with Responsive Bins"

@@ -85,7 +85,7 @@
     
 
 
-<div class="bd-header-announcement__content">This website is for Vega-Altair v5 (release candidate). Visit the <a href='https://altair-viz.github.io/altair-viz-v4/'>Vega-Altair v4 homepage</a> for previous release documentation.</div>
+<div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
 
   </div>
 
@@ -729,7 +729,7 @@ way that Altair expects:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-fc2916b8817237fed8d67f8641bad1b4"}, "mark": {"type": "text", "baseline": "middle", "size": 20}, "encoding": {"color": {"condition": {"value": "green", "test": "datum.compliant"}, "value": "red"}, "text": {"condition": {"value": "OK", "test": "datum.compliant"}, "value": "not OK"}}, "height": 50, "transform": [{"calculate": "hours(datum.local) != hours(datum.utc) ? true : false", "as": "compliant"}], "width": 80, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-fc2916b8817237fed8d67f8641bad1b4": [{"local": "2018-01-01T00:00:00", "utc": "2018-01-01T00:00:00Z"}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-fc2916b8817237fed8d67f8641bad1b4"}, "mark": {"type": "text", "baseline": "middle", "size": 20}, "encoding": {"color": {"condition": {"test": "datum.compliant", "value": "green"}, "value": "red"}, "text": {"condition": {"test": "datum.compliant", "value": "OK"}, "value": "not OK"}}, "height": 50, "transform": [{"calculate": "hours(datum.local) != hours(datum.utc) ? true : false", "as": "compliant"}], "width": 80, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-fc2916b8817237fed8d67f8641bad1b4": [{"local": "2018-01-01T00:00:00", "utc": "2018-01-01T00:00:00Z"}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
