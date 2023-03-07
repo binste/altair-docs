@@ -1,12 +1,15 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-theme="light">
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>altair.selection_point &#8212; Vega-Altair 5.0.0 documentation</title>
+    <title>altair.selection_point &#8212; Vega-Altair 5.0.0dev documentation</title>
   
   
   
@@ -16,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/altair-plot.css" />
@@ -33,108 +36,117 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/generated/api/altair.selection_point';</script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="altair.selection_single" href="altair.selection_single.html" />
     <link rel="prev" title="altair.selection_multi" href="altair.selection_multi.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
 
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
-    
+</form></div>
+  </div>
 
 
-<div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
-
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code> <span class="pre">(more info <a href='https://github.com/altair-viz/altair/issues/2937'>#2937</a>)</span>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
   </div>
 
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
+    <span class="fa-solid fa-bars"></span>
   </label>
-  <div id="navbar-start">
-    
-    
   
-
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
 
 <a class="navbar-brand logo" href="../../../index.html">
-
   
   
   
   
-  
-  
-  
-
-  
-    <img src="../../../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image">
-    <img src="../../../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
     
-    <a class="navbar-brand" href="../../../index.html">
+    
+    
+    <img src="../../../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+      <div class="navbar-item"><a class="navbar-brand" href="../../../index.html">
 <p class="title">Vega-Altair</p>
 </a>
-
+</div>
     
   </div>
-
+  
   
   <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../getting_started/overview.html">
                         Getting Started
@@ -165,7 +177,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -176,32 +188,39 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
+  </ul>
+</nav></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-        <div class="navbar-end-item navbar-persistent--container">
+        <div class="navbar-item navbar-persistent--container">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
         </div>
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
+  </button>
+`);
+</script></div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -210,7 +229,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -221,53 +241,58 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
+    
   </div>
-
-
   
   
     <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
     </div>
   
 
   
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
       <span class="fa-solid fa-outdent"></span>
-  </label>
+    </label>
   
-
 </div>
-  </nav>
-  
 
+    </nav>
+  
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       <div class="bd-sidebar-primary bd-sidebar">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
       <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
         
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../getting_started/overview.html">
                         Getting Started
@@ -298,7 +323,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -309,27 +334,28 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
+  </ul>
+</nav></div>
+        
       </div>
-      
-      </div>
-    
-
     
     
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -338,7 +364,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -349,24 +376,21 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
+</ul></div>
+        
       </div>
-      
-    </div>
     
   </div>
-
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
-    <ul class="nav bd-sidenav">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../toplevel/altair.Chart.html">altair.Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../toplevel/altair.ConcatChart.html">altair.ConcatChart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../toplevel/altair.FacetChart.html">altair.FacetChart</a></li>
@@ -857,6 +881,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.TopLevelFacetSpec.html">altair.TopLevelFacetSpec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.TopLevelHConcatSpec.html">altair.TopLevelHConcatSpec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.TopLevelLayerSpec.html">altair.TopLevelLayerSpec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/altair.TopLevelParameter.html">altair.TopLevelParameter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.TopLevelRepeatSpec.html">altair.TopLevelRepeatSpec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.TopLevelSelectionParameter.html">altair.TopLevelSelectionParameter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.TopLevelSpec.html">altair.TopLevelSpec</a></li>
@@ -900,115 +925,149 @@
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.WindowOnlyOp.html">altair.WindowOnlyOp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/altair.WindowTransform.html">altair.WindowTransform</a></li>
 </ul>
-
-  </div>
-</nav>
+</div>
+</nav></div>
     </div>
-  </div>
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-            </div>
-            
-            
-            <article class="bd-article" role="main">
+          <div class="bd-content">
+            <div class="bd-article-container">
               
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../API.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">altair.selection_point</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="altair-selection-point">
 <h1>altair.selection_point<a class="headerlink" href="#altair-selection-point" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="altair.selection_point">
-<span class="sig-prename descclassname"><span class="pre">altair.</span></span><span class="sig-name descname"><span class="pre">selection_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encodings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nearest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altair.selection_point" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a selection with type=’point’
-Mapping(required=[type])</p>
+<span class="sig-prename descclassname"><span class="pre">altair.</span></span><span class="sig-name descname"><span class="pre">selection_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encodings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toggle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nearest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Undefined</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altair.selection_point" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a point selection parameter. Selection parameters define data queries that are driven by direct manipulation from user input (e.g., mouse clicks or drags). Point selection parameters are used to select multiple discrete data values; the first value is selected on click and additional values toggled on shift-click. To select a continuous range of data values on drag interval selection parameters (<cite>selection_interval</cite>) can be used instead.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>type</strong><span class="classifier">string</span></dt><dd><p>Determines the default event processing and data query for the selection. Vega-Lite
-currently supports two selection types:</p>
+<dt><strong>name</strong><span class="classifier">string (optional)</span></dt><dd><p>The name of the parameter. If not specified, a unique name will be
+created.</p>
+</dd>
+<dt><strong>bind</strong><span class="classifier"><a class="reference internal" href="../core/altair.Binding.html#altair.Binding" title="altair.Binding"><code class="xref py py-class docutils literal notranslate"><span class="pre">Binding</span></code></a> (optional)</span></dt><dd><p>Binds the parameter to an external input element such as a slider,
+selection list or radio button group.</p>
+</dd>
+<dt><strong>value</strong><span class="classifier">any (optional)</span></dt><dd><p>The default value of the parameter. If not specified, the parameter
+will be created without a default value.</p>
+</dd>
+<dt><strong>empty</strong><span class="classifier">boolean (optional)</span></dt><dd><p>For selection parameters, the predicate of empty selections returns
+True by default. Override this behavior, by setting this property
+‘empty=False’.</p>
+</dd>
+<dt><strong>expr</strong><span class="classifier"><a class="reference internal" href="../core/altair.Expr.html#altair.Expr" title="altair.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a> (optional)</span></dt><dd><p>An expression for the value of the parameter. This expression may
+include other parameters, in which case the parameter will
+automatically update in response to upstream parameter changes.</p>
+</dd>
+<dt><strong>encodings</strong><span class="classifier">List[str] (optional)</span></dt><dd><p>A list of encoding channels. The corresponding data field values
+must match for a data tuple to fall within the selection.</p>
+</dd>
+<dt><strong>fields</strong><span class="classifier">List[str] (optional)</span></dt><dd><p>A list of field names whose values must match for a data tuple to
+fall within the selection.</p>
+</dd>
+<dt><strong>on</strong><span class="classifier">string (optional)</span></dt><dd><p>A Vega event stream (object or selector) that triggers the selection.
+For interval selections, the event stream must specify a start and end.</p>
+</dd>
+<dt><strong>clear</strong><span class="classifier">string or boolean (optional)</span></dt><dd><p>Clears the selection, emptying it of all values. This property can
+be an Event Stream or False to disable clear.  Default is ‘dblclick’.</p>
+</dd>
+<dt><strong>resolve</strong><span class="classifier">enum(‘global’, ‘union’, ‘intersect’) (optional)</span></dt><dd><p>With layered and multi-view displays, a strategy that determines
+how selections’ data queries are resolved when applied in a filter
+transform, conditional encoding rule, or scale domain.
+One of:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;point&quot;</span></code> – to select multiple discrete data values; the first value is
-selected on <code class="docutils literal notranslate"><span class="pre">click</span></code> and additional values toggled on shift-click.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;interval&quot;</span></code> – to select a continuous range of data values on <code class="docutils literal notranslate"><span class="pre">drag</span></code>.</p></li>
+<li><p>‘global’: only one brush exists for the entire SPLOM. When the
+user begins to drag, any previous brushes are cleared, and a
+new one is constructed.</p></li>
+<li><p>‘union’: each cell contains its own brush, and points are
+highlighted if they lie within any of these individual brushes.</p></li>
+<li><p>‘intersect’: each cell contains its own brush, and points are
+highlighted only if they fall within all of these individual
+brushes.</p></li>
+</ul>
+<p>The default is ‘global’.</p>
+</dd>
+<dt><strong>toggle</strong><span class="classifier">string or boolean (optional)</span></dt><dd><p>Controls whether data values should be toggled (inserted or
+removed from a point selection) or only ever inserted into
+point selections.
+One of:</p>
+<ul class="simple">
+<li><p>True (default): the toggle behavior, which corresponds to
+“event.shiftKey”. As a result, data values are toggled
+when the user interacts with the shift-key pressed.</p></li>
+<li><p>False: disables toggling behaviour; the selection will
+only ever contain a single data value corresponding
+to the most recent interaction.</p></li>
+<li><p>A Vega expression which is re-evaluated as the user interacts.
+If the expression evaluates to True, the data value is
+toggled into or out of the point selection. If the expression
+evaluates to False, the point selection is first cleared, and
+the data value is then inserted. For example, setting the
+value to the Vega expression True will toggle data values
+without the user pressing the shift-key.</p></li>
 </ul>
 </dd>
-<dt><strong>clear</strong><span class="classifier">anyOf(<a class="reference internal" href="../core/altair.Stream.html#altair.Stream" title="altair.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a>, string, boolean)</span></dt><dd><p>Clears the selection, emptying it of all values. This property can be a <a class="reference external" href="https://vega.github.io/vega/docs/event-streams/">Event
-Stream</a> or <code class="docutils literal notranslate"><span class="pre">false</span></code> to disable
-clear.</p>
-<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">dblclick</span></code>.</p>
-<p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#clear">clear examples</a> in the
-documentation.</p>
+<dt><strong>nearest</strong><span class="classifier">boolean (optional)</span></dt><dd><p>When true, an invisible voronoi diagram is computed to accelerate
+discrete selection. The data value nearest the mouse cursor is
+added to the selection.  The default is False, which means that
+data values must be interacted with directly (e.g., clicked on)
+to be added to the selection.</p>
 </dd>
-<dt><strong>encodings</strong><span class="classifier">List(<a class="reference internal" href="../core/altair.SingleDefUnitChannel.html#altair.SingleDefUnitChannel" title="altair.SingleDefUnitChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">SingleDefUnitChannel</span></code></a>)</span></dt><dd><p>An array of encoding channels. The corresponding data field values must match for a
-data tuple to fall within the selection.</p>
-<p><strong>See also:</strong> The <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#project">projection with encodings and fields section</a> in the
-documentation.</p>
+<dt><strong>**kwds</strong></dt><dd><p>additional keywords to control the selection.</p>
 </dd>
-<dt><strong>fields</strong><span class="classifier">List(<a class="reference internal" href="../core/altair.FieldName.html#altair.FieldName" title="altair.FieldName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FieldName</span></code></a>)</span></dt><dd><p>An array of field names whose values must match for a data tuple to fall within the
-selection.</p>
-<p><strong>See also:</strong> The <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#project">projection with encodings and fields section</a> in the
-documentation.</p>
+</dl>
 </dd>
-<dt><strong>nearest</strong><span class="classifier">boolean</span></dt><dd><p>When true, an invisible voronoi diagram is computed to accelerate discrete
-selection. The data value <em>nearest</em> the mouse cursor is added to the selection.</p>
-<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">false</span></code>, which means that data values must be interacted with
-directly (e.g., clicked on) to be added to the selection.</p>
-<p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#nearest">nearest examples</a> documentation.</p>
-</dd>
-<dt><strong>on</strong><span class="classifier">anyOf(<a class="reference internal" href="../core/altair.Stream.html#altair.Stream" title="altair.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stream</span></code></a>, string)</span></dt><dd><p>A <a class="reference external" href="https://vega.github.io/vega/docs/event-streams/">Vega event stream</a> (object or
-selector) that triggers the selection. For interval selections, the event stream
-must specify a <a class="reference external" href="https://vega.github.io/vega/docs/event-streams/#between-filters">start and end</a>.</p>
-<p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#on">on examples</a> in the documentation.</p>
-</dd>
-<dt><strong>resolve</strong><span class="classifier"><a class="reference internal" href="../core/altair.SelectionResolution.html#altair.SelectionResolution" title="altair.SelectionResolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionResolution</span></code></a></span></dt><dd><p>With layered and multi-view displays, a strategy that determines how selections’
-data queries are resolved when applied in a filter transform, conditional encoding
-rule, or scale domain.</p>
-<p>One of:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;global&quot;</span></code> – only one brush exists for the entire SPLOM. When the user begins
-to drag, any previous brushes are cleared, and a new one is constructed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;union&quot;</span></code> – each cell contains its own brush, and points are highlighted if
-they lie within <em>any</em> of these individual brushes.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;intersect&quot;</span></code> – each cell contains its own brush, and points are highlighted
-only if they fall within <em>all</em> of these individual brushes.</p></li>
-</ul>
-<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">global</span></code>.</p>
-<p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#resolve">resolve examples</a> in the
-documentation.</p>
-</dd>
-<dt><strong>toggle</strong><span class="classifier">anyOf(string, boolean)</span></dt><dd><p>Controls whether data values should be toggled (inserted or removed from a point
-selection) or only ever inserted into multi selections.</p>
-<p>One of:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">true</span></code> – the default behavior, which corresponds to <code class="docutils literal notranslate"><span class="pre">&quot;event.shiftKey&quot;</span></code>.  As a
-result, data values are toggled when the user interacts with the shift-key
-pressed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">false</span></code> – disables toggling behaviour; as the user interacts, data values are
-only inserted into the multi selection and never removed.</p></li>
-<li><p>A <a class="reference external" href="https://vega.github.io/vega/docs/expressions/">Vega expression</a> which is
-re-evaluated as the user interacts. If the expression evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the
-data value is toggled into or out of the multi selection. If the expression
-evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, the multi selection is first clear, and the data value is
-then inserted. For example, setting the value to the Vega expression <code class="docutils literal notranslate"><span class="pre">&quot;true&quot;</span></code>
-will toggle data values without the user pressing the shift-key.</p></li>
-</ul>
-<p><strong>Default value:</strong> <code class="docutils literal notranslate"><span class="pre">true</span></code></p>
-<p><strong>See also:</strong> <a class="reference external" href="https://vega.github.io/vega-lite/docs/selection.html#toggle">toggle examples</a> in the
-documentation.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>parameter: Parameter</dt><dd><p>The parameter object that can be used in chart creation.</p>
 </dd>
 </dl>
 </dd>
@@ -1018,93 +1077,100 @@ documentation.</p>
 </section>
 
 
-            </article>
-            
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="altair.selection_multi.html" title="previous page">
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="altair.selection_multi.html"
+       title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">altair.selection_multi</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">altair.selection_multi</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="altair.selection_single.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">altair.selection_single</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
+    </a>
+    <a class="right-next"
+       href="altair.selection_single.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">altair.selection_single</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-            </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+                </footer>
               
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#altair.selection_point">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     selection_point()
-    </span>
-   </code>
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-<div class="toc-item">
-  
-<div id="searchbox"></div>
-</div>
-
-<div class="toc-item">
-  
-</div>
-
-<div class="toc-item">
-  
-</div>
-
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#altair.selection_point"><code class="docutils literal notranslate"><span class="pre">selection_point()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
-        </footer>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
         
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-  <footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2016-2023, Vega-Altair Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
   
 </div>
+
   </footer>
   </body>
 </html>

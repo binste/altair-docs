@@ -1,12 +1,15 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-theme="light">
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>API Reference &#8212; Vega-Altair 5.0.0 documentation</title>
+    <title>API Reference &#8212; Vega-Altair 5.0.0dev documentation</title>
   
   
   
@@ -16,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/altair-plot.css" />
@@ -33,108 +36,117 @@
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/API';</script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="altair.Chart" href="generated/toplevel/altair.Chart.html" />
     <link rel="prev" title="Exploring Seattle Weather" href="../case_studies/exploring-weather.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
 
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
-    
+</form></div>
+  </div>
 
 
-<div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
-
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code> <span class="pre">(more info <a href='https://github.com/altair-viz/altair/issues/2937'>#2937</a>)</span>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
   </div>
 
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
+    <span class="fa-solid fa-bars"></span>
   </label>
-  <div id="navbar-start">
-    
-    
   
-
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
 
 <a class="navbar-brand logo" href="../index.html">
-
   
   
   
   
-  
-  
-  
-
-  
-    <img src="../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image">
-    <img src="../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
     
-    <a class="navbar-brand" href="../index.html">
+    
+    
+    <img src="../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+      <div class="navbar-item"><a class="navbar-brand" href="../index.html">
 <p class="title">Vega-Altair</p>
 </a>
-
+</div>
     
   </div>
-
+  
   
   <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../getting_started/overview.html">
                         Getting Started
@@ -165,7 +177,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -176,32 +188,39 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
+  </ul>
+</nav></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-        <div class="navbar-end-item navbar-persistent--container">
+        <div class="navbar-item navbar-persistent--container">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
         </div>
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
+  </button>
+`);
+</script></div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -210,7 +229,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -221,53 +241,58 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
+    
   </div>
-
-
   
   
     <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
     </div>
   
 
   
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
       <span class="fa-solid fa-outdent"></span>
-  </label>
+    </label>
   
-
 </div>
-  </nav>
-  
 
+    </nav>
+  
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       <div class="bd-sidebar-primary bd-sidebar">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
       <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
         
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../getting_started/overview.html">
                         Getting Started
@@ -298,7 +323,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -309,27 +334,28 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
+  </ul>
+</nav></div>
+        
       </div>
-      
-      </div>
-    
-
     
     
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -338,7 +364,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -349,24 +376,21 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
+</ul></div>
+        
       </div>
-      
-    </div>
     
   </div>
-
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
-    <ul class="nav bd-sidenav">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="generated/toplevel/altair.Chart.html">altair.Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/toplevel/altair.ConcatChart.html">altair.ConcatChart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/toplevel/altair.FacetChart.html">altair.FacetChart</a></li>
@@ -857,6 +881,7 @@
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.TopLevelFacetSpec.html">altair.TopLevelFacetSpec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.TopLevelHConcatSpec.html">altair.TopLevelHConcatSpec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.TopLevelLayerSpec.html">altair.TopLevelLayerSpec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/core/altair.TopLevelParameter.html">altair.TopLevelParameter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.TopLevelRepeatSpec.html">altair.TopLevelRepeatSpec</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.TopLevelSelectionParameter.html">altair.TopLevelSelectionParameter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.TopLevelSpec.html">altair.TopLevelSpec</a></li>
@@ -900,34 +925,59 @@
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.WindowOnlyOp.html">altair.WindowOnlyOp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generated/core/altair.WindowTransform.html">altair.WindowTransform</a></li>
 </ul>
-
-  </div>
-</nav>
+</div>
+</nav></div>
     </div>
-  </div>
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-            </div>
-            
-            
-            <article class="bd-article" role="main">
+          <div class="bd-content">
+            <div class="bd-article-container">
               
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">API Reference</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="api-reference">
 <span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">#</a></h1>
 <p>This is the class and function reference of Altair, and the following content
@@ -943,25 +993,25 @@ full guidelines on their use.</p>
 <td><p>Create a basic Altair/Vega-Lite chart.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/toplevel/altair.ConcatChart.html#altair.ConcatChart" title="altair.ConcatChart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcatChart</span></code></a></p></td>
-<td><p>A chart with horizontally-concatenated facets Mapping(required=[concat])</p></td>
+<td><p>A chart with horizontally-concatenated facets</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/toplevel/altair.FacetChart.html#altair.FacetChart" title="altair.FacetChart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FacetChart</span></code></a></p></td>
-<td><p>A Chart with layers within a single panel Mapping(required=[data, facet, spec])</p></td>
+<td><p>A Chart with layers within a single panel</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/toplevel/altair.HConcatChart.html#altair.HConcatChart" title="altair.HConcatChart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HConcatChart</span></code></a></p></td>
-<td><p>A chart with horizontally-concatenated facets Mapping(required=[hconcat])</p></td>
+<td><p>A chart with horizontally-concatenated facets</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/toplevel/altair.LayerChart.html#altair.LayerChart" title="altair.LayerChart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LayerChart</span></code></a></p></td>
-<td><p>A Chart with layers within a single panel Mapping(required=[layer])</p></td>
+<td><p>A Chart with layers within a single panel</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/toplevel/altair.RepeatChart.html#altair.RepeatChart" title="altair.RepeatChart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RepeatChart</span></code></a></p></td>
-<td><p>A chart repeated across rows and columns with small changes anyOf(Mapping(required=[repeat, spec]), Mapping(required=[repeat, spec]))</p></td>
+<td><p>A chart repeated across rows and columns with small changes</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/toplevel/altair.TopLevelMixin.html#altair.TopLevelMixin" title="altair.TopLevelMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelMixin</span></code></a></p></td>
 <td><p>Mixin for top-level chart objects such as Chart, LayeredChart, etc.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/toplevel/altair.VConcatChart.html#altair.VConcatChart" title="altair.VConcatChart"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VConcatChart</span></code></a></p></td>
-<td><p>A chart with vertically-concatenated facets Mapping(required=[vconcat])</p></td>
+<td><p>A chart with vertically-concatenated facets</p></td>
 </tr>
 </tbody>
 </table>
@@ -1314,19 +1364,19 @@ full guidelines on their use.</p>
 <td><p>Tie a channel to the row or column within a repeated chart</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/api/altair.selection.html#altair.selection" title="altair.selection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection</span></code></a></p></td>
-<td><p>Create a selection.</p></td>
+<td><p>Users are recommended to use either 'selection_point' or 'selection_interval' instead, depending on the type of parameter they want to create.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/api/altair.selection_interval.html#altair.selection_interval" title="altair.selection_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_interval</span></code></a></p></td>
-<td><p>Create a selection parameter with type='interval' Mapping(required=[type])</p></td>
+<td><p>Create an interval selection parameter.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/api/altair.selection_multi.html#altair.selection_multi" title="altair.selection_multi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_multi</span></code></a></p></td>
-<td><p>PointSelectionConfig schema wrapper</p></td>
+<td><p>'selection_multi' is deprecated.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/api/altair.selection_point.html#altair.selection_point" title="altair.selection_point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_point</span></code></a></p></td>
-<td><p>Create a selection with type='point' Mapping(required=[type])</p></td>
+<td><p>Create a point selection parameter.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/api/altair.selection_single.html#altair.selection_single" title="altair.selection_single"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_single</span></code></a></p></td>
-<td><p>PointSelectionConfig schema wrapper</p></td>
+<td><p>'selection_single' is deprecated.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/api/altair.sequence.html#altair.sequence" title="altair.sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sequence</span></code></a></p></td>
 <td><p>Sequence generator.</p></td>
@@ -1747,7 +1797,7 @@ full guidelines on their use.</p>
 <td><p>FacetFieldDef schema wrapper</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.FacetMapping.html#altair.FacetMapping" title="altair.FacetMapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FacetMapping</span></code></a></p></td>
-<td><p>FacetMapping schema wrapper</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.FacetSpec.html#altair.FacetSpec" title="altair.FacetSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FacetSpec</span></code></a></p></td>
 <td><p>FacetSpec schema wrapper</p></td>
@@ -1984,7 +2034,7 @@ full guidelines on their use.</p>
 <td><p>LogicalOrPredicate schema wrapper</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.LookupData.html#altair.LookupData" title="altair.LookupData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LookupData</span></code></a></p></td>
-<td><p>LookupData schema wrapper</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.LookupSelection.html#altair.LookupSelection" title="altair.LookupSelection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LookupSelection</span></code></a></p></td>
 <td><p>LookupSelection schema wrapper</p></td>
@@ -2412,130 +2462,133 @@ full guidelines on their use.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TopLevelLayerSpec.html#altair.TopLevelLayerSpec" title="altair.TopLevelLayerSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelLayerSpec</span></code></a></p></td>
 <td><p>TopLevelLayerSpec schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TopLevelRepeatSpec.html#altair.TopLevelRepeatSpec" title="altair.TopLevelRepeatSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelRepeatSpec</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TopLevelParameter.html#altair.TopLevelParameter" title="altair.TopLevelParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelParameter</span></code></a></p></td>
+<td><p>TopLevelParameter schema wrapper</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TopLevelRepeatSpec.html#altair.TopLevelRepeatSpec" title="altair.TopLevelRepeatSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelRepeatSpec</span></code></a></p></td>
 <td><p>TopLevelRepeatSpec schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TopLevelSelectionParameter.html#altair.TopLevelSelectionParameter" title="altair.TopLevelSelectionParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelSelectionParameter</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TopLevelSelectionParameter.html#altair.TopLevelSelectionParameter" title="altair.TopLevelSelectionParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelSelectionParameter</span></code></a></p></td>
 <td><p>TopLevelSelectionParameter schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TopLevelSpec.html#altair.TopLevelSpec" title="altair.TopLevelSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelSpec</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TopLevelSpec.html#altair.TopLevelSpec" title="altair.TopLevelSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelSpec</span></code></a></p></td>
 <td><p>TopLevelSpec schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TopLevelUnitSpec.html#altair.TopLevelUnitSpec" title="altair.TopLevelUnitSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelUnitSpec</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TopLevelUnitSpec.html#altair.TopLevelUnitSpec" title="altair.TopLevelUnitSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelUnitSpec</span></code></a></p></td>
 <td><p>TopLevelUnitSpec schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TopLevelVConcatSpec.html#altair.TopLevelVConcatSpec" title="altair.TopLevelVConcatSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelVConcatSpec</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TopLevelVConcatSpec.html#altair.TopLevelVConcatSpec" title="altair.TopLevelVConcatSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopLevelVConcatSpec</span></code></a></p></td>
 <td><p>TopLevelVConcatSpec schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TopoDataFormat.html#altair.TopoDataFormat" title="altair.TopoDataFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopoDataFormat</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TopoDataFormat.html#altair.TopoDataFormat" title="altair.TopoDataFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TopoDataFormat</span></code></a></p></td>
 <td><p>TopoDataFormat schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Transform.html#altair.Transform" title="altair.Transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Transform</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Transform.html#altair.Transform" title="altair.Transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Transform</span></code></a></p></td>
 <td><p>Transform schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Type.html#altair.Type" title="altair.Type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Type.html#altair.Type" title="altair.Type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code></a></p></td>
 <td><p>A special construct usable to annotate class objects.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TypeForShape.html#altair.TypeForShape" title="altair.TypeForShape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeForShape</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TypeForShape.html#altair.TypeForShape" title="altair.TypeForShape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeForShape</span></code></a></p></td>
 <td><p>TypeForShape schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.TypedFieldDef.html#altair.TypedFieldDef" title="altair.TypedFieldDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedFieldDef</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.TypedFieldDef.html#altair.TypedFieldDef" title="altair.TypedFieldDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedFieldDef</span></code></a></p></td>
 <td><p>TypedFieldDef schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.URI.html#altair.URI" title="altair.URI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URI</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.URI.html#altair.URI" title="altair.URI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URI</span></code></a></p></td>
 <td><p>URI schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.UnitSpec.html#altair.UnitSpec" title="altair.UnitSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitSpec</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.UnitSpec.html#altair.UnitSpec" title="altair.UnitSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitSpec</span></code></a></p></td>
 <td><p>UnitSpec schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.UnitSpecWithFrame.html#altair.UnitSpecWithFrame" title="altair.UnitSpecWithFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitSpecWithFrame</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.UnitSpecWithFrame.html#altair.UnitSpecWithFrame" title="altair.UnitSpecWithFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitSpecWithFrame</span></code></a></p></td>
 <td><p>UnitSpecWithFrame schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.UrlData.html#altair.UrlData" title="altair.UrlData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UrlData</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.UrlData.html#altair.UrlData" title="altair.UrlData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UrlData</span></code></a></p></td>
 <td><p>UrlData schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.UtcMultiTimeUnit.html#altair.UtcMultiTimeUnit" title="altair.UtcMultiTimeUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UtcMultiTimeUnit</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.UtcMultiTimeUnit.html#altair.UtcMultiTimeUnit" title="altair.UtcMultiTimeUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UtcMultiTimeUnit</span></code></a></p></td>
 <td><p>UtcMultiTimeUnit schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.UtcSingleTimeUnit.html#altair.UtcSingleTimeUnit" title="altair.UtcSingleTimeUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UtcSingleTimeUnit</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.UtcSingleTimeUnit.html#altair.UtcSingleTimeUnit" title="altair.UtcSingleTimeUnit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UtcSingleTimeUnit</span></code></a></p></td>
 <td><p>UtcSingleTimeUnit schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.VConcatSpecGenericSpec.html#altair.VConcatSpecGenericSpec" title="altair.VConcatSpecGenericSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VConcatSpecGenericSpec</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.VConcatSpecGenericSpec.html#altair.VConcatSpecGenericSpec" title="altair.VConcatSpecGenericSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VConcatSpecGenericSpec</span></code></a></p></td>
 <td><p>VConcatSpecGenericSpec schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull</span></code></a></p></td>
 <td><p>ValueDefWithConditionMarkPropFieldOrDatumDefGradientstringnull schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull</span></code></a></p></td>
 <td><p>ValueDefWithConditionMarkPropFieldOrDatumDefTypeForShapestringnull schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumber.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumber" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefnumber</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumber.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumber" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefnumber</span></code></a></p></td>
 <td><p>ValueDefWithConditionMarkPropFieldOrDatumDefnumber schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray</span></code></a></p></td>
 <td><p>ValueDefWithConditionMarkPropFieldOrDatumDefnumberArray schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefstringnull.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefstringnull" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefstringnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefstringnull</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionMarkPropFieldOrDatumDefstringnull.html#altair.ValueDefWithConditionMarkPropFieldOrDatumDefstringnull" title="altair.ValueDefWithConditionMarkPropFieldOrDatumDefstringnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionMarkPropFieldOrDatumDefstringnull</span></code></a></p></td>
 <td><p>ValueDefWithConditionMarkPropFieldOrDatumDefstringnull schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionStringFieldDefText.html#altair.ValueDefWithConditionStringFieldDefText" title="altair.ValueDefWithConditionStringFieldDefText"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionStringFieldDefText</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefWithConditionStringFieldDefText.html#altair.ValueDefWithConditionStringFieldDefText" title="altair.ValueDefWithConditionStringFieldDefText"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefWithConditionStringFieldDefText</span></code></a></p></td>
 <td><p>ValueDefWithConditionStringFieldDefText schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefnumber.html#altair.ValueDefnumber" title="altair.ValueDefnumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefnumber</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefnumber.html#altair.ValueDefnumber" title="altair.ValueDefnumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefnumber</span></code></a></p></td>
 <td><p>ValueDefnumber schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ValueDefnumberwidthheightExprRef.html#altair.ValueDefnumberwidthheightExprRef" title="altair.ValueDefnumberwidthheightExprRef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefnumberwidthheightExprRef</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ValueDefnumberwidthheightExprRef.html#altair.ValueDefnumberwidthheightExprRef" title="altair.ValueDefnumberwidthheightExprRef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueDefnumberwidthheightExprRef</span></code></a></p></td>
 <td><p>ValueDefnumberwidthheightExprRef schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.VariableParameter.html#altair.VariableParameter" title="altair.VariableParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariableParameter</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.VariableParameter.html#altair.VariableParameter" title="altair.VariableParameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariableParameter</span></code></a></p></td>
 <td><p>VariableParameter schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector10string.html#altair.Vector10string" title="altair.Vector10string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector10string</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector10string.html#altair.Vector10string" title="altair.Vector10string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector10string</span></code></a></p></td>
 <td><p>Vector10string schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector12string.html#altair.Vector12string" title="altair.Vector12string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector12string</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector12string.html#altair.Vector12string" title="altair.Vector12string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector12string</span></code></a></p></td>
 <td><p>Vector12string schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector2DateTime.html#altair.Vector2DateTime" title="altair.Vector2DateTime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2DateTime</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector2DateTime.html#altair.Vector2DateTime" title="altair.Vector2DateTime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2DateTime</span></code></a></p></td>
 <td><p>Vector2DateTime schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector2Vector2number.html#altair.Vector2Vector2number" title="altair.Vector2Vector2number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2Vector2number</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector2Vector2number.html#altair.Vector2Vector2number" title="altair.Vector2Vector2number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2Vector2number</span></code></a></p></td>
 <td><p>Vector2Vector2number schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector2boolean.html#altair.Vector2boolean" title="altair.Vector2boolean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2boolean</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector2boolean.html#altair.Vector2boolean" title="altair.Vector2boolean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2boolean</span></code></a></p></td>
 <td><p>Vector2boolean schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector2number.html#altair.Vector2number" title="altair.Vector2number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2number</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector2number.html#altair.Vector2number" title="altair.Vector2number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2number</span></code></a></p></td>
 <td><p>Vector2number schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector2string.html#altair.Vector2string" title="altair.Vector2string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2string</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector2string.html#altair.Vector2string" title="altair.Vector2string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2string</span></code></a></p></td>
 <td><p>Vector2string schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector3number.html#altair.Vector3number" title="altair.Vector3number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector3number</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector3number.html#altair.Vector3number" title="altair.Vector3number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector3number</span></code></a></p></td>
 <td><p>Vector3number schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.Vector7string.html#altair.Vector7string" title="altair.Vector7string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector7string</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.Vector7string.html#altair.Vector7string" title="altair.Vector7string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector7string</span></code></a></p></td>
 <td><p>Vector7string schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.VegaLiteSchema.html#altair.VegaLiteSchema" title="altair.VegaLiteSchema"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VegaLiteSchema</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.VegaLiteSchema.html#altair.VegaLiteSchema" title="altair.VegaLiteSchema"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VegaLiteSchema</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ViewBackground.html#altair.ViewBackground" title="altair.ViewBackground"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ViewBackground</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ViewBackground.html#altair.ViewBackground" title="altair.ViewBackground"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ViewBackground</span></code></a></p></td>
 <td><p>ViewBackground schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.ViewConfig.html#altair.ViewConfig" title="altair.ViewConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ViewConfig</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.ViewConfig.html#altair.ViewConfig" title="altair.ViewConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ViewConfig</span></code></a></p></td>
 <td><p>ViewConfig schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.WindowEventType.html#altair.WindowEventType" title="altair.WindowEventType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowEventType</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.WindowEventType.html#altair.WindowEventType" title="altair.WindowEventType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowEventType</span></code></a></p></td>
 <td><p>WindowEventType schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.WindowFieldDef.html#altair.WindowFieldDef" title="altair.WindowFieldDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowFieldDef</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.WindowFieldDef.html#altair.WindowFieldDef" title="altair.WindowFieldDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowFieldDef</span></code></a></p></td>
 <td><p>WindowFieldDef schema wrapper</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.WindowOnlyOp.html#altair.WindowOnlyOp" title="altair.WindowOnlyOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowOnlyOp</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.WindowOnlyOp.html#altair.WindowOnlyOp" title="altair.WindowOnlyOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowOnlyOp</span></code></a></p></td>
 <td><p>WindowOnlyOp schema wrapper</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/core/altair.WindowTransform.html#altair.WindowTransform" title="altair.WindowTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowTransform</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/core/altair.WindowTransform.html#altair.WindowTransform" title="altair.WindowTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowTransform</span></code></a></p></td>
 <td><p>WindowTransform schema wrapper</p></td>
 </tr>
 </tbody>
@@ -2544,104 +2597,103 @@ full guidelines on their use.</p>
 </section>
 
 
-            </article>
-            
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="../case_studies/exploring-weather.html" title="previous page">
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../case_studies/exploring-weather.html"
+       title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Exploring Seattle Weather</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exploring Seattle Weather</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="generated/toplevel/altair.Chart.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">altair.Chart</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
+    </a>
+    <a class="right-next"
+       href="generated/toplevel/altair.Chart.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">altair.Chart</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-            </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+                </footer>
               
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#top-level-objects">
-   Top-Level Objects
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#encoding-channels">
-   Encoding Channels
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#api-functions">
-   API Functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#low-level-schema-wrappers">
-   Low-Level Schema Wrappers
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-<div class="toc-item">
-  
-<div id="searchbox"></div>
-</div>
-
-<div class="toc-item">
-  
-</div>
-
-<div class="toc-item">
-  
-</div>
-
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-objects">Top-Level Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-channels">Encoding Channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-functions">API Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-level-schema-wrappers">Low-Level Schema Wrappers</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
-        </footer>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
         
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-  <footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2016-2023, Vega-Altair Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
   
 </div>
+
   </footer>
   </body>
 </html>

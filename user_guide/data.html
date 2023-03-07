@@ -1,12 +1,15 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-theme="light">
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Specifying Data &#8212; Vega-Altair 5.0.0 documentation</title>
+    <title>Specifying Data &#8212; Vega-Altair 5.0.0dev documentation</title>
   
   
   
@@ -16,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/altair-plot.css" />
@@ -33,108 +36,117 @@
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/data';</script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Encodings" href="encodings/index.html" />
     <link rel="prev" title="Project Philosophy" href="../getting_started/project_philosophy.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
 
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div><div class="bd-header-announcement container-fluid" id="header-announcement">
-    
+</form></div>
+  </div>
 
 
-<div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
-
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code> <span class="pre">(more info <a href='https://github.com/altair-viz/altair/issues/2937'>#2937</a>)</span>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
   </div>
 
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
+    <span class="fa-solid fa-bars"></span>
   </label>
-  <div id="navbar-start">
-    
-    
   
-
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
 
 <a class="navbar-brand logo" href="../index.html">
-
   
   
   
   
-  
-  
-  
-
-  
-    <img src="../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image">
-    <img src="../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
     
-    <a class="navbar-brand" href="../index.html">
+    
+    
+    <img src="../_static/altair-logo-light.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/altair-logo-light.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+      <div class="navbar-item"><a class="navbar-brand" href="../index.html">
 <p class="title">Vega-Altair</p>
 </a>
-
+</div>
     
   </div>
-
+  
   
   <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../getting_started/overview.html">
                         Getting Started
@@ -165,7 +177,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -176,32 +188,39 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
+  </ul>
+</nav></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-        <div class="navbar-end-item navbar-persistent--container">
+        <div class="navbar-item navbar-persistent--container">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
         </div>
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
+  </button>
+`);
+</script></div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -210,7 +229,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -221,53 +241,58 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
+    
   </div>
-
-
   
   
     <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
     </div>
   
 
   
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
       <span class="fa-solid fa-outdent"></span>
-  </label>
+    </label>
   
-
 </div>
-  </nav>
-  
 
+    </nav>
+  
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       <div class="bd-sidebar-primary bd-sidebar">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
       <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
         
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../getting_started/overview.html">
                         Getting Started
@@ -298,7 +323,7 @@
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="ecosystem.html">
-                        Ecosystem
+                        Resources
                       </a>
                     </li>
                 
@@ -309,27 +334,28 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
+  </ul>
+</nav></div>
+        
       </div>
-      
-      </div>
-    
-
     
     
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -338,7 +364,8 @@
           
           
           
-          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github fa-lg"></i></span>
+          
+          <a href="https://github.com/altair-viz/altair" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github fa-lg"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -349,24 +376,21 @@
           
           
           
-          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
+          
+          <a href="https://stackoverflow.com/tags/altair" title="StackOverflow" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-stack-overflow fa-xl"></i></span>
             <label class="sr-only">StackOverflow</label></a>
         </li>
-      </ul>
+</ul></div>
+        
       </div>
-      
-    </div>
     
   </div>
-
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
-    <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Specifying Data</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="encodings/index.html">Encodings</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -445,34 +469,59 @@
 <li class="toctree-l1"><a class="reference internal" href="data_transformers.html">Data Transformers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="large_datasets.html">Large Datasets</a></li>
 </ul>
-
-  </div>
-</nav>
+</div>
+</nav></div>
     </div>
-  </div>
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-            </div>
-            
-            
-            <article class="bd-article" role="main">
+          <div class="bd-content">
+            <div class="bd-article-container">
               
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Specifying Data</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="specifying-data">
 <span id="user-guide-data"></span><h1>Specifying Data<a class="headerlink" href="#specifying-data" title="Permalink to this heading">#</a></h1>
 <p>The basic data model used by Altair is tabular data,
@@ -490,7 +539,7 @@ there are many different ways of specifying a dataset:</p>
 <li><p>as a url string pointing to a <code class="docutils literal notranslate"><span class="pre">json</span></code> or <code class="docutils literal notranslate"><span class="pre">csv</span></code> formatted text file</p></li>
 <li><p>as a <a class="reference external" href="http://geopandas.org/data_structures.html#geodataframe">geopandas GeoDataFrame</a>, <a class="reference external" href="https://shapely.readthedocs.io/en/latest/manual.html#geometric-objects">Shapely Geometries</a>, <a class="reference external" href="https://github.com/jazzband/geojson#geojson-objects">GeoJSON Objects</a> or other objects that support the <code class="docutils literal notranslate"><span class="pre">__geo_interface__</span></code></p></li>
 <li><p>as a generated dataset such as numerical sequences or geographic reference elements</p></li>
-<li><p>as a DataFrame that supports the DataFrame Interchange Protocol (contains a <cite>__dataframe__</cite> attribute). This is experimental.</p></li>
+<li><p>as a DataFrame that supports the DataFrame Interchange Protocol (contains a <code class="docutils literal notranslate"><span class="pre">__dataframe__</span></code> attribute). This is experimental.</p></li>
 </ul>
 <p>When data is specified as a DataFrame, the encoding is quite simple, as Altair
 uses the data type information provided by pandas to automatically determine
@@ -514,7 +563,7 @@ and that the y-column should be visualized on a categorical scale:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-865b0f7f64bff0a4a97037244e6476d1"}, "mark": {"type": "bar"}, "encoding": {"x": {"field": "x", "type": "nominal"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-865b0f7f64bff0a4a97037244e6476d1": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-865b0f7f64bff0a4a97037244e6476d1"}, "mark": {"type": "bar"}, "encoding": {"x": {"field": "x", "type": "nominal"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-865b0f7f64bff0a4a97037244e6476d1": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -544,7 +593,7 @@ with the data specified as a JSON-style list of records:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": {"type": "bar"}, "encoding": {"x": {"field": "x", "type": "ordinal"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": [{"x": "A", "y": 5}, {"x": "B", "y": 3}, {"x": "C", "y": 6}, {"x": "D", "y": 7}, {"x": "E", "y": 2}]}, "mark": {"type": "bar"}, "encoding": {"x": {"field": "x", "type": "ordinal"}, "y": {"field": "y", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -574,7 +623,7 @@ and <em>quantitative</em> (<code class="docutils literal notranslate"><span clas
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/cars.json"}, "mark": {"type": "point"}, "encoding": {"x": {"field": "Horsepower", "type": "quantitative"}, "y": {"field": "Miles_per_Gallon", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -620,7 +669,7 @@ turn it into a column using the <code class="docutils literal notranslate"><span
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-dd19c1c673ba91c82c2873cf9b033163"}, "mark": {"type": "line"}, "encoding": {"x": {"field": "index", "type": "temporal"}, "y": {"field": "value", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-dd19c1c673ba91c82c2873cf9b033163": [{"index": "2018-01-01T00:00:00", "value": 1.764052345967664}, {"index": "2018-01-02T00:00:00", "value": 2.1642095543348874}, {"index": "2018-01-03T00:00:00", "value": 3.1429475384406267}, {"index": "2018-01-04T00:00:00", "value": 5.3838407376420845}, {"index": "2018-01-05T00:00:00", "value": 7.251398727792052}, {"index": "2018-01-06T00:00:00", "value": 6.274120847915642}, {"index": "2018-01-07T00:00:00", "value": 7.224209265441231}, {"index": "2018-01-08T00:00:00", "value": 7.072852057143533}, {"index": "2018-01-09T00:00:00", "value": 6.969633205349975}, {"index": "2018-01-10T00:00:00", "value": 7.380231707288347}, {"index": "2018-01-11T00:00:00", "value": 7.524275278449225}, {"index": "2018-01-12T00:00:00", "value": 8.9785487854122}, {"index": "2018-01-13T00:00:00", "value": 9.739586510559192}, {"index": "2018-01-14T00:00:00", "value": 9.86126152705202}, {"index": "2018-01-15T00:00:00", "value": 10.305124759797446}, {"index": "2018-01-16T00:00:00", "value": 10.638799087171712}, {"index": "2018-01-17T00:00:00", "value": 12.132878160329318}, {"index": "2018-01-18T00:00:00", "value": 11.927719896563516}, {"index": "2018-01-19T00:00:00", "value": 12.240787598214418}, {"index": "2018-01-20T00:00:00", "value": 11.386691858912693}, {"index": "2018-01-21T00:00:00", "value": 8.833702043078613}, {"index": "2018-01-22T00:00:00", "value": 9.487320638518973}, {"index": "2018-01-23T00:00:00", "value": 10.35175683737848}, {"index": "2018-01-24T00:00:00", "value": 9.609591816972037}, {"index": "2018-01-25T00:00:00", "value": 11.879346440959644}, {"index": "2018-01-26T00:00:00", "value": 10.424980766360878}, {"index": "2018-01-27T00:00:00", "value": 10.470739283662324}, {"index": "2018-01-28T00:00:00", "value": 10.28355543363649}, {"index": "2018-01-29T00:00:00", "value": 11.816334647994948}, {"index": "2018-01-30T00:00:00", "value": 13.285693417895233}, {"index": "2018-01-31T00:00:00", "value": 13.44064084359215}, {"index": "2018-02-01T00:00:00", "value": 13.818803363194323}, {"index": "2018-02-02T00:00:00", "value": 12.93101761556421}, {"index": "2018-02-03T00:00:00", "value": 10.950221147340283}, {"index": "2018-02-04T00:00:00", "value": 10.60230899801413}, {"index": "2018-02-05T00:00:00", "value": 10.758657967118111}, {"index": "2018-02-06T00:00:00", "value": 11.988948647845833}, {"index": "2018-02-07T00:00:00", "value": 13.191328496630245}, {"index": "2018-02-08T00:00:00", "value": 12.804001679222292}, {"index": "2018-02-09T00:00:00", "value": 12.501698928646956}, {"index": "2018-02-10T00:00:00", "value": 11.453145963579864}, {"index": "2018-02-11T00:00:00", "value": 10.033128026400888}, {"index": "2018-02-12T00:00:00", "value": 8.326857835775876}, {"index": "2018-02-13T00:00:00", "value": 10.277633231007666}, {"index": "2018-02-14T00:00:00", "value": 9.767981049256013}, {"index": "2018-02-15T00:00:00", "value": 9.329906747644827}, {"index": "2018-02-16T00:00:00", "value": 8.0771113875949}, {"index": "2018-02-17T00:00:00", "value": 8.85460174342681}, {"index": "2018-02-18T00:00:00", "value": 7.240703895868859}, {"index": "2018-02-19T00:00:00", "value": 7.02796361565489}, {"index": "2018-02-20T00:00:00", "value": 6.132497054461215}, {"index": "2018-02-21T00:00:00", "value": 6.519399552320477}, {"index": "2018-02-22T00:00:00", "value": 6.008594414751604}, {"index": "2018-02-23T00:00:00", "value": 4.827962230629192}, {"index": "2018-02-24T00:00:00", "value": 4.799780002290537}, {"index": "2018-02-25T00:00:00", "value": 5.228111872820954}, {"index": "2018-02-26T00:00:00", "value": 5.294629095204122}, {"index": "2018-02-27T00:00:00", "value": 5.597100992943904}, {"index": "2018-02-28T00:00:00", "value": 4.962778899262941}, {"index": "2018-03-01T00:00:00", "value": 4.600037733275802}, {"index": "2018-03-02T00:00:00", "value": 3.927577285499851}, {"index": "2018-03-03T00:00:00", "value": 3.56802412395931}, {"index": "2018-03-04T00:00:00", "value": 2.7548778419148556}, {"index": "2018-03-05T00:00:00", "value": 1.0285952395831788}, {"index": "2018-03-06T00:00:00", "value": 1.2060213818369316}, {"index": "2018-03-07T00:00:00", "value": 0.8042404456286698}, {"index": "2018-03-08T00:00:00", "value": -0.8259579013373748}, {"index": "2018-03-09T00:00:00", "value": -0.3631756458116006}, {"index": "2018-03-10T00:00:00", "value": -1.2704740101948429}, {"index": "2018-03-11T00:00:00", "value": -1.218528614398704}, {"index": "2018-03-12T00:00:00", "value": -0.4894380522211671}, {"index": "2018-03-13T00:00:00", "value": -0.36045514146375646}, {"index": "2018-03-14T00:00:00", "value": 0.7789455430795442}, {"index": "2018-03-15T00:00:00", "value": -0.4558802772741084}, {"index": "2018-03-16T00:00:00", "value": -0.0535386360965594}, {"index": "2018-03-17T00:00:00", "value": -0.7383487270368726}, {"index": "2018-03-18T00:00:00", "value": -1.6091458762187543}, {"index": "2018-03-19T00:00:00", "value": -2.1879955409831697}, {"index": "2018-03-20T00:00:00", "value": -2.4995480731105424}, {"index": "2018-03-21T00:00:00", "value": -2.443382730880797}, {"index": "2018-03-22T00:00:00", "value": -3.6085325716641536}, {"index": "2018-03-23T00:00:00", "value": -2.7077060847099665}, {"index": "2018-03-24T00:00:00", "value": -2.242043644979507}, {"index": "2018-03-25T00:00:00", "value": -3.7782873312567307}, {"index": "2018-03-26T00:00:00", "value": -2.290035137461131}, {"index": "2018-03-27T00:00:00", "value": -0.3941459614305478}, {"index": "2018-03-28T00:00:00", "value": 0.7846336097291029}, {"index": "2018-03-29T00:00:00", "value": 0.604708773916752}, {"index": "2018-03-30T00:00:00", "value": -0.4660438475937905}, {"index": "2018-03-31T00:00:00", "value": 0.5884078793373462}, {"index": "2018-04-01T00:00:00", "value": 0.18523093236416655}, {"index": "2018-04-02T00:00:00", "value": 1.407676002746594}, {"index": "2018-04-03T00:00:00", "value": 1.6159509808234542}, {"index": "2018-04-04T00:00:00", "value": 2.5925900173071668}, {"index": "2018-04-05T00:00:00", "value": 2.9489564144815685}, {"index": "2018-04-06T00:00:00", "value": 3.6555295826735166}, {"index": "2018-04-07T00:00:00", "value": 3.666029603394337}, {"index": "2018-04-08T00:00:00", "value": 5.4519000973001726}, {"index": "2018-04-09T00:00:00", "value": 5.578812190003792}, {"index": "2018-04-10T00:00:00", "value": 5.980801553448494}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-dd19c1c673ba91c82c2873cf9b033163"}, "mark": {"type": "line"}, "encoding": {"x": {"field": "index", "type": "temporal"}, "y": {"field": "value", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-dd19c1c673ba91c82c2873cf9b033163": [{"index": "2018-01-01T00:00:00", "value": 1.764052345967664}, {"index": "2018-01-02T00:00:00", "value": 2.1642095543348874}, {"index": "2018-01-03T00:00:00", "value": 3.1429475384406267}, {"index": "2018-01-04T00:00:00", "value": 5.3838407376420845}, {"index": "2018-01-05T00:00:00", "value": 7.251398727792052}, {"index": "2018-01-06T00:00:00", "value": 6.274120847915642}, {"index": "2018-01-07T00:00:00", "value": 7.224209265441231}, {"index": "2018-01-08T00:00:00", "value": 7.072852057143533}, {"index": "2018-01-09T00:00:00", "value": 6.969633205349975}, {"index": "2018-01-10T00:00:00", "value": 7.380231707288347}, {"index": "2018-01-11T00:00:00", "value": 7.524275278449225}, {"index": "2018-01-12T00:00:00", "value": 8.9785487854122}, {"index": "2018-01-13T00:00:00", "value": 9.739586510559192}, {"index": "2018-01-14T00:00:00", "value": 9.86126152705202}, {"index": "2018-01-15T00:00:00", "value": 10.305124759797446}, {"index": "2018-01-16T00:00:00", "value": 10.638799087171712}, {"index": "2018-01-17T00:00:00", "value": 12.132878160329318}, {"index": "2018-01-18T00:00:00", "value": 11.927719896563516}, {"index": "2018-01-19T00:00:00", "value": 12.240787598214418}, {"index": "2018-01-20T00:00:00", "value": 11.386691858912693}, {"index": "2018-01-21T00:00:00", "value": 8.833702043078613}, {"index": "2018-01-22T00:00:00", "value": 9.487320638518973}, {"index": "2018-01-23T00:00:00", "value": 10.35175683737848}, {"index": "2018-01-24T00:00:00", "value": 9.609591816972037}, {"index": "2018-01-25T00:00:00", "value": 11.879346440959644}, {"index": "2018-01-26T00:00:00", "value": 10.424980766360878}, {"index": "2018-01-27T00:00:00", "value": 10.470739283662324}, {"index": "2018-01-28T00:00:00", "value": 10.28355543363649}, {"index": "2018-01-29T00:00:00", "value": 11.816334647994948}, {"index": "2018-01-30T00:00:00", "value": 13.285693417895233}, {"index": "2018-01-31T00:00:00", "value": 13.44064084359215}, {"index": "2018-02-01T00:00:00", "value": 13.818803363194323}, {"index": "2018-02-02T00:00:00", "value": 12.93101761556421}, {"index": "2018-02-03T00:00:00", "value": 10.950221147340283}, {"index": "2018-02-04T00:00:00", "value": 10.60230899801413}, {"index": "2018-02-05T00:00:00", "value": 10.758657967118111}, {"index": "2018-02-06T00:00:00", "value": 11.988948647845833}, {"index": "2018-02-07T00:00:00", "value": 13.191328496630245}, {"index": "2018-02-08T00:00:00", "value": 12.804001679222292}, {"index": "2018-02-09T00:00:00", "value": 12.501698928646956}, {"index": "2018-02-10T00:00:00", "value": 11.453145963579864}, {"index": "2018-02-11T00:00:00", "value": 10.033128026400888}, {"index": "2018-02-12T00:00:00", "value": 8.326857835775876}, {"index": "2018-02-13T00:00:00", "value": 10.277633231007666}, {"index": "2018-02-14T00:00:00", "value": 9.767981049256013}, {"index": "2018-02-15T00:00:00", "value": 9.329906747644827}, {"index": "2018-02-16T00:00:00", "value": 8.0771113875949}, {"index": "2018-02-17T00:00:00", "value": 8.85460174342681}, {"index": "2018-02-18T00:00:00", "value": 7.240703895868859}, {"index": "2018-02-19T00:00:00", "value": 7.02796361565489}, {"index": "2018-02-20T00:00:00", "value": 6.132497054461215}, {"index": "2018-02-21T00:00:00", "value": 6.519399552320477}, {"index": "2018-02-22T00:00:00", "value": 6.008594414751604}, {"index": "2018-02-23T00:00:00", "value": 4.827962230629192}, {"index": "2018-02-24T00:00:00", "value": 4.799780002290537}, {"index": "2018-02-25T00:00:00", "value": 5.228111872820954}, {"index": "2018-02-26T00:00:00", "value": 5.294629095204122}, {"index": "2018-02-27T00:00:00", "value": 5.597100992943904}, {"index": "2018-02-28T00:00:00", "value": 4.962778899262941}, {"index": "2018-03-01T00:00:00", "value": 4.600037733275802}, {"index": "2018-03-02T00:00:00", "value": 3.927577285499851}, {"index": "2018-03-03T00:00:00", "value": 3.56802412395931}, {"index": "2018-03-04T00:00:00", "value": 2.7548778419148556}, {"index": "2018-03-05T00:00:00", "value": 1.0285952395831788}, {"index": "2018-03-06T00:00:00", "value": 1.2060213818369316}, {"index": "2018-03-07T00:00:00", "value": 0.8042404456286698}, {"index": "2018-03-08T00:00:00", "value": -0.8259579013373748}, {"index": "2018-03-09T00:00:00", "value": -0.3631756458116006}, {"index": "2018-03-10T00:00:00", "value": -1.2704740101948429}, {"index": "2018-03-11T00:00:00", "value": -1.218528614398704}, {"index": "2018-03-12T00:00:00", "value": -0.4894380522211671}, {"index": "2018-03-13T00:00:00", "value": -0.36045514146375646}, {"index": "2018-03-14T00:00:00", "value": 0.7789455430795442}, {"index": "2018-03-15T00:00:00", "value": -0.4558802772741084}, {"index": "2018-03-16T00:00:00", "value": -0.0535386360965594}, {"index": "2018-03-17T00:00:00", "value": -0.7383487270368726}, {"index": "2018-03-18T00:00:00", "value": -1.6091458762187543}, {"index": "2018-03-19T00:00:00", "value": -2.1879955409831697}, {"index": "2018-03-20T00:00:00", "value": -2.4995480731105424}, {"index": "2018-03-21T00:00:00", "value": -2.443382730880797}, {"index": "2018-03-22T00:00:00", "value": -3.6085325716641536}, {"index": "2018-03-23T00:00:00", "value": -2.7077060847099665}, {"index": "2018-03-24T00:00:00", "value": -2.242043644979507}, {"index": "2018-03-25T00:00:00", "value": -3.7782873312567307}, {"index": "2018-03-26T00:00:00", "value": -2.290035137461131}, {"index": "2018-03-27T00:00:00", "value": -0.3941459614305478}, {"index": "2018-03-28T00:00:00", "value": 0.7846336097291029}, {"index": "2018-03-29T00:00:00", "value": 0.604708773916752}, {"index": "2018-03-30T00:00:00", "value": -0.4660438475937905}, {"index": "2018-03-31T00:00:00", "value": 0.5884078793373462}, {"index": "2018-04-01T00:00:00", "value": 0.18523093236416655}, {"index": "2018-04-02T00:00:00", "value": 1.407676002746594}, {"index": "2018-04-03T00:00:00", "value": 1.6159509808234542}, {"index": "2018-04-04T00:00:00", "value": 2.5925900173071668}, {"index": "2018-04-05T00:00:00", "value": 2.9489564144815685}, {"index": "2018-04-06T00:00:00", "value": 3.6555295826735166}, {"index": "2018-04-07T00:00:00", "value": 3.666029603394337}, {"index": "2018-04-08T00:00:00", "value": 5.4519000973001726}, {"index": "2018-04-09T00:00:00", "value": 5.578812190003792}, {"index": "2018-04-10T00:00:00", "value": 5.980801553448494}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -710,7 +759,7 @@ labels of rows and columns:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-838ec4417e9a8df251f2031a5a48660b"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "company", "type": "nominal"}, "x": {"field": "Date", "type": "temporal"}, "y": {"field": "price", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-838ec4417e9a8df251f2031a5a48660b": [{"Date": "2007-10-01", "company": "AAPL", "price": 189.95}, {"Date": "2007-11-01", "company": "AAPL", "price": 182.22}, {"Date": "2007-12-01", "company": "AAPL", "price": 198.08}, {"Date": "2007-10-01", "company": "AMZN", "price": 89.15}, {"Date": "2007-11-01", "company": "AMZN", "price": 90.56}, {"Date": "2007-12-01", "company": "AMZN", "price": 92.64}, {"Date": "2007-10-01", "company": "GOOG", "price": 707.0}, {"Date": "2007-11-01", "company": "GOOG", "price": 693.0}, {"Date": "2007-12-01", "company": "GOOG", "price": 691.48}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-838ec4417e9a8df251f2031a5a48660b"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "company", "type": "nominal"}, "x": {"field": "Date", "type": "temporal"}, "y": {"field": "price", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-838ec4417e9a8df251f2031a5a48660b": [{"Date": "2007-10-01", "company": "AAPL", "price": 189.95}, {"Date": "2007-11-01", "company": "AAPL", "price": 182.22}, {"Date": "2007-12-01", "company": "AAPL", "price": 198.08}, {"Date": "2007-10-01", "company": "AMZN", "price": 89.15}, {"Date": "2007-11-01", "company": "AMZN", "price": 90.56}, {"Date": "2007-12-01", "company": "AMZN", "price": 92.64}, {"Date": "2007-10-01", "company": "GOOG", "price": 707.0}, {"Date": "2007-11-01", "company": "GOOG", "price": 693.0}, {"Date": "2007-12-01", "company": "GOOG", "price": 691.48}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -784,7 +833,7 @@ With it, the above chart can be reproduced as follows:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-0262b56fd1a535ea9c867d2322ea5232"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "company", "type": "nominal"}, "x": {"field": "Date", "type": "temporal"}, "y": {"field": "price", "type": "quantitative"}}, "transform": [{"fold": ["AAPL", "AMZN", "GOOG"], "as": ["company", "price"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-0262b56fd1a535ea9c867d2322ea5232": [{"Date": "2007-10-01", "AAPL": 189.95, "AMZN": 89.15, "GOOG": 707.0}, {"Date": "2007-11-01", "AAPL": 182.22, "AMZN": 90.56, "GOOG": 693.0}, {"Date": "2007-12-01", "AAPL": 198.08, "AMZN": 92.64, "GOOG": 691.48}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-0262b56fd1a535ea9c867d2322ea5232"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "company", "type": "nominal"}, "x": {"field": "Date", "type": "temporal"}, "y": {"field": "price", "type": "quantitative"}}, "transform": [{"fold": ["AAPL", "AMZN", "GOOG"], "as": ["company", "price"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-0262b56fd1a535ea9c867d2322ea5232": [{"Date": "2007-10-01", "AAPL": 189.95, "AMZN": 89.15, "GOOG": 707.0}, {"Date": "2007-11-01", "AAPL": 182.22, "AMZN": 90.56, "GOOG": 693.0}, {"Date": "2007-12-01", "AAPL": 198.08, "AMZN": 92.64, "GOOG": 691.48}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -827,7 +876,7 @@ data, along with a <a class="reference internal" href="transform/calculate.html#
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"sequence": {"start": 0, "stop": 10, "step": 0.1, "as": "x"}}, "mark": {"type": "line"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}, "transform": [{"calculate": "sin(datum.x)", "as": "y"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"sequence": {"start": 0, "stop": 10, "step": 0.1, "as": "x"}}, "mark": {"type": "line"}, "encoding": {"x": {"field": "x", "type": "quantitative"}, "y": {"field": "y", "type": "quantitative"}}, "transform": [{"calculate": "sin(datum.x)", "as": "y"}], "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -858,7 +907,7 @@ lines on a geographic visualization, known as a graticule. These can be created 
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"graticule": {"step": [15, 15]}}, "mark": {"type": "geoshape", "stroke": "black"}, "projection": {"rotate": [0, -45, 0], "type": "orthographic"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"graticule": {"step": [15, 15]}}, "mark": {"type": "geoshape", "stroke": "black"}, "projection": {"rotate": [0, -45, 0], "type": "orthographic"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -890,7 +939,7 @@ created using Altair’s <a class="reference internal" href="generated/api/altai
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "aliceblue"}}, {"data": {"graticule": {"step": [15, 15]}}, "mark": {"type": "geoshape", "stroke": "lightgrey"}}], "projection": {"type": "naturalEarth1"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "aliceblue"}}, {"data": {"graticule": {"step": [15, 15]}}, "mark": {"type": "geoshape", "stroke": "lightgrey"}}], "projection": {"type": "naturalEarth1"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -950,7 +999,7 @@ and instead directly use the provided Hex color codes.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-bebd53fa230a524ab1c88b2c1fd7da69"}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "color", "scale": null, "type": "nominal"}}, "projection": {"reflectY": true, "type": "identity"}, "title": "Vega-Altair", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-bebd53fa230a524ab1c88b2c1fd7da69": [{"color": "#F3C14F", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 3.75], [1.45, 0.0], [0.0, 0.0], [1.45, 3.75]]]}}, {"color": "#4098D7", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 0.0], [1.45, 3.75], [2.57, 3.75], [2.57, 0.0], [2.33, 0.0], [1.45, 0.0]]]}}, {"color": "#66B4E2", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[2.33, 0.0], [2.33, 2.5], [3.47, 2.5], [3.47, 0.0], [3.2, 0.0], [2.57, 0.0], [2.33, 0.0]]]}}, {"color": "#A9CDE0", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[3.2, 0.0], [3.2, 1.25], [4.32, 1.25], [4.32, 0.0], [3.47, 0.0], [3.2, 0.0]]]}}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-bebd53fa230a524ab1c88b2c1fd7da69"}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "color", "scale": null, "type": "nominal"}}, "projection": {"reflectY": true, "type": "identity"}, "title": "Vega-Altair", "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-bebd53fa230a524ab1c88b2c1fd7da69": [{"color": "#F3C14F", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 3.75], [1.45, 0.0], [0.0, 0.0], [1.45, 3.75]]]}}, {"color": "#4098D7", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 0.0], [1.45, 3.75], [2.57, 3.75], [2.57, 0.0], [2.33, 0.0], [1.45, 0.0]]]}}, {"color": "#66B4E2", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[2.33, 0.0], [2.33, 2.5], [3.47, 2.5], [3.47, 0.0], [3.2, 0.0], [2.57, 0.0], [2.33, 0.0]]]}}, {"color": "#A9CDE0", "type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[3.2, 0.0], [3.2, 1.25], [4.32, 1.25], [4.32, 0.0], [3.47, 0.0], [3.2, 0.0]]]}}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1009,7 +1058,7 @@ for the ordinal structured data.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"location": "left"}, "geometry": {"type": "Polygon", "coordinates": [[[1.45, 3.75], [1.45, 0], [0, 0], [1.45, 3.75]]]}}, {"type": "Feature", "properties": {"location": "middle-left"}, "geometry": {"type": "Polygon", "coordinates": [[[1.45, 0], [1.45, 3.75], [2.57, 3.75], [2.57, 0], [2.33, 0], [1.45, 0]]]}}, {"type": "Feature", "properties": {"location": "middle-right"}, "geometry": {"type": "Polygon", "coordinates": [[[2.33, 0], [2.33, 2.5], [3.47, 2.5], [3.47, 0], [3.2, 0], [2.57, 0], [2.33, 0]]]}}, {"type": "Feature", "properties": {"location": "right"}, "geometry": {"type": "Polygon", "coordinates": [[[3.2, 0], [3.2, 1.25], [4.32, 1.25], [4.32, 0], [3.47, 0], [3.2, 0]]]}}]}, "format": {"property": "features"}}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "properties.location", "scale": {"scheme": "magma"}, "type": "ordinal"}}, "projection": {"reflectY": true, "type": "identity"}, "title": "Vega-Altair - ordinal scale", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"location": "left"}, "geometry": {"type": "Polygon", "coordinates": [[[1.45, 3.75], [1.45, 0], [0, 0], [1.45, 3.75]]]}}, {"type": "Feature", "properties": {"location": "middle-left"}, "geometry": {"type": "Polygon", "coordinates": [[[1.45, 0], [1.45, 3.75], [2.57, 3.75], [2.57, 0], [2.33, 0], [1.45, 0]]]}}, {"type": "Feature", "properties": {"location": "middle-right"}, "geometry": {"type": "Polygon", "coordinates": [[[2.33, 0], [2.33, 2.5], [3.47, 2.5], [3.47, 0], [3.2, 0], [2.57, 0], [2.33, 0]]]}}, {"type": "Feature", "properties": {"location": "right"}, "geometry": {"type": "Polygon", "coordinates": [[[3.2, 0], [3.2, 1.25], [4.32, 1.25], [4.32, 0], [3.47, 0], [3.2, 0]]]}}]}, "format": {"property": "features"}}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "properties.location", "scale": {"scheme": "magma"}, "type": "ordinal"}}, "projection": {"reflectY": true, "type": "identity"}, "title": "Vega-Altair - ordinal scale", "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1050,7 +1099,7 @@ information of each geometry is stored (<code class="docutils literal notranslat
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_0_countries.geojson", "format": {"property": "features"}}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "properties.continent", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_0_countries.geojson", "format": {"property": "features"}}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "properties.continent", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1116,7 +1165,7 @@ but this differs in each dataset.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": {"arcs": [[[1.0, 1.0], [0.0, 1.0], [0.0, 0.0], [1.0, 0.0]], [[1.0, 0.0], [2.0, 0.0], [2.0, 1.0], [1.0, 1.0]], [[1.0, 1.0], [1.0, 0.0]]], "objects": {"MY_DATA": {"geometries": [{"arcs": [[-3, 0]], "properties": {"name": "abc"}, "type": "Polygon"}, {"arcs": [[1, 2]], "properties": {"name": "def"}, "type": "Polygon"}], "type": "GeometryCollection"}}, "type": "Topology"}, "format": {"feature": "MY_DATA", "type": "topojson"}}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "properties.name", "type": "nominal"}}, "projection": {"reflectY": true, "type": "identity"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": {"arcs": [[[1.0, 1.0], [0.0, 1.0], [0.0, 0.0], [1.0, 0.0]], [[1.0, 0.0], [2.0, 0.0], [2.0, 1.0], [1.0, 1.0]], [[1.0, 1.0], [1.0, 0.0]]], "objects": {"MY_DATA": {"geometries": [{"arcs": [[-3, 0]], "properties": {"name": "abc"}, "type": "Polygon"}, {"arcs": [[1, 2]], "properties": {"name": "def"}, "type": "Polygon"}], "type": "GeometryCollection"}}, "type": "Topology"}, "format": {"feature": "MY_DATA", "type": "topojson"}}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "properties.name", "type": "nominal"}}, "projection": {"reflectY": true, "type": "identity"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1174,7 +1223,7 @@ as we hover over it with the mouse.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/londonBoroughs.json", "format": {"feature": "boroughs", "type": "topojson"}}, "mark": {"type": "geoshape", "tooltip": true}, "encoding": {"color": {"field": "id", "legend": {"columns": 2, "symbolLimit": 33}, "scale": {"scheme": "tableau20"}, "type": "nominal"}}, "title": "London-Boroughs", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/londonBoroughs.json", "format": {"feature": "boroughs", "type": "topojson"}}, "mark": {"type": "geoshape", "tooltip": true}, "encoding": {"color": {"field": "id", "legend": {"columns": 2, "symbolLimit": 33}, "scale": {"scheme": "tableau20"}, "type": "nominal"}}, "title": "London-Boroughs", "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1212,7 +1261,7 @@ without fill color.</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/londonBoroughs.json", "format": {"mesh": "boroughs", "type": "topojson"}}, "mark": {"type": "geoshape", "filled": false}, "title": "Border London-Boroughs", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/londonBoroughs.json", "format": {"mesh": "boroughs", "type": "topojson"}}, "mark": {"type": "geoshape", "filled": false}, "title": "Border London-Boroughs", "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1249,7 +1298,7 @@ in the list of dictionaries:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": [{"color": "#F3C14F", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 3.75], [1.45, 0], [0, 0], [1.45, 3.75]]]}}}, {"color": "#4098D7", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 0], [1.45, 3.75], [2.57, 3.75], [2.57, 0], [2.33, 0], [1.45, 0]]]}}}, {"color": "#66B4E2", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[2.33, 0], [2.33, 2.5], [3.47, 2.5], [3.47, 0], [3.2, 0], [2.57, 0], [2.33, 0]]]}}}, {"color": "#A9CDE0", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[3.2, 0], [3.2, 1.25], [4.32, 1.25], [4.32, 0], [3.47, 0], [3.2, 0]]]}}}]}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "color", "scale": null, "type": "nominal"}, "shape": {"field": "geo", "type": "geojson"}}, "projection": {"reflectY": true, "type": "identity"}, "title": "Vega-Altair", "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json"};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"values": [{"color": "#F3C14F", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 3.75], [1.45, 0], [0, 0], [1.45, 3.75]]]}}}, {"color": "#4098D7", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[1.45, 0], [1.45, 3.75], [2.57, 3.75], [2.57, 0], [2.33, 0], [1.45, 0]]]}}}, {"color": "#66B4E2", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[2.33, 0], [2.33, 2.5], [3.47, 2.5], [3.47, 0], [3.2, 0], [2.57, 0], [2.33, 0]]]}}}, {"color": "#A9CDE0", "geo": {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[3.2, 0], [3.2, 1.25], [4.32, 1.25], [4.32, 0], [3.47, 0], [3.2, 0]]]}}}]}, "mark": {"type": "geoshape"}, "encoding": {"color": {"field": "color", "scale": null, "type": "nominal"}, "shape": {"field": "geo", "type": "geojson"}}, "projection": {"reflectY": true, "type": "identity"}, "title": "Vega-Altair", "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json"};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -1295,184 +1344,127 @@ data before usage in Altair using GeoPandas for example as such:</p>
 </section>
 
 
-            </article>
-            
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="../getting_started/project_philosophy.html" title="previous page">
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../getting_started/project_philosophy.html"
+       title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Project Philosophy</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project Philosophy</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="encodings/index.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Encodings</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
+    </a>
+    <a class="right-next"
+       href="encodings/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Encodings</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-            </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+                </footer>
               
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Pandas DataFrame
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#including-index-data">
-     Including Index Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#long-form-vs-wide-form-data">
-     Long-form vs. Wide-form Data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#converting-with-pandas">
-       Converting with Pandas
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#converting-with-fold-transform">
-       Converting with Fold Transform
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generated-data">
-   Generated Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sequence-generator">
-     Sequence Generator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graticule-generator">
-     Graticule Generator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sphere-generator">
-     Sphere Generator
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#spatial-data">
-   Spatial Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spatial-data-gdf">
-     GeoPandas GeoDataFrame
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-geojson-object">
-     Inline GeoJSON Object
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#geojson-file-by-url">
-     GeoJSON File by URL
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-topojson-object">
-     Inline TopoJSON Object
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#topojson-file-by-url">
-     TopoJSON File by URL
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nested-geojson-objects">
-     Nested GeoJSON Objects
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#projections">
-     Projections
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#winding-order">
-     Winding Order
-    </a>
-    <ul class="nav section-nav flex-column">
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-</nav>
-</div>
-
-<div class="toc-item">
-  
-<div id="searchbox"></div>
-</div>
-
-<div class="toc-item">
-  
-</div>
-
-<div class="toc-item">
-  
-</div>
-
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pandas DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-index-data">Including Index Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long-form-vs-wide-form-data">Long-form vs. Wide-form Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-with-pandas">Converting with Pandas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-with-fold-transform">Converting with Fold Transform</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generated-data">Generated Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-generator">Sequence Generator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graticule-generator">Graticule Generator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphere-generator">Sphere Generator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-data">Spatial Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-data-gdf">GeoPandas GeoDataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-geojson-object">Inline GeoJSON Object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geojson-file-by-url">GeoJSON File by URL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-topojson-object">Inline TopoJSON Object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topojson-file-by-url">TopoJSON File by URL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-geojson-objects">Nested GeoJSON Objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#projections">Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#winding-order">Winding Order</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
-        </footer>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
         
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-  <footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2016-2023, Vega-Altair Developers.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
   
 </div>
+
   </footer>
   </body>
 </html>
