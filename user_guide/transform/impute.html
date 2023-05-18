@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Impute &#8212; Vega-Altair 5.0.0dev documentation</title>
+    <title>Impute &#8212; Vega-Altair 5.1.0dev documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -32,19 +32,24 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/altair-plot.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/altair-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/transform/impute';</script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -97,7 +102,7 @@
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">This website is for the release candidate of version 5 <code class="docutils literal notranslate"><span class="pre">pip install altair==5.0.0rc1</span></code> <span class="pre">(more info <a href='https://github.com/altair-viz/altair/issues/2937'>#2937</a>)</span>. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
+    <div class="bd-header-announcement__content">This website is for version 5. You can find the documentation for version 4 <a href='https://altair-viz.github.io/altair-viz-v4/'>here</a>.</div>
   </div>
 
   
@@ -169,8 +174,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../API.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../api.html">
+                        API
                       </a>
                     </li>
                 
@@ -315,8 +320,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../API.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../api.html">
+                        API
                       </a>
                     </li>
                 
@@ -562,7 +567,7 @@ data directly, the line skips the missing entries:</p>
 <div class="highlight-python notranslate" id="impute-rst-altair-source-1"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 
 <span class="n">raw</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;t:Q&#39;</span><span class="p">),</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;t:Q&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;value:Q&#39;</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;variable:N&#39;</span>
 <span class="p">)</span>
@@ -575,7 +580,7 @@ data directly, the line skips the missing entries:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -588,13 +593,13 @@ data directly, the line skips the missing entries:</p>
 no points) it can imply the existence of data that is not there.</p>
 <section id="impute-via-encodings">
 <h2>Impute via Encodings<a class="headerlink" href="#impute-via-encodings" title="Permalink to this heading">#</a></h2>
-<p>To address this, you can use an impute argument to the encoding channel.
+<p>To address this, you can use the impute method of the encoding channel.
 For example, we can impute using a constant value (we’ll show the raw chart
 lightly in the background for reference):</p>
 <div class="highlight-python notranslate" id="impute-rst-altair-source-2"><div class="highlight"><pre><span></span><span class="n">background</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
 <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;t:Q&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;value:Q&#39;</span><span class="p">,</span> <span class="n">impute</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">ImputeParams</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;value:Q&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">impute</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;variable:N&#39;</span>
 <span class="p">)</span>
 <span class="n">background</span> <span class="o">+</span> <span class="n">chart</span>
@@ -606,7 +611,7 @@ lightly in the background for reference):</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"value": 0}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"value": 0}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -618,7 +623,7 @@ lightly in the background for reference):</p>
 </div><p>Or we can impute using any supported aggregate:</p>
 <div class="highlight-python notranslate" id="impute-rst-altair-source-3"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;t:Q&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;value:Q&#39;</span><span class="p">,</span> <span class="n">impute</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">ImputeParams</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)),</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;value:Q&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">impute</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">),</span>
     <span class="n">color</span><span class="o">=</span><span class="s1">&#39;variable:N&#39;</span>
 <span class="p">)</span>
 <span class="n">background</span> <span class="o">+</span> <span class="n">chart</span>
@@ -630,7 +635,7 @@ lightly in the background for reference):</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"method": "mean"}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "impute": {"method": "mean"}, "type": "quantitative"}}}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -664,7 +669,7 @@ transform. For example, here is the equivalent of the above two charts:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "value": 0}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "value": 0}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -692,7 +697,7 @@ transform. For example, here is the equivalent of the above two charts:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -726,7 +731,7 @@ side:</p>
   // embed when document is loaded, to ensure vega library is available
   // this works on all modern browsers, except IE8 and older
   document.addEventListener("DOMContentLoaded", function(event) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "frame": [-1, 1], "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.6.1.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "opacity": {"value": 0.2}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}}, {"mark": {"type": "line", "point": true}, "encoding": {"color": {"field": "variable", "type": "nominal"}, "x": {"field": "t", "type": "quantitative"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"impute": "value", "key": "t", "frame": [-1, 1], "groupby": ["variable"], "method": "mean"}]}], "data": {"name": "data-7be20e7420cc57bc379470ef15f02789"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7be20e7420cc57bc379470ef15f02789": [{"t": 0, "variable": "x", "value": 2.0}, {"t": 2, "variable": "x", "value": 3.0}, {"t": 3, "variable": "x", "value": 1.0}, {"t": 4, "variable": "x", "value": 3.0}, {"t": 0, "variable": "y", "value": 5.0}, {"t": 1, "variable": "y", "value": 7.0}, {"t": 2, "variable": "y", "value": 5.0}, {"t": 4, "variable": "y", "value": 4.0}]}};
       var opt = {
         "mode": "vega-lite",
         "renderer": "canvas",
@@ -794,7 +799,10 @@ class, which has the following options:</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="fold.html"
@@ -814,7 +822,10 @@ class, which has the following options:</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -840,7 +851,7 @@ class, which has the following options:</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -848,8 +859,8 @@ class, which has the following options:</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -867,7 +878,7 @@ class, which has the following options:</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
     <br/>
   </p>
 </div>
@@ -878,7 +889,7 @@ class, which has the following options:</p>
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

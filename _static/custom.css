@@ -75,8 +75,21 @@ properly displayed on mobile devices and not restricted to 20% */
   width: 100%;
 }
 
-/* Use full page width without sidebars */
-/* .bd-content { */
-/*   max-width: 100%; */
-/*   flex-grow: 1; */
-/* } */
+/* Configurations for the start page
+------------------------------------ */
+.lead {
+  font-size: 1.3em;
+  font-weight: 300;
+  margin-top: 18px;
+}
+
+.lead strong {
+  /* Default is bolder which is less */
+  font-weight: bold;
+}
+
+.sd-p-4.startpage-grid {
+  padding-left: 6em !important;
+  padding-right: 6em !important;
+}
+/* ---------------------------------- */
